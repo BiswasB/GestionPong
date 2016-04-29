@@ -50,6 +50,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DataSetPong.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSetPong.xsd</DependentUpon>
+    </Compile>
     <Compile Include="FormAcheterForfaits.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -196,6 +201,17 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <None Include="DataSetPong.xsc">
+      <DependentUpon>DataSetPong.xsd</DependentUpon>
+    </None>
+    <None Include="DataSetPong.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSetPong.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataSetPong.xss">
+      <DependentUpon>DataSetPong.xsd</DependentUpon>
+    </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

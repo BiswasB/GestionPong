@@ -227,7 +227,7 @@
             this.groupBoxAdresse.Controls.Add(this.label15);
             this.groupBoxAdresse.Location = new System.Drawing.Point(12, 183);
             this.groupBoxAdresse.Name = "groupBoxAdresse";
-            this.groupBoxAdresse.Size = new System.Drawing.Size(349, 248);
+            this.groupBoxAdresse.Size = new System.Drawing.Size(308, 248);
             this.groupBoxAdresse.TabIndex = 71;
             this.groupBoxAdresse.TabStop = false;
             this.groupBoxAdresse.Text = "Adresse";
@@ -244,14 +244,14 @@
             // comboBoxPays
             // 
             this.comboBoxPays.FormattingEnabled = true;
-            this.comboBoxPays.Location = new System.Drawing.Point(186, 176);
+            this.comboBoxPays.Location = new System.Drawing.Point(149, 176);
             this.comboBoxPays.Name = "comboBoxPays";
             this.comboBoxPays.Size = new System.Drawing.Size(144, 21);
             this.comboBoxPays.TabIndex = 53;
             // 
             // textBoxNumeroCivique
             // 
-            this.textBoxNumeroCivique.Location = new System.Drawing.Point(186, 22);
+            this.textBoxNumeroCivique.Location = new System.Drawing.Point(149, 22);
             this.textBoxNumeroCivique.Name = "textBoxNumeroCivique";
             this.textBoxNumeroCivique.Size = new System.Drawing.Size(144, 20);
             this.textBoxNumeroCivique.TabIndex = 42;
@@ -259,7 +259,7 @@
             // comboBoxProvince
             // 
             this.comboBoxProvince.FormattingEnabled = true;
-            this.comboBoxProvince.Location = new System.Drawing.Point(186, 216);
+            this.comboBoxProvince.Location = new System.Drawing.Point(149, 216);
             this.comboBoxProvince.Name = "comboBoxProvince";
             this.comboBoxProvince.Size = new System.Drawing.Size(144, 21);
             this.comboBoxProvince.TabIndex = 52;
@@ -284,7 +284,7 @@
             // 
             // textBoxRue
             // 
-            this.textBoxRue.Location = new System.Drawing.Point(186, 59);
+            this.textBoxRue.Location = new System.Drawing.Point(149, 59);
             this.textBoxRue.Name = "textBoxRue";
             this.textBoxRue.Size = new System.Drawing.Size(144, 20);
             this.textBoxRue.TabIndex = 44;
@@ -309,14 +309,14 @@
             // 
             // textBoxCodePostal
             // 
-            this.textBoxCodePostal.Location = new System.Drawing.Point(186, 139);
+            this.textBoxCodePostal.Location = new System.Drawing.Point(149, 139);
             this.textBoxCodePostal.Name = "textBoxCodePostal";
             this.textBoxCodePostal.Size = new System.Drawing.Size(144, 20);
             this.textBoxCodePostal.TabIndex = 48;
             // 
             // textBoxVille
             // 
-            this.textBoxVille.Location = new System.Drawing.Point(186, 99);
+            this.textBoxVille.Location = new System.Drawing.Point(149, 99);
             this.textBoxVille.Name = "textBoxVille";
             this.textBoxVille.Size = new System.Drawing.Size(144, 20);
             this.textBoxVille.TabIndex = 46;
@@ -334,7 +334,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(386, 707);
+            this.ClientSize = new System.Drawing.Size(341, 707);
             this.Controls.Add(this.groupBoxAdresse);
             this.Controls.Add(this.buttonCreer);
             this.Controls.Add(this.buttonImporterPhoto);
