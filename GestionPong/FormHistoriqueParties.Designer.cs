@@ -28,25 +28,25 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.label1 = new System.Windows.Forms.Label();
+            this.labelNombrePartiesJoueesCP = new System.Windows.Forms.Label();
             this.labelNombrePartiesJouees = new System.Windows.Forms.Label();
             this.labelPourcentageVictoire = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
+            this.labelPourcentageVictoireCP = new System.Windows.Forms.Label();
             this.labelPointage = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
+            this.labelPointageCP = new System.Windows.Forms.Label();
             this.dataGridViewParties = new System.Windows.Forms.DataGridView();
             this.buttonOk = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewParties)).BeginInit();
             this.SuspendLayout();
             // 
-            // label1
+            // labelNombrePartiesJoueesCP
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(13, 13);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(133, 13);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Nombre de parties jouées :";
+            this.labelNombrePartiesJoueesCP.AutoSize = true;
+            this.labelNombrePartiesJoueesCP.Location = new System.Drawing.Point(13, 13);
+            this.labelNombrePartiesJoueesCP.Name = "labelNombrePartiesJoueesCP";
+            this.labelNombrePartiesJoueesCP.Size = new System.Drawing.Size(133, 13);
+            this.labelNombrePartiesJoueesCP.TabIndex = 0;
+            this.labelNombrePartiesJoueesCP.Text = "Nombre de parties jouées :";
             // 
             // labelNombrePartiesJouees
             // 
@@ -66,14 +66,14 @@
             this.labelPourcentageVictoire.TabIndex = 3;
             this.labelPourcentageVictoire.Text = "0";
             // 
-            // label3
+            // labelPourcentageVictoireCP
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(12, 46);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(126, 13);
-            this.label3.TabIndex = 2;
-            this.label3.Text = "Pourcentage de victoire :";
+            this.labelPourcentageVictoireCP.AutoSize = true;
+            this.labelPourcentageVictoireCP.Location = new System.Drawing.Point(12, 46);
+            this.labelPourcentageVictoireCP.Name = "labelPourcentageVictoireCP";
+            this.labelPourcentageVictoireCP.Size = new System.Drawing.Size(126, 13);
+            this.labelPourcentageVictoireCP.TabIndex = 2;
+            this.labelPourcentageVictoireCP.Text = "Pourcentage de victoire :";
             // 
             // labelPointage
             // 
@@ -84,14 +84,14 @@
             this.labelPointage.TabIndex = 5;
             this.labelPointage.Text = "0";
             // 
-            // label4
+            // labelPointageCP
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(13, 82);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(55, 13);
-            this.label4.TabIndex = 4;
-            this.label4.Text = "Pointage :";
+            this.labelPointageCP.AutoSize = true;
+            this.labelPointageCP.Location = new System.Drawing.Point(13, 82);
+            this.labelPointageCP.Name = "labelPointageCP";
+            this.labelPointageCP.Size = new System.Drawing.Size(55, 13);
+            this.labelPointageCP.TabIndex = 4;
+            this.labelPointageCP.Text = "Pointage :";
             // 
             // dataGridViewParties
             // 
@@ -119,11 +119,11 @@
             this.Controls.Add(this.buttonOk);
             this.Controls.Add(this.dataGridViewParties);
             this.Controls.Add(this.labelPointage);
-            this.Controls.Add(this.label4);
+            this.Controls.Add(this.labelPointageCP);
             this.Controls.Add(this.labelPourcentageVictoire);
-            this.Controls.Add(this.label3);
+            this.Controls.Add(this.labelPourcentageVictoireCP);
             this.Controls.Add(this.labelNombrePartiesJouees);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.labelNombrePartiesJoueesCP);
             this.Name = "FormHistoriqueParties";
             this.Text = "Historique des parties";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewParties)).EndInit();
@@ -134,12 +134,12 @@
 
         #endregion
 
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label labelNombrePartiesJoueesCP;
         private System.Windows.Forms.Label labelNombrePartiesJouees;
         private System.Windows.Forms.Label labelPourcentageVictoire;
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label labelPourcentageVictoireCP;
         private System.Windows.Forms.Label labelPointage;
-        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label labelPointageCP;
         private System.Windows.Forms.DataGridView dataGridViewParties;
         private System.Windows.Forms.Button buttonOk;
     }

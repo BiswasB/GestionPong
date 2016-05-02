@@ -30,15 +30,15 @@
         {
             this.buttonAjouter = new System.Windows.Forms.Button();
             this.textBoxNumeroSecurite = new System.Windows.Forms.TextBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
+            this.labelNumeroDeSecuriteCP = new System.Windows.Forms.Label();
+            this.dateTimePickerDateExpiration = new System.Windows.Forms.DateTimePicker();
+            this.labelDateExpirationCP = new System.Windows.Forms.Label();
+            this.labelMarqueCP = new System.Windows.Forms.Label();
             this.comboBoxMarque = new System.Windows.Forms.ComboBox();
             this.textBoxNom = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
+            this.labelNomDuTitulaireCP = new System.Windows.Forms.Label();
             this.textBoxNumero = new System.Windows.Forms.TextBox();
-            this.label6 = new System.Windows.Forms.Label();
+            this.labelNumeroCP = new System.Windows.Forms.Label();
             this.buttonOK = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
@@ -58,39 +58,39 @@
             this.textBoxNumeroSecurite.Size = new System.Drawing.Size(133, 20);
             this.textBoxNumeroSecurite.TabIndex = 22;
             // 
-            // label5
+            // labelNumeroDeSecuriteCP
             // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(12, 216);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(105, 13);
-            this.label5.TabIndex = 21;
-            this.label5.Text = "Numéro de sécurité :";
+            this.labelNumeroDeSecuriteCP.AutoSize = true;
+            this.labelNumeroDeSecuriteCP.Location = new System.Drawing.Point(12, 216);
+            this.labelNumeroDeSecuriteCP.Name = "labelNumeroDeSecuriteCP";
+            this.labelNumeroDeSecuriteCP.Size = new System.Drawing.Size(105, 13);
+            this.labelNumeroDeSecuriteCP.TabIndex = 21;
+            this.labelNumeroDeSecuriteCP.Text = "Numéro de sécurité :";
             // 
-            // dateTimePicker1
+            // dateTimePickerDateExpiration
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(110, 169);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(146, 20);
-            this.dateTimePicker1.TabIndex = 20;
+            this.dateTimePickerDateExpiration.Location = new System.Drawing.Point(110, 169);
+            this.dateTimePickerDateExpiration.Name = "dateTimePickerDateExpiration";
+            this.dateTimePickerDateExpiration.Size = new System.Drawing.Size(146, 20);
+            this.dateTimePickerDateExpiration.TabIndex = 20;
             // 
-            // label4
+            // labelDateExpirationCP
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(12, 175);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(92, 13);
-            this.label4.TabIndex = 19;
-            this.label4.Text = "Date d\'expiration :";
+            this.labelDateExpirationCP.AutoSize = true;
+            this.labelDateExpirationCP.Location = new System.Drawing.Point(12, 175);
+            this.labelDateExpirationCP.Name = "labelDateExpirationCP";
+            this.labelDateExpirationCP.Size = new System.Drawing.Size(92, 13);
+            this.labelDateExpirationCP.TabIndex = 19;
+            this.labelDateExpirationCP.Text = "Date d\'expiration :";
             // 
-            // label3
+            // labelMarqueCP
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(12, 122);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(49, 13);
-            this.label3.TabIndex = 18;
-            this.label3.Text = "Marque :";
+            this.labelMarqueCP.AutoSize = true;
+            this.labelMarqueCP.Location = new System.Drawing.Point(12, 122);
+            this.labelMarqueCP.Name = "labelMarqueCP";
+            this.labelMarqueCP.Size = new System.Drawing.Size(49, 13);
+            this.labelMarqueCP.TabIndex = 18;
+            this.labelMarqueCP.Text = "Marque :";
             // 
             // comboBoxMarque
             // 
@@ -107,14 +107,14 @@
             this.textBoxNom.Size = new System.Drawing.Size(145, 20);
             this.textBoxNom.TabIndex = 16;
             // 
-            // label2
+            // labelNomDuTitulaireCP
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(12, 70);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(83, 13);
-            this.label2.TabIndex = 15;
-            this.label2.Text = "Nom du titulaire:";
+            this.labelNomDuTitulaireCP.AutoSize = true;
+            this.labelNomDuTitulaireCP.Location = new System.Drawing.Point(12, 70);
+            this.labelNomDuTitulaireCP.Name = "labelNomDuTitulaireCP";
+            this.labelNomDuTitulaireCP.Size = new System.Drawing.Size(83, 13);
+            this.labelNomDuTitulaireCP.TabIndex = 15;
+            this.labelNomDuTitulaireCP.Text = "Nom du titulaire:";
             // 
             // textBoxNumero
             // 
@@ -123,14 +123,14 @@
             this.textBoxNumero.Size = new System.Drawing.Size(145, 20);
             this.textBoxNumero.TabIndex = 27;
             // 
-            // label6
+            // labelNumeroCP
             // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(12, 23);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(50, 13);
-            this.label6.TabIndex = 26;
-            this.label6.Text = "Numéro :";
+            this.labelNumeroCP.AutoSize = true;
+            this.labelNumeroCP.Location = new System.Drawing.Point(12, 23);
+            this.labelNumeroCP.Name = "labelNumeroCP";
+            this.labelNumeroCP.Size = new System.Drawing.Size(50, 13);
+            this.labelNumeroCP.TabIndex = 26;
+            this.labelNumeroCP.Text = "Numéro :";
             // 
             // buttonOK
             // 
@@ -149,16 +149,16 @@
             this.ClientSize = new System.Drawing.Size(280, 313);
             this.Controls.Add(this.buttonOK);
             this.Controls.Add(this.textBoxNumero);
-            this.Controls.Add(this.label6);
+            this.Controls.Add(this.labelNumeroCP);
             this.Controls.Add(this.buttonAjouter);
             this.Controls.Add(this.textBoxNumeroSecurite);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.dateTimePicker1);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.label3);
+            this.Controls.Add(this.labelNumeroDeSecuriteCP);
+            this.Controls.Add(this.dateTimePickerDateExpiration);
+            this.Controls.Add(this.labelDateExpirationCP);
+            this.Controls.Add(this.labelMarqueCP);
             this.Controls.Add(this.comboBoxMarque);
             this.Controls.Add(this.textBoxNom);
-            this.Controls.Add(this.label2);
+            this.Controls.Add(this.labelNomDuTitulaireCP);
             this.Name = "FormAjouterCarteCredit";
             this.Text = "Ajouter une carte de crédit";
             this.ResumeLayout(false);
@@ -170,15 +170,15 @@
 
         private System.Windows.Forms.Button buttonAjouter;
         private System.Windows.Forms.TextBox textBoxNumeroSecurite;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label labelNumeroDeSecuriteCP;
+        private System.Windows.Forms.DateTimePicker dateTimePickerDateExpiration;
+        private System.Windows.Forms.Label labelDateExpirationCP;
+        private System.Windows.Forms.Label labelMarqueCP;
         private System.Windows.Forms.ComboBox comboBoxMarque;
         private System.Windows.Forms.TextBox textBoxNom;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label labelNomDuTitulaireCP;
         private System.Windows.Forms.TextBox textBoxNumero;
-        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label labelNumeroCP;
         private System.Windows.Forms.Button buttonOK;
     }
 }

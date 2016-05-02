@@ -28,39 +28,39 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.groupBoxEquipeActuelle = new System.Windows.Forms.GroupBox();
             this.labelDescription = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
+            this.labelDescriptionCP = new System.Windows.Forms.Label();
             this.buttonInviter = new System.Windows.Forms.Button();
             this.labelPointage = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
+            this.labelPointageCP = new System.Windows.Forms.Label();
             this.dataGridViewJoueurs = new System.Windows.Forms.DataGridView();
             this.labelNomEquipe = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
+            this.labelNomCP = new System.Windows.Forms.Label();
             this.buttonQuitterEquipe = new System.Windows.Forms.Button();
             this.buttonCreer = new System.Windows.Forms.Button();
             this.buttonVoirInvitations = new System.Windows.Forms.Button();
             this.buttonOK = new System.Windows.Forms.Button();
-            this.groupBox1.SuspendLayout();
+            this.groupBoxEquipeActuelle.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewJoueurs)).BeginInit();
             this.SuspendLayout();
             // 
-            // groupBox1
+            // groupBoxEquipeActuelle
             // 
-            this.groupBox1.Controls.Add(this.labelDescription);
-            this.groupBox1.Controls.Add(this.label4);
-            this.groupBox1.Controls.Add(this.buttonInviter);
-            this.groupBox1.Controls.Add(this.labelPointage);
-            this.groupBox1.Controls.Add(this.label3);
-            this.groupBox1.Controls.Add(this.dataGridViewJoueurs);
-            this.groupBox1.Controls.Add(this.labelNomEquipe);
-            this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Location = new System.Drawing.Point(13, 13);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(259, 341);
-            this.groupBox1.TabIndex = 0;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Équipe Actuelle";
+            this.groupBoxEquipeActuelle.Controls.Add(this.labelDescription);
+            this.groupBoxEquipeActuelle.Controls.Add(this.labelDescriptionCP);
+            this.groupBoxEquipeActuelle.Controls.Add(this.buttonInviter);
+            this.groupBoxEquipeActuelle.Controls.Add(this.labelPointage);
+            this.groupBoxEquipeActuelle.Controls.Add(this.labelPointageCP);
+            this.groupBoxEquipeActuelle.Controls.Add(this.dataGridViewJoueurs);
+            this.groupBoxEquipeActuelle.Controls.Add(this.labelNomEquipe);
+            this.groupBoxEquipeActuelle.Controls.Add(this.labelNomCP);
+            this.groupBoxEquipeActuelle.Location = new System.Drawing.Point(13, 13);
+            this.groupBoxEquipeActuelle.Name = "groupBoxEquipeActuelle";
+            this.groupBoxEquipeActuelle.Size = new System.Drawing.Size(259, 341);
+            this.groupBoxEquipeActuelle.TabIndex = 0;
+            this.groupBoxEquipeActuelle.TabStop = false;
+            this.groupBoxEquipeActuelle.Text = "Équipe Actuelle";
             // 
             // labelDescription
             // 
@@ -71,14 +71,14 @@
             this.labelDescription.TabIndex = 6;
             this.labelDescription.Text = "Description";
             // 
-            // label4
+            // labelDescriptionCP
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(7, 51);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(66, 13);
-            this.label4.TabIndex = 5;
-            this.label4.Text = "Description :";
+            this.labelDescriptionCP.AutoSize = true;
+            this.labelDescriptionCP.Location = new System.Drawing.Point(7, 51);
+            this.labelDescriptionCP.Name = "labelDescriptionCP";
+            this.labelDescriptionCP.Size = new System.Drawing.Size(66, 13);
+            this.labelDescriptionCP.TabIndex = 5;
+            this.labelDescriptionCP.Text = "Description :";
             // 
             // buttonInviter
             // 
@@ -99,14 +99,14 @@
             this.labelPointage.TabIndex = 4;
             this.labelPointage.Text = "0";
             // 
-            // label3
+            // labelPointageCP
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(7, 284);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(55, 13);
-            this.label3.TabIndex = 3;
-            this.label3.Text = "Pointage :";
+            this.labelPointageCP.AutoSize = true;
+            this.labelPointageCP.Location = new System.Drawing.Point(7, 284);
+            this.labelPointageCP.Name = "labelPointageCP";
+            this.labelPointageCP.Size = new System.Drawing.Size(55, 13);
+            this.labelPointageCP.TabIndex = 3;
+            this.labelPointageCP.Text = "Pointage :";
             // 
             // dataGridViewJoueurs
             // 
@@ -125,14 +125,14 @@
             this.labelNomEquipe.TabIndex = 1;
             this.labelNomEquipe.Text = "Les champions du Pong";
             // 
-            // label1
+            // labelNomCP
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(7, 20);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(35, 13);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Nom :";
+            this.labelNomCP.AutoSize = true;
+            this.labelNomCP.Location = new System.Drawing.Point(7, 20);
+            this.labelNomCP.Name = "labelNomCP";
+            this.labelNomCP.Size = new System.Drawing.Size(35, 13);
+            this.labelNomCP.TabIndex = 0;
+            this.labelNomCP.Text = "Nom :";
             // 
             // buttonQuitterEquipe
             // 
@@ -182,11 +182,11 @@
             this.Controls.Add(this.buttonVoirInvitations);
             this.Controls.Add(this.buttonCreer);
             this.Controls.Add(this.buttonQuitterEquipe);
-            this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.groupBoxEquipeActuelle);
             this.Name = "FormEquipe";
             this.Text = "Équipe";
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
+            this.groupBoxEquipeActuelle.ResumeLayout(false);
+            this.groupBoxEquipeActuelle.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewJoueurs)).EndInit();
             this.ResumeLayout(false);
 
@@ -194,18 +194,18 @@
 
         #endregion
 
-        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.GroupBox groupBoxEquipeActuelle;
         private System.Windows.Forms.Button buttonInviter;
         private System.Windows.Forms.Label labelPointage;
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label labelPointageCP;
         private System.Windows.Forms.DataGridView dataGridViewJoueurs;
         private System.Windows.Forms.Label labelNomEquipe;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label labelNomCP;
         private System.Windows.Forms.Button buttonQuitterEquipe;
         private System.Windows.Forms.Button buttonCreer;
         private System.Windows.Forms.Button buttonVoirInvitations;
         private System.Windows.Forms.Label labelDescription;
-        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label labelDescriptionCP;
         private System.Windows.Forms.Button buttonOK;
     }
 }

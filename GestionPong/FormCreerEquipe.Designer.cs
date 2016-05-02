@@ -28,31 +28,31 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.label4 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
+            this.labelDescriptionCP = new System.Windows.Forms.Label();
+            this.labelNomCP = new System.Windows.Forms.Label();
             this.textBoxNom = new System.Windows.Forms.TextBox();
             this.richTextBoxDescription = new System.Windows.Forms.RichTextBox();
             this.buttonCreer = new System.Windows.Forms.Button();
             this.buttonOK = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // label4
+            // labelDescriptionCP
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(12, 40);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(66, 13);
-            this.label4.TabIndex = 9;
-            this.label4.Text = "Description :";
+            this.labelDescriptionCP.AutoSize = true;
+            this.labelDescriptionCP.Location = new System.Drawing.Point(12, 40);
+            this.labelDescriptionCP.Name = "labelDescriptionCP";
+            this.labelDescriptionCP.Size = new System.Drawing.Size(66, 13);
+            this.labelDescriptionCP.TabIndex = 9;
+            this.labelDescriptionCP.Text = "Description :";
             // 
-            // label1
+            // labelNomCP
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(12, 9);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(35, 13);
-            this.label1.TabIndex = 7;
-            this.label1.Text = "Nom :";
+            this.labelNomCP.AutoSize = true;
+            this.labelNomCP.Location = new System.Drawing.Point(12, 9);
+            this.labelNomCP.Name = "labelNomCP";
+            this.labelNomCP.Size = new System.Drawing.Size(35, 13);
+            this.labelNomCP.TabIndex = 7;
+            this.labelNomCP.Text = "Nom :";
             // 
             // textBoxNom
             // 
@@ -97,8 +97,8 @@
             this.Controls.Add(this.buttonCreer);
             this.Controls.Add(this.richTextBoxDescription);
             this.Controls.Add(this.textBoxNom);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.labelDescriptionCP);
+            this.Controls.Add(this.labelNomCP);
             this.Name = "FormCreerEquipe";
             this.Text = "Créer une équipe";
             this.ResumeLayout(false);
@@ -108,8 +108,8 @@
 
         #endregion
 
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label labelDescriptionCP;
+        private System.Windows.Forms.Label labelNomCP;
         private System.Windows.Forms.TextBox textBoxNom;
         private System.Windows.Forms.RichTextBox richTextBoxDescription;
         private System.Windows.Forms.Button buttonCreer;
