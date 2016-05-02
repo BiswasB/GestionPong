@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MySql.Data.MySqlClient;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -27,6 +28,11 @@ namespace GestionPong
         private void buttonConnexion_Click(object sender, EventArgs e)
         {
             this.Hide();
+            //Créer la connexion
+            MySqlConnection con = null;
+            MySqlCommand cmd = null;
+            MySqlDataReader rdr = null;
+            string commandText = "";
             FormEcranPrincipal formEcranPrincipal = new FormEcranPrincipal();
             formEcranPrincipal.Show();
         }
