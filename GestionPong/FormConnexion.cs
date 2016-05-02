@@ -33,7 +33,7 @@ namespace GestionPong
             string commandText = "";
             try
             {
-                con = new MySqlConnection(Properties.Settings.Default."______"); //À faire: Nom connexionString
+                con = new MySqlConnection(Properties.Settings.Default.PongConnexionString); //À faire: Nom connexionString
                 con.Open();
                 commandText = "SELECT ID FROM Joueurs WHERE Pseudonyme = @Pseudonyme";
                 cmd = new MySqlCommand(commandText);
