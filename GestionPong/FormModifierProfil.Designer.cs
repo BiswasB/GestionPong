@@ -400,6 +400,7 @@
             this.Controls.Add(this.labelPseudonymeCP);
             this.Name = "FormModifierProfil";
             this.Text = "FormModifierProfil";
+            this.Load += new System.EventHandler(this.FormModifierProfil_Load);
             this.groupBoxAdresse.ResumeLayout(false);
             this.groupBoxAdresse.PerformLayout();
             this.groupBoxModifierMotDePasse.ResumeLayout(false);

@@ -140,6 +140,7 @@
     <Compile Include="FormVoirInvitations.Designer.cs">
       <DependentUpon>FormVoirInvitations.cs</DependentUpon>
     </Compile>
+    <Compile Include="Global.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="FormAcheterForfaits.resx">
