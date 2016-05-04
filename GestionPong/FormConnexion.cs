@@ -32,6 +32,8 @@ namespace GestionPong
             MySqlDataReader rdr = null;
             string commandText = "";
             try
+
+                //
             {
                 con = new MySqlConnection(Properties.Settings.Default.PongConnexionString); //À faire: Nom connexionString
                 con.Open();
