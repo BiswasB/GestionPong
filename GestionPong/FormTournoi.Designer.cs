@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             this.buttonInscrire = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
-            this.labelTournoisJoues = new System.Windows.Forms.Label();
+            this.labelNombreDeTournoisJouesCP = new System.Windows.Forms.Label();
+            this.labelNombreDeTournoisJoues = new System.Windows.Forms.Label();
             this.buttonTournoiActif = new System.Windows.Forms.Button();
             this.buttonOK = new System.Windows.Forms.Button();
             this.SuspendLayout();
@@ -44,23 +44,23 @@
             this.buttonInscrire.Text = "S\'inscrire à un nouveau tournoi";
             this.buttonInscrire.UseVisualStyleBackColor = true;
             // 
-            // label1
+            // labelNombreDeTournoisJouesCP
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(13, 13);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(128, 13);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Nombre de tournoi joués :";
+            this.labelNombreDeTournoisJouesCP.AutoSize = true;
+            this.labelNombreDeTournoisJouesCP.Location = new System.Drawing.Point(13, 13);
+            this.labelNombreDeTournoisJouesCP.Name = "labelNombreDeTournoisJouesCP";
+            this.labelNombreDeTournoisJouesCP.Size = new System.Drawing.Size(128, 13);
+            this.labelNombreDeTournoisJouesCP.TabIndex = 1;
+            this.labelNombreDeTournoisJouesCP.Text = "Nombre de tournoi joués :";
             // 
-            // labelTournoisJoues
+            // labelNombreDeTournoisJoues
             // 
-            this.labelTournoisJoues.AutoSize = true;
-            this.labelTournoisJoues.Location = new System.Drawing.Point(171, 13);
-            this.labelTournoisJoues.Name = "labelTournoisJoues";
-            this.labelTournoisJoues.Size = new System.Drawing.Size(13, 13);
-            this.labelTournoisJoues.TabIndex = 2;
-            this.labelTournoisJoues.Text = "0";
+            this.labelNombreDeTournoisJoues.AutoSize = true;
+            this.labelNombreDeTournoisJoues.Location = new System.Drawing.Point(171, 13);
+            this.labelNombreDeTournoisJoues.Name = "labelNombreDeTournoisJoues";
+            this.labelNombreDeTournoisJoues.Size = new System.Drawing.Size(13, 13);
+            this.labelNombreDeTournoisJoues.TabIndex = 2;
+            this.labelNombreDeTournoisJoues.Text = "0";
             // 
             // buttonTournoiActif
             // 
@@ -89,8 +89,8 @@
             this.ClientSize = new System.Drawing.Size(208, 164);
             this.Controls.Add(this.buttonOK);
             this.Controls.Add(this.buttonTournoiActif);
-            this.Controls.Add(this.labelTournoisJoues);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.labelNombreDeTournoisJoues);
+            this.Controls.Add(this.labelNombreDeTournoisJouesCP);
             this.Controls.Add(this.buttonInscrire);
             this.Name = "FormTournoi";
             this.Text = "Tournoi";
@@ -102,8 +102,8 @@
         #endregion
 
         private System.Windows.Forms.Button buttonInscrire;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label labelTournoisJoues;
+        private System.Windows.Forms.Label labelNombreDeTournoisJouesCP;
+        private System.Windows.Forms.Label labelNombreDeTournoisJoues;
         private System.Windows.Forms.Button buttonTournoiActif;
         private System.Windows.Forms.Button buttonOK;
     }

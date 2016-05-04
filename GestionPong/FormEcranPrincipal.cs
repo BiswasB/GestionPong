@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MySql.Data.MySqlClient;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -19,6 +20,7 @@ namespace GestionPong
 
         private void buttonDeconnexion_Click(object sender, EventArgs e)
         {
+            Global.ID = 0;
             Environment.Exit(0);
         }
 

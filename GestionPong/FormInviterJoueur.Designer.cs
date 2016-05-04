@@ -28,20 +28,20 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.label1 = new System.Windows.Forms.Label();
+            this.labelNomJoueurCP = new System.Windows.Forms.Label();
             this.textBoxNomJoueur = new System.Windows.Forms.TextBox();
             this.buttonInviter = new System.Windows.Forms.Button();
             this.buttonOK = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // label1
+            // labelNomJoueurCP
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(13, 13);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(82, 13);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Nom du joueur :";
+            this.labelNomJoueurCP.AutoSize = true;
+            this.labelNomJoueurCP.Location = new System.Drawing.Point(13, 13);
+            this.labelNomJoueurCP.Name = "labelNomJoueurCP";
+            this.labelNomJoueurCP.Size = new System.Drawing.Size(82, 13);
+            this.labelNomJoueurCP.TabIndex = 0;
+            this.labelNomJoueurCP.Text = "Nom du joueur :";
             // 
             // textBoxNomJoueur
             // 
@@ -77,7 +77,7 @@
             this.Controls.Add(this.buttonOK);
             this.Controls.Add(this.buttonInviter);
             this.Controls.Add(this.textBoxNomJoueur);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.labelNomJoueurCP);
             this.Name = "FormInviterJoueur";
             this.Text = "FormInviterJoueur";
             this.ResumeLayout(false);
@@ -87,7 +87,7 @@
 
         #endregion
 
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label labelNomJoueurCP;
         private System.Windows.Forms.TextBox textBoxNomJoueur;
         private System.Windows.Forms.Button buttonInviter;
         private System.Windows.Forms.Button buttonOK;

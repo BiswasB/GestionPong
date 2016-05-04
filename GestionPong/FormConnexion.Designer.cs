@@ -29,10 +29,10 @@
         private void InitializeComponent()
         {
             this.buttonConnexion = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
+            this.labelPseudonymeCP = new System.Windows.Forms.Label();
             this.textBoxPseudonyme = new System.Windows.Forms.TextBox();
             this.textBoxMotdePasse = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
+            this.labelMotDePasseCP = new System.Windows.Forms.Label();
             this.buttonNouveauCompte = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
@@ -46,14 +46,14 @@
             this.buttonConnexion.UseVisualStyleBackColor = true;
             this.buttonConnexion.Click += new System.EventHandler(this.buttonConnexion_Click);
             // 
-            // label1
+            // labelPseudonymeCP
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(12, 9);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(74, 13);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Pseudonyme :";
+            this.labelPseudonymeCP.AutoSize = true;
+            this.labelPseudonymeCP.Location = new System.Drawing.Point(12, 9);
+            this.labelPseudonymeCP.Name = "labelPseudonymeCP";
+            this.labelPseudonymeCP.Size = new System.Drawing.Size(74, 13);
+            this.labelPseudonymeCP.TabIndex = 1;
+            this.labelPseudonymeCP.Text = "Pseudonyme :";
             // 
             // textBoxPseudonyme
             // 
@@ -69,14 +69,14 @@
             this.textBoxMotdePasse.Size = new System.Drawing.Size(100, 20);
             this.textBoxMotdePasse.TabIndex = 4;
             // 
-            // label2
+            // labelMotDePasseCP
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(12, 60);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(77, 13);
-            this.label2.TabIndex = 3;
-            this.label2.Text = "Mot de passe :";
+            this.labelMotDePasseCP.AutoSize = true;
+            this.labelMotDePasseCP.Location = new System.Drawing.Point(12, 60);
+            this.labelMotDePasseCP.Name = "labelMotDePasseCP";
+            this.labelMotDePasseCP.Size = new System.Drawing.Size(77, 13);
+            this.labelMotDePasseCP.TabIndex = 3;
+            this.labelMotDePasseCP.Text = "Mot de passe :";
             // 
             // buttonNouveauCompte
             // 
@@ -95,9 +95,9 @@
             this.ClientSize = new System.Drawing.Size(212, 158);
             this.Controls.Add(this.buttonNouveauCompte);
             this.Controls.Add(this.textBoxMotdePasse);
-            this.Controls.Add(this.label2);
+            this.Controls.Add(this.labelMotDePasseCP);
             this.Controls.Add(this.textBoxPseudonyme);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.labelPseudonymeCP);
             this.Controls.Add(this.buttonConnexion);
             this.Name = "FormConnexion";
             this.Text = "Connexion";
@@ -109,10 +109,10 @@
         #endregion
 
         private System.Windows.Forms.Button buttonConnexion;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label labelPseudonymeCP;
         private System.Windows.Forms.TextBox textBoxPseudonyme;
         private System.Windows.Forms.TextBox textBoxMotdePasse;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label labelMotDePasseCP;
         private System.Windows.Forms.Button buttonNouveauCompte;
     }
 }
