@@ -20,7 +20,7 @@ namespace GestionPong
 
         private void buttonDeconnexion_Click(object sender, EventArgs e)
         {
-            Global.ID = 0;
+            Global.ID = 0; //fuck you
             Environment.Exit(0);
         }
 
