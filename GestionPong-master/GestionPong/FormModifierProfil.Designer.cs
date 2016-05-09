@@ -368,9 +368,9 @@
             // 
             // buttonOK
             // 
-            this.buttonOK.Location = new System.Drawing.Point(120, 710);
+            this.buttonOK.Location = new System.Drawing.Point(20, 710);
             this.buttonOK.Name = "buttonOK";
-            this.buttonOK.Size = new System.Drawing.Size(133, 23);
+            this.buttonOK.Size = new System.Drawing.Size(330, 23);
             this.buttonOK.TabIndex = 71;
             this.buttonOK.Text = "OK";
             this.buttonOK.UseVisualStyleBackColor = true;

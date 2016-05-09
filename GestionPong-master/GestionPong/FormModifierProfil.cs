@@ -36,22 +36,53 @@ namespace GestionPong
                 con = new MySqlConnection(Global.ConnexionString); //À faire: Nom de connexion string.
                 con.Open();
                 //Créer la commande
-                commandText = "SELECT Pseudonyme, Prenom, Nom, Courriel, DateDeNaissance FROM Joueurs WHERE ID = @ID"; //Commande à exécuter
+                commandText = "SELECT Pseudonyme, NomJoueur, Prenom, MotdePasse Courriel, MotdePasse, NumeroCivique, Rue, CodePostal FROM joueurs, adresse WHERE ID = " + Global.Id; //Commande à exécuter
                 cmd = new MySqlCommand(commandText); //Création de la commande
                 cmd.Connection = con; //Association de la commande à la connexion
-                //Ajouter les paramètres (Nom, Type, Taille dans la table, type dans la table)
-                cmd.Parameters.Add(new MySqlParameter("@ID", MySql.Data.MySqlClient.MySqlDbType.VarChar, -1, "ID"));
-                //cmd.Parameters.Add(new MySqlParameter("@Pseudonyme", MySql.Data.MySqlClient.MySqlDbType.VarChar, -1, "Pseudonyme"));
-                //cmd.Parameters.Add(new MySqlParameter("@Prenom", MySql.Data.MySqlClient.MySqlDbType.VarChar, -1, "Prenom"));
-                //cmd.Parameters.Add(new MySqlParameter("@Nom", MySql.Data.MySqlClient.MySqlDbType.VarChar, -1, "Nom"));
-                //cmd.Parameters.Add(new MySqlParameter("@Courriel", MySql.Data.MySqlClient.MySqlDbType.VarChar, -1, "Courriel"));
-                //cmd.Parameters.Add(new MySqlParameter("@DateDeNaissance", MySql.Data.MySqlClient.MySqlDbType.VarChar, -1, "DateDeNaissance"));
-                //Récupérer la valeur de l'ID
-                //cmd.Parameters["@ID"].Value = 
+                //Ajouter les paramètres(Nom, Type, Taille dans la table, type dans la table)
+                cmd.Parameters.Add(new MySqlParameter("@ID", MySql.Data.MySqlClient.MySqlDbType.Int16, -1, "ID"));
+                
+                cmd.Parameters["@ID"].Value = Global.Id;
+
+                rdr = cmd.ExecuteReader();
+
+                // Effectuer le traitement
+                // Affiche le nom de l'élève
+                if (rdr.HasRows)
+                {
+                    rdr.Read();
+                    textBoxPseudonyme.Text = rdr["Pseudonyme"].ToString();
+                    textBoxNom.Text = rdr["NomJoueur"].ToString();
+                    textBoxPrenom.Text = rdr["Prenom"].ToString();
+                    textBoxCourriel.Text = rdr["Courriel"].ToString();
+                    textBoxMotdePasseActuel.Text = rdr["MotdePasse"].ToString();
+                    textBoxNumeroCivique.Text = rdr["NumeroCivique"].ToString();
+                    textBoxRue.Text = rdr["Rue"].ToString();
+                    textBoxCodePostal.Text = rdr["CodePostal"].ToString();
+
+                }
+                else
+                {
+                    textBoxPseudonyme.Text = "";
+                    textBoxNom.Text = "";
+                    textBoxPrenom.Text = "";
+                    MessageBox.Show("Aucun joueur trouvé");
+                }
             }
             catch
             {
-
+                MessageBox.Show("Erreur.");
+            }
+            finally
+            {
+                if (rdr != null)
+                {
+                    rdr.Close();
+                }
+                if (con.State == ConnectionState.Open)
+                {
+                    con.Close();
+                }
             }
         }
     }
