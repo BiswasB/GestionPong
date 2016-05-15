@@ -107,7 +107,7 @@
             // comboBoxCarteCredit
             // 
             this.comboBoxCarteCredit.FormattingEnabled = true;
-            this.comboBoxCarteCredit.Location = new System.Drawing.Point(260, 146);
+            this.comboBoxCarteCredit.Location = new System.Drawing.Point(252, 146);
             this.comboBoxCarteCredit.Name = "comboBoxCarteCredit";
             this.comboBoxCarteCredit.Size = new System.Drawing.Size(121, 21);
             this.comboBoxCarteCredit.TabIndex = 2;
@@ -175,9 +175,9 @@
             // 
             // buttonOK
             // 
-            this.buttonOK.Location = new System.Drawing.Point(200, 211);
+            this.buttonOK.Location = new System.Drawing.Point(147, 211);
             this.buttonOK.Name = "buttonOK";
-            this.buttonOK.Size = new System.Drawing.Size(114, 23);
+            this.buttonOK.Size = new System.Drawing.Size(226, 23);
             this.buttonOK.TabIndex = 6;
             this.buttonOK.Text = "OK";
             this.buttonOK.UseVisualStyleBackColor = true;

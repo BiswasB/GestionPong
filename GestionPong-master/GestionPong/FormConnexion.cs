@@ -33,12 +33,13 @@ namespace GestionPong
             string commandText = "";
             try
             {
-                con = new MySqlConnection(Global.ConnexionString);
+                con = new MySqlConnection(Global.ConnexionString); //À faire: Nom connexionString
                 con.Open();
-                commandText = "SELECT ID, MotdePasse FROM Joueurs WHERE Pseudonyme = @Pseudonyme";
+                commandText = "SELECT ID, MotdePasse FROM joueurs WHERE Pseudonyme = @Pseudonyme";
                 cmd = new MySqlCommand(commandText);
                 cmd.Connection = con;
                 cmd.Parameters.Add(new MySqlParameter("@Pseudonyme", MySql.Data.MySqlClient.MySqlDbType.VarChar, -1, "Pseudonyme"));
+                cmd.Parameters.Add(new MySqlParameter("@MotdePasse", MySql.Data.MySqlClient.MySqlDbType.VarChar, -1, "MotdePasse"));
                 cmd.Parameters["@Pseudonyme"].Value = textBoxPseudonyme.Text;
                 rdr = cmd.ExecuteReader();
                 if (rdr.HasRows)
@@ -46,7 +47,7 @@ namespace GestionPong
                     rdr.Read();
                     if (rdr["MotdePasse"].ToString() == textBoxMotdePasse.Text)
                     {
-                        Global.ID = (int)rdr["ID"]; //Variable globale permettan à l'ID de suivre.
+                        Global.Id = (int)rdr["ID"]; //Variable globale permettan à l'ID de suivre.
                         this.Hide();
                         FormEcranPrincipal formEcranPrincipal = new FormEcranPrincipal();
                         formEcranPrincipal.Show();
