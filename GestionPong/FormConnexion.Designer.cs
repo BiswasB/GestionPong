@@ -61,6 +61,7 @@
             this.textBoxPseudonyme.Name = "textBoxPseudonyme";
             this.textBoxPseudonyme.Size = new System.Drawing.Size(100, 20);
             this.textBoxPseudonyme.TabIndex = 2;
+            this.textBoxPseudonyme.Text = "Basia";
             // 
             // textBoxMotdePasse
             // 
@@ -68,6 +69,7 @@
             this.textBoxMotdePasse.Name = "textBoxMotdePasse";
             this.textBoxMotdePasse.Size = new System.Drawing.Size(100, 20);
             this.textBoxMotdePasse.TabIndex = 4;
+            this.textBoxMotdePasse.Text = "Brynn";
             // 
             // labelMotDePasseCP
             // 

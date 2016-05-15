@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.labelPartiesRestantesCP = new System.Windows.Forms.Label();
             this.labelPartiesRestantes = new System.Windows.Forms.Label();
             this.labelJoursPremiumRestants = new System.Windows.Forms.Label();
@@ -35,7 +36,25 @@
             this.labelJoursCP = new System.Windows.Forms.Label();
             this.buttonOk = new System.Windows.Forms.Button();
             this.labelCouleurPaletteCP = new System.Windows.Forms.Label();
-            this.comboBoxCouleurPalette = new System.Windows.Forms.ComboBox();
+            this.joueursBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dataSetPong = new GestionPong.DataSetPong();
+            this.couleurplaquetteBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
+            this.couleurplaquetteBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.dataSetPongBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.couleurplaquetteBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.couleurplaquetteTableAdapter = new GestionPong.DataSetPongTableAdapters.couleurplaquetteTableAdapter();
+            this.joueursTableAdapter = new GestionPong.DataSetPongTableAdapters.joueursTableAdapter();
+            this.fKIDCouleurPlaquetteJoueursBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.joueursBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.labelCouleurPalette = new System.Windows.Forms.Label();
+            ((System.ComponentModel.ISupportInitialize)(this.joueursBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSetPong)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.couleurplaquetteBindingSource2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.couleurplaquetteBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSetPongBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.couleurplaquetteBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.fKIDCouleurPlaquetteJoueursBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.joueursBindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
             // labelPartiesRestantesCP
@@ -102,20 +121,68 @@
             this.labelCouleurPaletteCP.TabIndex = 6;
             this.labelCouleurPaletteCP.Text = "Changer la couleur de la palette :";
             // 
-            // comboBoxCouleurPalette
+            // joueursBindingSource
             // 
-            this.comboBoxCouleurPalette.FormattingEnabled = true;
-            this.comboBoxCouleurPalette.Location = new System.Drawing.Point(183, 85);
-            this.comboBoxCouleurPalette.Name = "comboBoxCouleurPalette";
-            this.comboBoxCouleurPalette.Size = new System.Drawing.Size(121, 21);
-            this.comboBoxCouleurPalette.TabIndex = 7;
+            this.joueursBindingSource.DataMember = "joueurs";
+            this.joueursBindingSource.DataSource = this.dataSetPong;
+            // 
+            // dataSetPong
+            // 
+            this.dataSetPong.DataSetName = "DataSetPong";
+            this.dataSetPong.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // couleurplaquetteBindingSource2
+            // 
+            this.couleurplaquetteBindingSource2.DataMember = "couleurplaquette";
+            this.couleurplaquetteBindingSource2.DataSource = this.dataSetPong;
+            // 
+            // couleurplaquetteBindingSource1
+            // 
+            this.couleurplaquetteBindingSource1.DataMember = "couleurplaquette";
+            this.couleurplaquetteBindingSource1.DataSource = this.dataSetPongBindingSource;
+            // 
+            // dataSetPongBindingSource
+            // 
+            this.dataSetPongBindingSource.DataSource = this.dataSetPong;
+            this.dataSetPongBindingSource.Position = 0;
+            // 
+            // couleurplaquetteBindingSource
+            // 
+            this.couleurplaquetteBindingSource.DataMember = "couleurplaquette";
+            this.couleurplaquetteBindingSource.DataSource = this.dataSetPongBindingSource;
+            // 
+            // couleurplaquetteTableAdapter
+            // 
+            this.couleurplaquetteTableAdapter.ClearBeforeFill = true;
+            // 
+            // joueursTableAdapter
+            // 
+            this.joueursTableAdapter.ClearBeforeFill = true;
+            // 
+            // fKIDCouleurPlaquetteJoueursBindingSource
+            // 
+            this.fKIDCouleurPlaquetteJoueursBindingSource.DataMember = "FK_ID_CouleurPlaquette_Joueurs";
+            this.fKIDCouleurPlaquetteJoueursBindingSource.DataSource = this.couleurplaquetteBindingSource1;
+            // 
+            // joueursBindingSource1
+            // 
+            this.joueursBindingSource1.DataMember = "joueurs";
+            this.joueursBindingSource1.DataSource = this.dataSetPong;
+            // 
+            // labelCouleurPalette
+            // 
+            this.labelCouleurPalette.AutoSize = true;
+            this.labelCouleurPalette.Location = new System.Drawing.Point(183, 88);
+            this.labelCouleurPalette.Name = "labelCouleurPalette";
+            this.labelCouleurPalette.Size = new System.Drawing.Size(0, 13);
+            this.labelCouleurPalette.TabIndex = 7;
             // 
             // FormEtatCompte
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(311, 167);
-            this.Controls.Add(this.comboBoxCouleurPalette);
+            this.Controls.Add(this.labelCouleurPalette);
             this.Controls.Add(this.labelCouleurPaletteCP);
             this.Controls.Add(this.buttonOk);
             this.Controls.Add(this.labelJoursCP);
@@ -125,6 +192,15 @@
             this.Controls.Add(this.labelPartiesRestantesCP);
             this.Name = "FormEtatCompte";
             this.Text = "État du compte";
+            this.Load += new System.EventHandler(this.FormEtatCompte_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.joueursBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSetPong)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.couleurplaquetteBindingSource2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.couleurplaquetteBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSetPongBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.couleurplaquetteBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.fKIDCouleurPlaquetteJoueursBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.joueursBindingSource1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -139,6 +215,16 @@
         private System.Windows.Forms.Label labelJoursCP;
         private System.Windows.Forms.Button buttonOk;
         private System.Windows.Forms.Label labelCouleurPaletteCP;
-        private System.Windows.Forms.ComboBox comboBoxCouleurPalette;
+        private System.Windows.Forms.BindingSource dataSetPongBindingSource;
+        private DataSetPong dataSetPong;
+        private System.Windows.Forms.BindingSource couleurplaquetteBindingSource;
+        private DataSetPongTableAdapters.couleurplaquetteTableAdapter couleurplaquetteTableAdapter;
+        private System.Windows.Forms.BindingSource joueursBindingSource;
+        private DataSetPongTableAdapters.joueursTableAdapter joueursTableAdapter;
+        private System.Windows.Forms.BindingSource couleurplaquetteBindingSource1;
+        private System.Windows.Forms.BindingSource couleurplaquetteBindingSource2;
+        private System.Windows.Forms.BindingSource fKIDCouleurPlaquetteJoueursBindingSource;
+        private System.Windows.Forms.BindingSource joueursBindingSource1;
+        private System.Windows.Forms.Label labelCouleurPalette;
     }
 }
