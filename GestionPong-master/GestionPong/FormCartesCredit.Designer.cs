@@ -30,14 +30,10 @@
         {
             this.comboBoxCartes = new System.Windows.Forms.ComboBox();
             this.labelCarteCP = new System.Windows.Forms.Label();
-            this.labelNomTitulaireCP = new System.Windows.Forms.Label();
-            this.textBoxNom = new System.Windows.Forms.TextBox();
             this.comboBoxMarque = new System.Windows.Forms.ComboBox();
             this.labelMarqueCP = new System.Windows.Forms.Label();
             this.labelDateExpirationCP = new System.Windows.Forms.Label();
             this.dateTimePickerDateExpiration = new System.Windows.Forms.DateTimePicker();
-            this.textBoxNumeroSecurite = new System.Windows.Forms.TextBox();
-            this.labelNumeroSecuriteCP = new System.Windows.Forms.Label();
             this.buttonModifier = new System.Windows.Forms.Button();
             this.buttonSupprimer = new System.Windows.Forms.Button();
             this.buttonAjouter = new System.Windows.Forms.Button();
@@ -53,6 +49,7 @@
             this.comboBoxCartes.Name = "comboBoxCartes";
             this.comboBoxCartes.Size = new System.Drawing.Size(146, 21);
             this.comboBoxCartes.TabIndex = 0;
+            this.comboBoxCartes.SelectedIndexChanged += new System.EventHandler(this.comboBoxCartes_SelectedIndexChanged);
             // 
             // labelCarteCP
             // 
@@ -62,22 +59,6 @@
             this.labelCarteCP.Size = new System.Drawing.Size(38, 13);
             this.labelCarteCP.TabIndex = 1;
             this.labelCarteCP.Text = "Carte :";
-            // 
-            // labelNomTitulaireCP
-            // 
-            this.labelNomTitulaireCP.AutoSize = true;
-            this.labelNomTitulaireCP.Location = new System.Drawing.Point(12, 111);
-            this.labelNomTitulaireCP.Name = "labelNomTitulaireCP";
-            this.labelNomTitulaireCP.Size = new System.Drawing.Size(83, 13);
-            this.labelNomTitulaireCP.TabIndex = 2;
-            this.labelNomTitulaireCP.Text = "Nom du titulaire:";
-            // 
-            // textBoxNom
-            // 
-            this.textBoxNom.Location = new System.Drawing.Point(111, 108);
-            this.textBoxNom.Name = "textBoxNom";
-            this.textBoxNom.Size = new System.Drawing.Size(145, 20);
-            this.textBoxNom.TabIndex = 3;
             // 
             // comboBoxMarque
             // 
@@ -111,22 +92,6 @@
             this.dateTimePickerDateExpiration.Name = "dateTimePickerDateExpiration";
             this.dateTimePickerDateExpiration.Size = new System.Drawing.Size(146, 20);
             this.dateTimePickerDateExpiration.TabIndex = 7;
-            // 
-            // textBoxNumeroSecurite
-            // 
-            this.textBoxNumeroSecurite.Location = new System.Drawing.Point(123, 254);
-            this.textBoxNumeroSecurite.Name = "textBoxNumeroSecurite";
-            this.textBoxNumeroSecurite.Size = new System.Drawing.Size(133, 20);
-            this.textBoxNumeroSecurite.TabIndex = 9;
-            // 
-            // labelNumeroSecuriteCP
-            // 
-            this.labelNumeroSecuriteCP.AutoSize = true;
-            this.labelNumeroSecuriteCP.Location = new System.Drawing.Point(12, 257);
-            this.labelNumeroSecuriteCP.Name = "labelNumeroSecuriteCP";
-            this.labelNumeroSecuriteCP.Size = new System.Drawing.Size(105, 13);
-            this.labelNumeroSecuriteCP.TabIndex = 8;
-            this.labelNumeroSecuriteCP.Text = "Numéro de sécurité :";
             // 
             // buttonModifier
             // 
@@ -193,14 +158,10 @@
             this.Controls.Add(this.buttonAjouter);
             this.Controls.Add(this.buttonSupprimer);
             this.Controls.Add(this.buttonModifier);
-            this.Controls.Add(this.textBoxNumeroSecurite);
-            this.Controls.Add(this.labelNumeroSecuriteCP);
             this.Controls.Add(this.dateTimePickerDateExpiration);
             this.Controls.Add(this.labelDateExpirationCP);
             this.Controls.Add(this.labelMarqueCP);
             this.Controls.Add(this.comboBoxMarque);
-            this.Controls.Add(this.textBoxNom);
-            this.Controls.Add(this.labelNomTitulaireCP);
             this.Controls.Add(this.labelCarteCP);
             this.Controls.Add(this.comboBoxCartes);
             this.Name = "FormCartesCredit";
@@ -214,14 +175,10 @@
 
         private System.Windows.Forms.ComboBox comboBoxCartes;
         private System.Windows.Forms.Label labelCarteCP;
-        private System.Windows.Forms.Label labelNomTitulaireCP;
-        private System.Windows.Forms.TextBox textBoxNom;
         private System.Windows.Forms.ComboBox comboBoxMarque;
         private System.Windows.Forms.Label labelMarqueCP;
         private System.Windows.Forms.Label labelDateExpirationCP;
         private System.Windows.Forms.DateTimePicker dateTimePickerDateExpiration;
-        private System.Windows.Forms.TextBox textBoxNumeroSecurite;
-        private System.Windows.Forms.Label labelNumeroSecuriteCP;
         private System.Windows.Forms.Button buttonModifier;
         private System.Windows.Forms.Button buttonSupprimer;
         private System.Windows.Forms.Button buttonAjouter;

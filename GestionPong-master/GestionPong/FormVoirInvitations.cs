@@ -22,5 +22,14 @@ namespace GestionPong
         {
             this.Close();
         }
+
+        private void FormVoirInvitations_Load(object sender, EventArgs e)
+        {
+            // TODO: cette ligne de code charge les données dans la table 'dataSetPong.equipes'. Vous pouvez la déplacer ou la supprimer selon vos besoins.
+            this.equipesTableAdapter.Fill(this.dataSetPong.equipes);
+            // TODO: cette ligne de code charge les données dans la table 'dataSetPong.invitations'. Vous pouvez la déplacer ou la supprimer selon vos besoins.
+            this.invitationsTableAdapter.Fill(this.dataSetPong.invitations);
+
+        }
     }
 }

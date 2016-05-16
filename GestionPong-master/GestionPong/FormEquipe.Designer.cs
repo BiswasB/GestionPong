@@ -142,6 +142,7 @@
             this.buttonQuitterEquipe.TabIndex = 1;
             this.buttonQuitterEquipe.Text = "Quitter l\'équipe";
             this.buttonQuitterEquipe.UseVisualStyleBackColor = true;
+            this.buttonQuitterEquipe.Click += new System.EventHandler(this.buttonQuitterEquipe_Click);
             // 
             // buttonCreer
             // 
@@ -185,6 +186,7 @@
             this.Controls.Add(this.groupBoxEquipeActuelle);
             this.Name = "FormEquipe";
             this.Text = "Équipe";
+            this.Load += new System.EventHandler(this.FormEquipe_Load);
             this.groupBoxEquipeActuelle.ResumeLayout(false);
             this.groupBoxEquipeActuelle.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewJoueurs)).EndInit();

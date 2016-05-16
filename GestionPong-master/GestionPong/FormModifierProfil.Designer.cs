@@ -28,11 +28,16 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.groupBoxAdresse = new System.Windows.Forms.GroupBox();
             this.labelNumeroCiviqueCP = new System.Windows.Forms.Label();
             this.comboBoxPays = new System.Windows.Forms.ComboBox();
+            this.paysBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dataSetPongBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dataSetPong = new GestionPong.DataSetPong();
             this.textBoxNumeroCivique = new System.Windows.Forms.TextBox();
             this.comboBoxProvince = new System.Windows.Forms.ComboBox();
+            this.provinceBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.labelRueCP = new System.Windows.Forms.Label();
             this.labelProvinceCP = new System.Windows.Forms.Label();
             this.textBoxRue = new System.Windows.Forms.TextBox();
@@ -63,7 +68,13 @@
             this.textBoxPseudonyme = new System.Windows.Forms.TextBox();
             this.labelPseudonymeCP = new System.Windows.Forms.Label();
             this.buttonOK = new System.Windows.Forms.Button();
+            this.paysTableAdapter = new GestionPong.DataSetPongTableAdapters.paysTableAdapter();
+            this.provinceTableAdapter = new GestionPong.DataSetPongTableAdapters.provinceTableAdapter();
             this.groupBoxAdresse.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.paysBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSetPongBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSetPong)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.provinceBindingSource)).BeginInit();
             this.groupBoxModifierMotDePasse.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxPhotoDeProfil)).BeginInit();
             this.SuspendLayout();
@@ -100,11 +111,29 @@
             // 
             // comboBoxPays
             // 
+            this.comboBoxPays.DataSource = this.paysBindingSource;
+            this.comboBoxPays.DisplayMember = "NomPays";
             this.comboBoxPays.FormattingEnabled = true;
             this.comboBoxPays.Location = new System.Drawing.Point(186, 176);
             this.comboBoxPays.Name = "comboBoxPays";
             this.comboBoxPays.Size = new System.Drawing.Size(144, 21);
             this.comboBoxPays.TabIndex = 53;
+            this.comboBoxPays.ValueMember = "NomPays";
+            // 
+            // paysBindingSource
+            // 
+            this.paysBindingSource.DataMember = "pays";
+            this.paysBindingSource.DataSource = this.dataSetPongBindingSource;
+            // 
+            // dataSetPongBindingSource
+            // 
+            this.dataSetPongBindingSource.DataSource = this.dataSetPong;
+            this.dataSetPongBindingSource.Position = 0;
+            // 
+            // dataSetPong
+            // 
+            this.dataSetPong.DataSetName = "DataSetPong";
+            this.dataSetPong.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // textBoxNumeroCivique
             // 
@@ -115,11 +144,19 @@
             // 
             // comboBoxProvince
             // 
+            this.comboBoxProvince.DataSource = this.provinceBindingSource;
+            this.comboBoxProvince.DisplayMember = "NomProvince";
             this.comboBoxProvince.FormattingEnabled = true;
             this.comboBoxProvince.Location = new System.Drawing.Point(186, 216);
             this.comboBoxProvince.Name = "comboBoxProvince";
             this.comboBoxProvince.Size = new System.Drawing.Size(144, 21);
             this.comboBoxProvince.TabIndex = 52;
+            this.comboBoxProvince.ValueMember = "NomProvince";
+            // 
+            // provinceBindingSource
+            // 
+            this.provinceBindingSource.DataMember = "province";
+            this.provinceBindingSource.DataSource = this.dataSetPongBindingSource;
             // 
             // labelRueCP
             // 
@@ -258,6 +295,7 @@
             this.buttonModifier.TabIndex = 68;
             this.buttonModifier.Text = "Modifier";
             this.buttonModifier.UseVisualStyleBackColor = true;
+            this.buttonModifier.Click += new System.EventHandler(this.buttonModifier_Click);
             // 
             // buttonImporterPhoto
             // 
@@ -376,6 +414,14 @@
             this.buttonOK.UseVisualStyleBackColor = true;
             this.buttonOK.Click += new System.EventHandler(this.buttonOK_Click);
             // 
+            // paysTableAdapter
+            // 
+            this.paysTableAdapter.ClearBeforeFill = true;
+            // 
+            // provinceTableAdapter
+            // 
+            this.provinceTableAdapter.ClearBeforeFill = true;
+            // 
             // FormModifierProfil
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -403,6 +449,10 @@
             this.Load += new System.EventHandler(this.FormModifierProfil_Load);
             this.groupBoxAdresse.ResumeLayout(false);
             this.groupBoxAdresse.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.paysBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSetPongBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSetPong)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.provinceBindingSource)).EndInit();
             this.groupBoxModifierMotDePasse.ResumeLayout(false);
             this.groupBoxModifierMotDePasse.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxPhotoDeProfil)).EndInit();
@@ -448,5 +498,11 @@
         private System.Windows.Forms.Label labelNumeroCiviqueCP;
         private System.Windows.Forms.GroupBox groupBoxAdresse;
         private System.Windows.Forms.Button buttonOK;
+        private System.Windows.Forms.BindingSource dataSetPongBindingSource;
+        private DataSetPong dataSetPong;
+        private System.Windows.Forms.BindingSource paysBindingSource;
+        private DataSetPongTableAdapters.paysTableAdapter paysTableAdapter;
+        private System.Windows.Forms.BindingSource provinceBindingSource;
+        private DataSetPongTableAdapters.provinceTableAdapter provinceTableAdapter;
     }
 }
