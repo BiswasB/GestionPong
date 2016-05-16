@@ -50,8 +50,6 @@ namespace GestionPong {
         
         private provinceDataTable tableprovince;
         
-        private registretransactionsDataTable tableregistretransactions;
-        
         private rondesDataTable tablerondes;
         
         private statutinvitationsDataTable tablestatutinvitations;
@@ -88,8 +86,6 @@ namespace GestionPong {
         
         private global::System.Data.DataRelation relationFK_ID_Pays_Province;
         
-        private global::System.Data.DataRelation relationFK_ID_Forfaits_RegistreTransactions;
-        
         private global::System.Data.DataRelation relationFK_ID_Rondes_Parties;
         
         private global::System.Data.DataRelation relationFK_ID_StatutInvitations_Invitations;
@@ -98,9 +94,9 @@ namespace GestionPong {
         
         private global::System.Data.DataRelation relationFK_ID_Tournois_Rondes;
         
-        private global::System.Data.DataRelation relationFK_ID_Joueurs_Transactions;
+        private global::System.Data.DataRelation relationFK_ID_Forfaits_Transactions;
         
-        private global::System.Data.DataRelation relationFK_ID_RegistreTransactions_Transactions;
+        private global::System.Data.DataRelation relationFK_ID_Joueurs_Transactions;
         
         private global::System.Data.DataRelation relationFK_ID_Ville_Adresse;
         
@@ -172,9 +168,6 @@ namespace GestionPong {
                 }
                 if ((ds.Tables["province"] != null)) {
                     base.Tables.Add(new provinceDataTable(ds.Tables["province"]));
-                }
-                if ((ds.Tables["registretransactions"] != null)) {
-                    base.Tables.Add(new registretransactionsDataTable(ds.Tables["registretransactions"]));
                 }
                 if ((ds.Tables["rondes"] != null)) {
                     base.Tables.Add(new rondesDataTable(ds.Tables["rondes"]));
@@ -346,16 +339,6 @@ namespace GestionPong {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Browsable(false)]
         [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
-        public registretransactionsDataTable registretransactions {
-            get {
-                return this.tableregistretransactions;
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.Browsable(false)]
-        [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
         public rondesDataTable rondes {
             get {
                 return this.tablerondes;
@@ -518,9 +501,6 @@ namespace GestionPong {
                 if ((ds.Tables["province"] != null)) {
                     base.Tables.Add(new provinceDataTable(ds.Tables["province"]));
                 }
-                if ((ds.Tables["registretransactions"] != null)) {
-                    base.Tables.Add(new registretransactionsDataTable(ds.Tables["registretransactions"]));
-                }
                 if ((ds.Tables["rondes"] != null)) {
                     base.Tables.Add(new rondesDataTable(ds.Tables["rondes"]));
                 }
@@ -650,12 +630,6 @@ namespace GestionPong {
                     this.tableprovince.InitVars();
                 }
             }
-            this.tableregistretransactions = ((registretransactionsDataTable)(base.Tables["registretransactions"]));
-            if ((initTable == true)) {
-                if ((this.tableregistretransactions != null)) {
-                    this.tableregistretransactions.InitVars();
-                }
-            }
             this.tablerondes = ((rondesDataTable)(base.Tables["rondes"]));
             if ((initTable == true)) {
                 if ((this.tablerondes != null)) {
@@ -704,13 +678,12 @@ namespace GestionPong {
             this.relationFK_ID_Joueurs1_Parties = this.Relations["FK_ID_Joueurs1_Parties"];
             this.relationFK_ID_Joueurs2_Parties = this.Relations["FK_ID_Joueurs2_Parties"];
             this.relationFK_ID_Pays_Province = this.Relations["FK_ID_Pays_Province"];
-            this.relationFK_ID_Forfaits_RegistreTransactions = this.Relations["FK_ID_Forfaits_RegistreTransactions"];
             this.relationFK_ID_Rondes_Parties = this.Relations["FK_ID_Rondes_Parties"];
             this.relationFK_ID_StatutInvitations_Invitations = this.Relations["FK_ID_StatutInvitations_Invitations"];
             this.relationFK_ID_Taxes_Forfaits_Taxes = this.Relations["FK_ID_Taxes_Forfaits_Taxes"];
             this.relationFK_ID_Tournois_Rondes = this.Relations["FK_ID_Tournois_Rondes"];
+            this.relationFK_ID_Forfaits_Transactions = this.Relations["FK_ID_Forfaits_Transactions"];
             this.relationFK_ID_Joueurs_Transactions = this.Relations["FK_ID_Joueurs_Transactions"];
-            this.relationFK_ID_RegistreTransactions_Transactions = this.Relations["FK_ID_RegistreTransactions_Transactions"];
             this.relationFK_ID_Ville_Adresse = this.Relations["FK_ID_Ville_Adresse"];
             this.relationFK_ID_Province_Ville = this.Relations["FK_ID_Province_Ville"];
         }
@@ -749,8 +722,6 @@ namespace GestionPong {
             base.Tables.Add(this.tablepays);
             this.tableprovince = new provinceDataTable();
             base.Tables.Add(this.tableprovince);
-            this.tableregistretransactions = new registretransactionsDataTable();
-            base.Tables.Add(this.tableregistretransactions);
             this.tablerondes = new rondesDataTable();
             base.Tables.Add(this.tablerondes);
             this.tablestatutinvitations = new statutinvitationsDataTable();
@@ -811,10 +782,6 @@ namespace GestionPong {
                         this.tablepays.IDColumn}, new global::System.Data.DataColumn[] {
                         this.tableprovince.ID_PaysColumn}, false);
             this.Relations.Add(this.relationFK_ID_Pays_Province);
-            this.relationFK_ID_Forfaits_RegistreTransactions = new global::System.Data.DataRelation("FK_ID_Forfaits_RegistreTransactions", new global::System.Data.DataColumn[] {
-                        this.tableforfaits.IDColumn}, new global::System.Data.DataColumn[] {
-                        this.tableregistretransactions.ID_ForfaitsColumn}, false);
-            this.Relations.Add(this.relationFK_ID_Forfaits_RegistreTransactions);
             this.relationFK_ID_Rondes_Parties = new global::System.Data.DataRelation("FK_ID_Rondes_Parties", new global::System.Data.DataColumn[] {
                         this.tablerondes.IDColumn}, new global::System.Data.DataColumn[] {
                         this.tableparties.ID_RondesColumn}, false);
@@ -831,14 +798,14 @@ namespace GestionPong {
                         this.tabletournois.IDColumn}, new global::System.Data.DataColumn[] {
                         this.tablerondes.ID_TournoisColumn}, false);
             this.Relations.Add(this.relationFK_ID_Tournois_Rondes);
+            this.relationFK_ID_Forfaits_Transactions = new global::System.Data.DataRelation("FK_ID_Forfaits_Transactions", new global::System.Data.DataColumn[] {
+                        this.tableforfaits.IDColumn}, new global::System.Data.DataColumn[] {
+                        this.tabletransactions.ID_ForfaitsColumn}, false);
+            this.Relations.Add(this.relationFK_ID_Forfaits_Transactions);
             this.relationFK_ID_Joueurs_Transactions = new global::System.Data.DataRelation("FK_ID_Joueurs_Transactions", new global::System.Data.DataColumn[] {
                         this.tablejoueurs.IDColumn}, new global::System.Data.DataColumn[] {
                         this.tabletransactions.ID_JoueursColumn}, false);
             this.Relations.Add(this.relationFK_ID_Joueurs_Transactions);
-            this.relationFK_ID_RegistreTransactions_Transactions = new global::System.Data.DataRelation("FK_ID_RegistreTransactions_Transactions", new global::System.Data.DataColumn[] {
-                        this.tableregistretransactions.IDColumn}, new global::System.Data.DataColumn[] {
-                        this.tabletransactions.ID_RegistreTransactionsColumn}, false);
-            this.Relations.Add(this.relationFK_ID_RegistreTransactions_Transactions);
             this.relationFK_ID_Ville_Adresse = new global::System.Data.DataRelation("FK_ID_Ville_Adresse", new global::System.Data.DataColumn[] {
                         this.tableville.IDColumn}, new global::System.Data.DataColumn[] {
                         this.tableadresse.ID_VilleColumn}, false);
@@ -924,12 +891,6 @@ namespace GestionPong {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private bool ShouldSerializeprovince() {
-            return false;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        private bool ShouldSerializeregistretransactions() {
             return false;
         }
         
@@ -1062,9 +1023,6 @@ namespace GestionPong {
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         public delegate void provinceRowChangeEventHandler(object sender, provinceRowChangeEvent e);
-        
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public delegate void registretransactionsRowChangeEventHandler(object sender, registretransactionsRowChangeEvent e);
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         public delegate void rondesRowChangeEventHandler(object sender, rondesRowChangeEvent e);
@@ -1988,7 +1946,7 @@ namespace GestionPong {
             
             private global::System.Data.DataColumn columnID;
             
-            private global::System.Data.DataColumn columnDescription;
+            private global::System.Data.DataColumn columnCouleur;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
@@ -2033,9 +1991,9 @@ namespace GestionPong {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn DescriptionColumn {
+            public global::System.Data.DataColumn CouleurColumn {
                 get {
-                    return this.columnDescription;
+                    return this.columnCouleur;
                 }
             }
             
@@ -2076,11 +2034,11 @@ namespace GestionPong {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public couleurplaquetteRow AddcouleurplaquetteRow(string Description) {
+            public couleurplaquetteRow AddcouleurplaquetteRow(string Couleur) {
                 couleurplaquetteRow rowcouleurplaquetteRow = ((couleurplaquetteRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
-                        Description};
+                        Couleur};
                 rowcouleurplaquetteRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowcouleurplaquetteRow);
                 return rowcouleurplaquetteRow;
@@ -2111,7 +2069,7 @@ namespace GestionPong {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             internal void InitVars() {
                 this.columnID = base.Columns["ID"];
-                this.columnDescription = base.Columns["Description"];
+                this.columnCouleur = base.Columns["Couleur"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2119,8 +2077,8 @@ namespace GestionPong {
             private void InitClass() {
                 this.columnID = new global::System.Data.DataColumn("ID", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnID);
-                this.columnDescription = new global::System.Data.DataColumn("Description", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnDescription);
+                this.columnCouleur = new global::System.Data.DataColumn("Couleur", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnCouleur);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnID}, true));
                 this.columnID.AutoIncrement = true;
@@ -2128,7 +2086,7 @@ namespace GestionPong {
                 this.columnID.AutoIncrementStep = -1;
                 this.columnID.AllowDBNull = false;
                 this.columnID.Unique = true;
-                this.columnDescription.MaxLength = 45;
+                this.columnCouleur.MaxLength = 45;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2264,9 +2222,9 @@ namespace GestionPong {
             
             private global::System.Data.DataColumn columnID;
             
-            private global::System.Data.DataColumn columnNom;
+            private global::System.Data.DataColumn columnNomEquipe;
             
-            private global::System.Data.DataColumn columnDescription;
+            private global::System.Data.DataColumn columnDescriptionEquipe;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
@@ -2311,17 +2269,17 @@ namespace GestionPong {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn NomColumn {
+            public global::System.Data.DataColumn NomEquipeColumn {
                 get {
-                    return this.columnNom;
+                    return this.columnNomEquipe;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn DescriptionColumn {
+            public global::System.Data.DataColumn DescriptionEquipeColumn {
                 get {
-                    return this.columnDescription;
+                    return this.columnDescriptionEquipe;
                 }
             }
             
@@ -2362,12 +2320,12 @@ namespace GestionPong {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public equipesRow AddequipesRow(string Nom, string Description) {
+            public equipesRow AddequipesRow(string NomEquipe, string DescriptionEquipe) {
                 equipesRow rowequipesRow = ((equipesRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
-                        Nom,
-                        Description};
+                        NomEquipe,
+                        DescriptionEquipe};
                 rowequipesRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowequipesRow);
                 return rowequipesRow;
@@ -2398,8 +2356,8 @@ namespace GestionPong {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             internal void InitVars() {
                 this.columnID = base.Columns["ID"];
-                this.columnNom = base.Columns["Nom"];
-                this.columnDescription = base.Columns["Description"];
+                this.columnNomEquipe = base.Columns["NomEquipe"];
+                this.columnDescriptionEquipe = base.Columns["DescriptionEquipe"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2407,10 +2365,10 @@ namespace GestionPong {
             private void InitClass() {
                 this.columnID = new global::System.Data.DataColumn("ID", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnID);
-                this.columnNom = new global::System.Data.DataColumn("Nom", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnNom);
-                this.columnDescription = new global::System.Data.DataColumn("Description", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnDescription);
+                this.columnNomEquipe = new global::System.Data.DataColumn("NomEquipe", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnNomEquipe);
+                this.columnDescriptionEquipe = new global::System.Data.DataColumn("DescriptionEquipe", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDescriptionEquipe);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnID}, true));
                 this.columnID.AutoIncrement = true;
@@ -2418,8 +2376,8 @@ namespace GestionPong {
                 this.columnID.AutoIncrementStep = -1;
                 this.columnID.AllowDBNull = false;
                 this.columnID.Unique = true;
-                this.columnNom.MaxLength = 45;
-                this.columnDescription.MaxLength = 200;
+                this.columnNomEquipe.MaxLength = 45;
+                this.columnDescriptionEquipe.MaxLength = 200;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2555,7 +2513,7 @@ namespace GestionPong {
             
             private global::System.Data.DataColumn columnID;
             
-            private global::System.Data.DataColumn columnDescription;
+            private global::System.Data.DataColumn columnDescriptionForfait;
             
             private global::System.Data.DataColumn columnNombreParties;
             
@@ -2606,9 +2564,9 @@ namespace GestionPong {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn DescriptionColumn {
+            public global::System.Data.DataColumn DescriptionForfaitColumn {
                 get {
-                    return this.columnDescription;
+                    return this.columnDescriptionForfait;
                 }
             }
             
@@ -2673,11 +2631,11 @@ namespace GestionPong {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public forfaitsRow AddforfaitsRow(string Description, int NombreParties, int MoisPremium, double Prix) {
+            public forfaitsRow AddforfaitsRow(string DescriptionForfait, int NombreParties, int MoisPremium, double Prix) {
                 forfaitsRow rowforfaitsRow = ((forfaitsRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
-                        Description,
+                        DescriptionForfait,
                         NombreParties,
                         MoisPremium,
                         Prix};
@@ -2711,7 +2669,7 @@ namespace GestionPong {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             internal void InitVars() {
                 this.columnID = base.Columns["ID"];
-                this.columnDescription = base.Columns["Description"];
+                this.columnDescriptionForfait = base.Columns["DescriptionForfait"];
                 this.columnNombreParties = base.Columns["NombreParties"];
                 this.columnMoisPremium = base.Columns["MoisPremium"];
                 this.columnPrix = base.Columns["Prix"];
@@ -2722,8 +2680,8 @@ namespace GestionPong {
             private void InitClass() {
                 this.columnID = new global::System.Data.DataColumn("ID", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnID);
-                this.columnDescription = new global::System.Data.DataColumn("Description", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnDescription);
+                this.columnDescriptionForfait = new global::System.Data.DataColumn("DescriptionForfait", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDescriptionForfait);
                 this.columnNombreParties = new global::System.Data.DataColumn("NombreParties", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnNombreParties);
                 this.columnMoisPremium = new global::System.Data.DataColumn("MoisPremium", typeof(int), null, global::System.Data.MappingType.Element);
@@ -2737,7 +2695,7 @@ namespace GestionPong {
                 this.columnID.AutoIncrementStep = -1;
                 this.columnID.AllowDBNull = false;
                 this.columnID.Unique = true;
-                this.columnDescription.MaxLength = 45;
+                this.columnDescriptionForfait.MaxLength = 45;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -3450,7 +3408,7 @@ namespace GestionPong {
             
             private global::System.Data.DataColumn columnID;
             
-            private global::System.Data.DataColumn columnNom;
+            private global::System.Data.DataColumn columnNomJoueur;
             
             private global::System.Data.DataColumn columnPrenom;
             
@@ -3517,9 +3475,9 @@ namespace GestionPong {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn NomColumn {
+            public global::System.Data.DataColumn NomJoueurColumn {
                 get {
-                    return this.columnNom;
+                    return this.columnNomJoueur;
                 }
             }
             
@@ -3648,11 +3606,11 @@ namespace GestionPong {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public joueursRow AddjoueursRow(string Nom, string Prenom, string Pseudonyme, string Courriel, string MotdePasse, string DateNaissance, byte[] Photo, System.DateTime DateExpirationPremium, System.DateTime DateDerniereConnexion, adresseRow parentadresseRowByFK_ID_Adresse_Joueurs, equipesRow parentequipesRowByFK_ID_Equipes_Joueurs, couleurplaquetteRow parentcouleurplaquetteRowByFK_ID_CouleurPlaquette_Joueurs) {
+            public joueursRow AddjoueursRow(string NomJoueur, string Prenom, string Pseudonyme, string Courriel, string MotdePasse, string DateNaissance, byte[] Photo, System.DateTime DateExpirationPremium, System.DateTime DateDerniereConnexion, adresseRow parentadresseRowByFK_ID_Adresse_Joueurs, equipesRow parentequipesRowByFK_ID_Equipes_Joueurs, couleurplaquetteRow parentcouleurplaquetteRowByFK_ID_CouleurPlaquette_Joueurs) {
                 joueursRow rowjoueursRow = ((joueursRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
-                        Nom,
+                        NomJoueur,
                         Prenom,
                         Pseudonyme,
                         Courriel,
@@ -3703,7 +3661,7 @@ namespace GestionPong {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             internal void InitVars() {
                 this.columnID = base.Columns["ID"];
-                this.columnNom = base.Columns["Nom"];
+                this.columnNomJoueur = base.Columns["NomJoueur"];
                 this.columnPrenom = base.Columns["Prenom"];
                 this.columnPseudonyme = base.Columns["Pseudonyme"];
                 this.columnCourriel = base.Columns["Courriel"];
@@ -3722,8 +3680,8 @@ namespace GestionPong {
             private void InitClass() {
                 this.columnID = new global::System.Data.DataColumn("ID", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnID);
-                this.columnNom = new global::System.Data.DataColumn("Nom", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnNom);
+                this.columnNomJoueur = new global::System.Data.DataColumn("NomJoueur", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnNomJoueur);
                 this.columnPrenom = new global::System.Data.DataColumn("Prenom", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnPrenom);
                 this.columnPseudonyme = new global::System.Data.DataColumn("Pseudonyme", typeof(string), null, global::System.Data.MappingType.Element);
@@ -3753,7 +3711,7 @@ namespace GestionPong {
                 this.columnID.AutoIncrementStep = -1;
                 this.columnID.AllowDBNull = false;
                 this.columnID.Unique = true;
-                this.columnNom.MaxLength = 45;
+                this.columnNomJoueur.MaxLength = 45;
                 this.columnPrenom.MaxLength = 45;
                 this.columnPseudonyme.MaxLength = 45;
                 this.columnCourriel.MaxLength = 90;
@@ -3894,7 +3852,7 @@ namespace GestionPong {
             
             private global::System.Data.DataColumn columnID;
             
-            private global::System.Data.DataColumn columnNom;
+            private global::System.Data.DataColumn columnMarque;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
@@ -3939,9 +3897,9 @@ namespace GestionPong {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn NomColumn {
+            public global::System.Data.DataColumn MarqueColumn {
                 get {
-                    return this.columnNom;
+                    return this.columnMarque;
                 }
             }
             
@@ -3982,11 +3940,11 @@ namespace GestionPong {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public marquecreditRow AddmarquecreditRow(string Nom) {
+            public marquecreditRow AddmarquecreditRow(string Marque) {
                 marquecreditRow rowmarquecreditRow = ((marquecreditRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
-                        Nom};
+                        Marque};
                 rowmarquecreditRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowmarquecreditRow);
                 return rowmarquecreditRow;
@@ -4017,7 +3975,7 @@ namespace GestionPong {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             internal void InitVars() {
                 this.columnID = base.Columns["ID"];
-                this.columnNom = base.Columns["Nom"];
+                this.columnMarque = base.Columns["Marque"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -4025,8 +3983,8 @@ namespace GestionPong {
             private void InitClass() {
                 this.columnID = new global::System.Data.DataColumn("ID", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnID);
-                this.columnNom = new global::System.Data.DataColumn("Nom", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnNom);
+                this.columnMarque = new global::System.Data.DataColumn("Marque", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnMarque);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnID}, true));
                 this.columnID.AutoIncrement = true;
@@ -4034,7 +3992,7 @@ namespace GestionPong {
                 this.columnID.AutoIncrementStep = -1;
                 this.columnID.AllowDBNull = false;
                 this.columnID.Unique = true;
-                this.columnNom.MaxLength = 45;
+                this.columnMarque.MaxLength = 45;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -4553,7 +4511,7 @@ namespace GestionPong {
             
             private global::System.Data.DataColumn columnID;
             
-            private global::System.Data.DataColumn columnNom;
+            private global::System.Data.DataColumn columnNomPays;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
@@ -4598,9 +4556,9 @@ namespace GestionPong {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn NomColumn {
+            public global::System.Data.DataColumn NomPaysColumn {
                 get {
-                    return this.columnNom;
+                    return this.columnNomPays;
                 }
             }
             
@@ -4641,11 +4599,11 @@ namespace GestionPong {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public paysRow AddpaysRow(string Nom) {
+            public paysRow AddpaysRow(string NomPays) {
                 paysRow rowpaysRow = ((paysRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
-                        Nom};
+                        NomPays};
                 rowpaysRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowpaysRow);
                 return rowpaysRow;
@@ -4676,7 +4634,7 @@ namespace GestionPong {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             internal void InitVars() {
                 this.columnID = base.Columns["ID"];
-                this.columnNom = base.Columns["Nom"];
+                this.columnNomPays = base.Columns["NomPays"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -4684,8 +4642,8 @@ namespace GestionPong {
             private void InitClass() {
                 this.columnID = new global::System.Data.DataColumn("ID", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnID);
-                this.columnNom = new global::System.Data.DataColumn("Nom", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnNom);
+                this.columnNomPays = new global::System.Data.DataColumn("NomPays", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnNomPays);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnID}, true));
                 this.columnID.AutoIncrement = true;
@@ -4693,7 +4651,7 @@ namespace GestionPong {
                 this.columnID.AutoIncrementStep = -1;
                 this.columnID.AllowDBNull = false;
                 this.columnID.Unique = true;
-                this.columnNom.MaxLength = 45;
+                this.columnNomPays.MaxLength = 45;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -4829,7 +4787,7 @@ namespace GestionPong {
             
             private global::System.Data.DataColumn columnID;
             
-            private global::System.Data.DataColumn columnNom;
+            private global::System.Data.DataColumn columnNomProvince;
             
             private global::System.Data.DataColumn columnID_Pays;
             
@@ -4876,9 +4834,9 @@ namespace GestionPong {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn NomColumn {
+            public global::System.Data.DataColumn NomProvinceColumn {
                 get {
-                    return this.columnNom;
+                    return this.columnNomProvince;
                 }
             }
             
@@ -4927,11 +4885,11 @@ namespace GestionPong {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public provinceRow AddprovinceRow(string Nom, paysRow parentpaysRowByFK_ID_Pays_Province) {
+            public provinceRow AddprovinceRow(string NomProvince, paysRow parentpaysRowByFK_ID_Pays_Province) {
                 provinceRow rowprovinceRow = ((provinceRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
-                        Nom,
+                        NomProvince,
                         null};
                 if ((parentpaysRowByFK_ID_Pays_Province != null)) {
                     columnValuesArray[2] = parentpaysRowByFK_ID_Pays_Province[0];
@@ -4966,7 +4924,7 @@ namespace GestionPong {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             internal void InitVars() {
                 this.columnID = base.Columns["ID"];
-                this.columnNom = base.Columns["Nom"];
+                this.columnNomProvince = base.Columns["NomProvince"];
                 this.columnID_Pays = base.Columns["ID_Pays"];
             }
             
@@ -4975,8 +4933,8 @@ namespace GestionPong {
             private void InitClass() {
                 this.columnID = new global::System.Data.DataColumn("ID", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnID);
-                this.columnNom = new global::System.Data.DataColumn("Nom", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnNom);
+                this.columnNomProvince = new global::System.Data.DataColumn("NomProvince", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnNomProvince);
                 this.columnID_Pays = new global::System.Data.DataColumn("ID_Pays", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnID_Pays);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
@@ -4986,7 +4944,7 @@ namespace GestionPong {
                 this.columnID.AutoIncrementStep = -1;
                 this.columnID.AllowDBNull = false;
                 this.columnID.Unique = true;
-                this.columnNom.MaxLength = 45;
+                this.columnNomProvince.MaxLength = 45;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -5073,298 +5031,6 @@ namespace GestionPong {
                 global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
                 attribute2.Name = "tableTypeName";
                 attribute2.FixedValue = "provinceDataTable";
-                type.Attributes.Add(attribute2);
-                type.Particle = sequence;
-                global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
-                if (xs.Contains(dsSchema.TargetNamespace)) {
-                    global::System.IO.MemoryStream s1 = new global::System.IO.MemoryStream();
-                    global::System.IO.MemoryStream s2 = new global::System.IO.MemoryStream();
-                    try {
-                        global::System.Xml.Schema.XmlSchema schema = null;
-                        dsSchema.Write(s1);
-                        for (global::System.Collections.IEnumerator schemas = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator(); schemas.MoveNext(); ) {
-                            schema = ((global::System.Xml.Schema.XmlSchema)(schemas.Current));
-                            s2.SetLength(0);
-                            schema.Write(s2);
-                            if ((s1.Length == s2.Length)) {
-                                s1.Position = 0;
-                                s2.Position = 0;
-                                for (; ((s1.Position != s1.Length) 
-                                            && (s1.ReadByte() == s2.ReadByte())); ) {
-                                    ;
-                                }
-                                if ((s1.Position == s1.Length)) {
-                                    return type;
-                                }
-                            }
-                        }
-                    }
-                    finally {
-                        if ((s1 != null)) {
-                            s1.Close();
-                        }
-                        if ((s2 != null)) {
-                            s2.Close();
-                        }
-                    }
-                }
-                xs.Add(dsSchema);
-                return type;
-            }
-        }
-        
-        /// <summary>
-        ///Represents the strongly named DataTable class.
-        ///</summary>
-        [global::System.Serializable()]
-        [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
-        public partial class registretransactionsDataTable : global::System.Data.TypedTableBase<registretransactionsRow> {
-            
-            private global::System.Data.DataColumn columnID;
-            
-            private global::System.Data.DataColumn columnDateTransaction;
-            
-            private global::System.Data.DataColumn columnID_Forfaits;
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public registretransactionsDataTable() {
-                this.TableName = "registretransactions";
-                this.BeginInit();
-                this.InitClass();
-                this.EndInit();
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            internal registretransactionsDataTable(global::System.Data.DataTable table) {
-                this.TableName = table.TableName;
-                if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
-                    this.CaseSensitive = table.CaseSensitive;
-                }
-                if ((table.Locale.ToString() != table.DataSet.Locale.ToString())) {
-                    this.Locale = table.Locale;
-                }
-                if ((table.Namespace != table.DataSet.Namespace)) {
-                    this.Namespace = table.Namespace;
-                }
-                this.Prefix = table.Prefix;
-                this.MinimumCapacity = table.MinimumCapacity;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            protected registretransactionsDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
-                    base(info, context) {
-                this.InitVars();
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn IDColumn {
-                get {
-                    return this.columnID;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn DateTransactionColumn {
-                get {
-                    return this.columnDateTransaction;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn ID_ForfaitsColumn {
-                get {
-                    return this.columnID_Forfaits;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            [global::System.ComponentModel.Browsable(false)]
-            public int Count {
-                get {
-                    return this.Rows.Count;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public registretransactionsRow this[int index] {
-                get {
-                    return ((registretransactionsRow)(this.Rows[index]));
-                }
-            }
-            
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event registretransactionsRowChangeEventHandler registretransactionsRowChanging;
-            
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event registretransactionsRowChangeEventHandler registretransactionsRowChanged;
-            
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event registretransactionsRowChangeEventHandler registretransactionsRowDeleting;
-            
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event registretransactionsRowChangeEventHandler registretransactionsRowDeleted;
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void AddregistretransactionsRow(registretransactionsRow row) {
-                this.Rows.Add(row);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public registretransactionsRow AddregistretransactionsRow(System.DateTime DateTransaction, forfaitsRow parentforfaitsRowByFK_ID_Forfaits_RegistreTransactions) {
-                registretransactionsRow rowregistretransactionsRow = ((registretransactionsRow)(this.NewRow()));
-                object[] columnValuesArray = new object[] {
-                        null,
-                        DateTransaction,
-                        null};
-                if ((parentforfaitsRowByFK_ID_Forfaits_RegistreTransactions != null)) {
-                    columnValuesArray[2] = parentforfaitsRowByFK_ID_Forfaits_RegistreTransactions[0];
-                }
-                rowregistretransactionsRow.ItemArray = columnValuesArray;
-                this.Rows.Add(rowregistretransactionsRow);
-                return rowregistretransactionsRow;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public registretransactionsRow FindByID(int ID) {
-                return ((registretransactionsRow)(this.Rows.Find(new object[] {
-                            ID})));
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public override global::System.Data.DataTable Clone() {
-                registretransactionsDataTable cln = ((registretransactionsDataTable)(base.Clone()));
-                cln.InitVars();
-                return cln;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            protected override global::System.Data.DataTable CreateInstance() {
-                return new registretransactionsDataTable();
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            internal void InitVars() {
-                this.columnID = base.Columns["ID"];
-                this.columnDateTransaction = base.Columns["DateTransaction"];
-                this.columnID_Forfaits = base.Columns["ID_Forfaits"];
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            private void InitClass() {
-                this.columnID = new global::System.Data.DataColumn("ID", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnID);
-                this.columnDateTransaction = new global::System.Data.DataColumn("DateTransaction", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnDateTransaction);
-                this.columnID_Forfaits = new global::System.Data.DataColumn("ID_Forfaits", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnID_Forfaits);
-                this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
-                                this.columnID}, true));
-                this.columnID.AutoIncrement = true;
-                this.columnID.AutoIncrementSeed = -1;
-                this.columnID.AutoIncrementStep = -1;
-                this.columnID.AllowDBNull = false;
-                this.columnID.Unique = true;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public registretransactionsRow NewregistretransactionsRow() {
-                return ((registretransactionsRow)(this.NewRow()));
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
-                return new registretransactionsRow(builder);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            protected override global::System.Type GetRowType() {
-                return typeof(registretransactionsRow);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
-                base.OnRowChanged(e);
-                if ((this.registretransactionsRowChanged != null)) {
-                    this.registretransactionsRowChanged(this, new registretransactionsRowChangeEvent(((registretransactionsRow)(e.Row)), e.Action));
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
-                base.OnRowChanging(e);
-                if ((this.registretransactionsRowChanging != null)) {
-                    this.registretransactionsRowChanging(this, new registretransactionsRowChangeEvent(((registretransactionsRow)(e.Row)), e.Action));
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
-                base.OnRowDeleted(e);
-                if ((this.registretransactionsRowDeleted != null)) {
-                    this.registretransactionsRowDeleted(this, new registretransactionsRowChangeEvent(((registretransactionsRow)(e.Row)), e.Action));
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
-                base.OnRowDeleting(e);
-                if ((this.registretransactionsRowDeleting != null)) {
-                    this.registretransactionsRowDeleting(this, new registretransactionsRowChangeEvent(((registretransactionsRow)(e.Row)), e.Action));
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void RemoveregistretransactionsRow(registretransactionsRow row) {
-                this.Rows.Remove(row);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
-                global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
-                global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                DataSetPong ds = new DataSetPong();
-                global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
-                any1.Namespace = "http://www.w3.org/2001/XMLSchema";
-                any1.MinOccurs = new decimal(0);
-                any1.MaxOccurs = decimal.MaxValue;
-                any1.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
-                sequence.Items.Add(any1);
-                global::System.Xml.Schema.XmlSchemaAny any2 = new global::System.Xml.Schema.XmlSchemaAny();
-                any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1";
-                any2.MinOccurs = new decimal(1);
-                any2.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
-                sequence.Items.Add(any2);
-                global::System.Xml.Schema.XmlSchemaAttribute attribute1 = new global::System.Xml.Schema.XmlSchemaAttribute();
-                attribute1.Name = "namespace";
-                attribute1.FixedValue = ds.Namespace;
-                type.Attributes.Add(attribute1);
-                global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
-                attribute2.Name = "tableTypeName";
-                attribute2.FixedValue = "registretransactionsDataTable";
                 type.Attributes.Add(attribute2);
                 type.Particle = sequence;
                 global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
@@ -5706,7 +5372,7 @@ namespace GestionPong {
             
             private global::System.Data.DataColumn columnID;
             
-            private global::System.Data.DataColumn columnDescription;
+            private global::System.Data.DataColumn columnDescriptionInvitation;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
@@ -5751,9 +5417,9 @@ namespace GestionPong {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn DescriptionColumn {
+            public global::System.Data.DataColumn DescriptionInvitationColumn {
                 get {
-                    return this.columnDescription;
+                    return this.columnDescriptionInvitation;
                 }
             }
             
@@ -5794,11 +5460,11 @@ namespace GestionPong {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public statutinvitationsRow AddstatutinvitationsRow(string Description) {
+            public statutinvitationsRow AddstatutinvitationsRow(string DescriptionInvitation) {
                 statutinvitationsRow rowstatutinvitationsRow = ((statutinvitationsRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
-                        Description};
+                        DescriptionInvitation};
                 rowstatutinvitationsRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowstatutinvitationsRow);
                 return rowstatutinvitationsRow;
@@ -5829,7 +5495,7 @@ namespace GestionPong {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             internal void InitVars() {
                 this.columnID = base.Columns["ID"];
-                this.columnDescription = base.Columns["Description"];
+                this.columnDescriptionInvitation = base.Columns["DescriptionInvitation"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -5837,8 +5503,8 @@ namespace GestionPong {
             private void InitClass() {
                 this.columnID = new global::System.Data.DataColumn("ID", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnID);
-                this.columnDescription = new global::System.Data.DataColumn("Description", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnDescription);
+                this.columnDescriptionInvitation = new global::System.Data.DataColumn("DescriptionInvitation", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDescriptionInvitation);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnID}, true));
                 this.columnID.AutoIncrement = true;
@@ -5846,7 +5512,7 @@ namespace GestionPong {
                 this.columnID.AutoIncrementStep = -1;
                 this.columnID.AllowDBNull = false;
                 this.columnID.Unique = true;
-                this.columnDescription.MaxLength = 45;
+                this.columnDescriptionInvitation.MaxLength = 45;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -5982,7 +5648,7 @@ namespace GestionPong {
             
             private global::System.Data.DataColumn columnID;
             
-            private global::System.Data.DataColumn columnDescription;
+            private global::System.Data.DataColumn columnDescriptionTaxe;
             
             private global::System.Data.DataColumn columnTaxe;
             
@@ -6029,9 +5695,9 @@ namespace GestionPong {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn DescriptionColumn {
+            public global::System.Data.DataColumn DescriptionTaxeColumn {
                 get {
-                    return this.columnDescription;
+                    return this.columnDescriptionTaxe;
                 }
             }
             
@@ -6080,11 +5746,11 @@ namespace GestionPong {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public taxesRow AddtaxesRow(string Description, double Taxe) {
+            public taxesRow AddtaxesRow(string DescriptionTaxe, double Taxe) {
                 taxesRow rowtaxesRow = ((taxesRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
-                        Description,
+                        DescriptionTaxe,
                         Taxe};
                 rowtaxesRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowtaxesRow);
@@ -6116,7 +5782,7 @@ namespace GestionPong {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             internal void InitVars() {
                 this.columnID = base.Columns["ID"];
-                this.columnDescription = base.Columns["Description"];
+                this.columnDescriptionTaxe = base.Columns["DescriptionTaxe"];
                 this.columnTaxe = base.Columns["Taxe"];
             }
             
@@ -6125,8 +5791,8 @@ namespace GestionPong {
             private void InitClass() {
                 this.columnID = new global::System.Data.DataColumn("ID", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnID);
-                this.columnDescription = new global::System.Data.DataColumn("Description", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnDescription);
+                this.columnDescriptionTaxe = new global::System.Data.DataColumn("DescriptionTaxe", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDescriptionTaxe);
                 this.columnTaxe = new global::System.Data.DataColumn("Taxe", typeof(double), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnTaxe);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
@@ -6136,7 +5802,7 @@ namespace GestionPong {
                 this.columnID.AutoIncrementStep = -1;
                 this.columnID.AllowDBNull = false;
                 this.columnID.Unique = true;
-                this.columnDescription.MaxLength = 45;
+                this.columnDescriptionTaxe.MaxLength = 45;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -6272,7 +5938,7 @@ namespace GestionPong {
             
             private global::System.Data.DataColumn columnID;
             
-            private global::System.Data.DataColumn columnPremium;
+            private global::System.Data.DataColumn columnPremiumTournoi;
             
             private global::System.Data.DataColumn columnNombreJoueurs;
             
@@ -6319,9 +5985,9 @@ namespace GestionPong {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn PremiumColumn {
+            public global::System.Data.DataColumn PremiumTournoiColumn {
                 get {
-                    return this.columnPremium;
+                    return this.columnPremiumTournoi;
                 }
             }
             
@@ -6370,11 +6036,11 @@ namespace GestionPong {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public tournoisRow AddtournoisRow(string Premium, int NombreJoueurs) {
+            public tournoisRow AddtournoisRow(string PremiumTournoi, int NombreJoueurs) {
                 tournoisRow rowtournoisRow = ((tournoisRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
-                        Premium,
+                        PremiumTournoi,
                         NombreJoueurs};
                 rowtournoisRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowtournoisRow);
@@ -6406,7 +6072,7 @@ namespace GestionPong {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             internal void InitVars() {
                 this.columnID = base.Columns["ID"];
-                this.columnPremium = base.Columns["Premium"];
+                this.columnPremiumTournoi = base.Columns["PremiumTournoi"];
                 this.columnNombreJoueurs = base.Columns["NombreJoueurs"];
             }
             
@@ -6415,8 +6081,8 @@ namespace GestionPong {
             private void InitClass() {
                 this.columnID = new global::System.Data.DataColumn("ID", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnID);
-                this.columnPremium = new global::System.Data.DataColumn("Premium", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnPremium);
+                this.columnPremiumTournoi = new global::System.Data.DataColumn("PremiumTournoi", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnPremiumTournoi);
                 this.columnNombreJoueurs = new global::System.Data.DataColumn("NombreJoueurs", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnNombreJoueurs);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
@@ -6426,7 +6092,7 @@ namespace GestionPong {
                 this.columnID.AutoIncrementStep = -1;
                 this.columnID.AllowDBNull = false;
                 this.columnID.Unique = true;
-                this.columnPremium.MaxLength = 45;
+                this.columnPremiumTournoi.MaxLength = 45;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -6560,9 +6226,13 @@ namespace GestionPong {
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
         public partial class transactionsDataTable : global::System.Data.TypedTableBase<transactionsRow> {
             
+            private global::System.Data.DataColumn columnID;
+            
             private global::System.Data.DataColumn columnID_Joueurs;
             
-            private global::System.Data.DataColumn columnID_RegistreTransactions;
+            private global::System.Data.DataColumn columnID_Forfaits;
+            
+            private global::System.Data.DataColumn columnDateTransaction;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
@@ -6599,6 +6269,14 @@ namespace GestionPong {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn IDColumn {
+                get {
+                    return this.columnID;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public global::System.Data.DataColumn ID_JoueursColumn {
                 get {
                     return this.columnID_Joueurs;
@@ -6607,9 +6285,17 @@ namespace GestionPong {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn ID_RegistreTransactionsColumn {
+            public global::System.Data.DataColumn ID_ForfaitsColumn {
                 get {
-                    return this.columnID_RegistreTransactions;
+                    return this.columnID_Forfaits;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn DateTransactionColumn {
+                get {
+                    return this.columnDateTransaction;
                 }
             }
             
@@ -6650,16 +6336,18 @@ namespace GestionPong {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public transactionsRow AddtransactionsRow(joueursRow parentjoueursRowByFK_ID_Joueurs_Transactions, registretransactionsRow parentregistretransactionsRowByFK_ID_RegistreTransactions_Transactions) {
+            public transactionsRow AddtransactionsRow(joueursRow parentjoueursRowByFK_ID_Joueurs_Transactions, forfaitsRow parentforfaitsRowByFK_ID_Forfaits_Transactions, System.DateTime DateTransaction) {
                 transactionsRow rowtransactionsRow = ((transactionsRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
-                        null};
+                        null,
+                        null,
+                        DateTransaction};
                 if ((parentjoueursRowByFK_ID_Joueurs_Transactions != null)) {
-                    columnValuesArray[0] = parentjoueursRowByFK_ID_Joueurs_Transactions[0];
+                    columnValuesArray[1] = parentjoueursRowByFK_ID_Joueurs_Transactions[0];
                 }
-                if ((parentregistretransactionsRowByFK_ID_RegistreTransactions_Transactions != null)) {
-                    columnValuesArray[1] = parentregistretransactionsRowByFK_ID_RegistreTransactions_Transactions[0];
+                if ((parentforfaitsRowByFK_ID_Forfaits_Transactions != null)) {
+                    columnValuesArray[2] = parentforfaitsRowByFK_ID_Forfaits_Transactions[0];
                 }
                 rowtransactionsRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowtransactionsRow);
@@ -6668,10 +6356,9 @@ namespace GestionPong {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public transactionsRow FindByID_JoueursID_RegistreTransactions(int ID_Joueurs, int ID_RegistreTransactions) {
+            public transactionsRow FindByID(int ID) {
                 return ((transactionsRow)(this.Rows.Find(new object[] {
-                            ID_Joueurs,
-                            ID_RegistreTransactions})));
+                            ID})));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -6691,22 +6378,33 @@ namespace GestionPong {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             internal void InitVars() {
+                this.columnID = base.Columns["ID"];
                 this.columnID_Joueurs = base.Columns["ID_Joueurs"];
-                this.columnID_RegistreTransactions = base.Columns["ID_RegistreTransactions"];
+                this.columnID_Forfaits = base.Columns["ID_Forfaits"];
+                this.columnDateTransaction = base.Columns["DateTransaction"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             private void InitClass() {
+                this.columnID = new global::System.Data.DataColumn("ID", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnID);
                 this.columnID_Joueurs = new global::System.Data.DataColumn("ID_Joueurs", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnID_Joueurs);
-                this.columnID_RegistreTransactions = new global::System.Data.DataColumn("ID_RegistreTransactions", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnID_RegistreTransactions);
+                this.columnID_Forfaits = new global::System.Data.DataColumn("ID_Forfaits", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnID_Forfaits);
+                this.columnDateTransaction = new global::System.Data.DataColumn("DateTransaction", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDateTransaction);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
-                                this.columnID_Joueurs,
-                                this.columnID_RegistreTransactions}, true));
+                                this.columnID}, true));
+                this.columnID.AutoIncrement = true;
+                this.columnID.AutoIncrementSeed = -1;
+                this.columnID.AutoIncrementStep = -1;
+                this.columnID.AllowDBNull = false;
+                this.columnID.Unique = true;
                 this.columnID_Joueurs.AllowDBNull = false;
-                this.columnID_RegistreTransactions.AllowDBNull = false;
+                this.columnID_Forfaits.AllowDBNull = false;
+                this.columnDateTransaction.AllowDBNull = false;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -6842,7 +6540,7 @@ namespace GestionPong {
             
             private global::System.Data.DataColumn columnID;
             
-            private global::System.Data.DataColumn columnNom;
+            private global::System.Data.DataColumn columnNomVille;
             
             private global::System.Data.DataColumn columnID_Province;
             
@@ -6889,9 +6587,9 @@ namespace GestionPong {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn NomColumn {
+            public global::System.Data.DataColumn NomVilleColumn {
                 get {
-                    return this.columnNom;
+                    return this.columnNomVille;
                 }
             }
             
@@ -6940,11 +6638,11 @@ namespace GestionPong {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public villeRow AddvilleRow(string Nom, provinceRow parentprovinceRowByFK_ID_Province_Ville) {
+            public villeRow AddvilleRow(string NomVille, provinceRow parentprovinceRowByFK_ID_Province_Ville) {
                 villeRow rowvilleRow = ((villeRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
-                        Nom,
+                        NomVille,
                         null};
                 if ((parentprovinceRowByFK_ID_Province_Ville != null)) {
                     columnValuesArray[2] = parentprovinceRowByFK_ID_Province_Ville[0];
@@ -6979,7 +6677,7 @@ namespace GestionPong {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             internal void InitVars() {
                 this.columnID = base.Columns["ID"];
-                this.columnNom = base.Columns["Nom"];
+                this.columnNomVille = base.Columns["NomVille"];
                 this.columnID_Province = base.Columns["ID_Province"];
             }
             
@@ -6988,8 +6686,8 @@ namespace GestionPong {
             private void InitClass() {
                 this.columnID = new global::System.Data.DataColumn("ID", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnID);
-                this.columnNom = new global::System.Data.DataColumn("Nom", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnNom);
+                this.columnNomVille = new global::System.Data.DataColumn("NomVille", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnNomVille);
                 this.columnID_Province = new global::System.Data.DataColumn("ID_Province", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnID_Province);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
@@ -6999,7 +6697,7 @@ namespace GestionPong {
                 this.columnID.AutoIncrementStep = -1;
                 this.columnID.AllowDBNull = false;
                 this.columnID.Unique = true;
-                this.columnNom.MaxLength = 45;
+                this.columnNomVille.MaxLength = 45;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -7477,31 +7175,30 @@ namespace GestionPong {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string Description {
+            public string Couleur {
                 get {
                     try {
-                        return ((string)(this[this.tablecouleurplaquette.DescriptionColumn]));
+                        return ((string)(this[this.tablecouleurplaquette.CouleurColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("La valeur pour la colonne \'Description\' dans la table \'couleurplaquette\' est DBNu" +
-                                "ll.", e);
+                        throw new global::System.Data.StrongTypingException("La valeur pour la colonne \'Couleur\' dans la table \'couleurplaquette\' est DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tablecouleurplaquette.DescriptionColumn] = value;
+                    this[this.tablecouleurplaquette.CouleurColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsDescriptionNull() {
-                return this.IsNull(this.tablecouleurplaquette.DescriptionColumn);
+            public bool IsCouleurNull() {
+                return this.IsNull(this.tablecouleurplaquette.CouleurColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetDescriptionNull() {
-                this[this.tablecouleurplaquette.DescriptionColumn] = global::System.Convert.DBNull;
+            public void SetCouleurNull() {
+                this[this.tablecouleurplaquette.CouleurColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -7543,58 +7240,59 @@ namespace GestionPong {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string Nom {
+            public string NomEquipe {
                 get {
                     try {
-                        return ((string)(this[this.tableequipes.NomColumn]));
+                        return ((string)(this[this.tableequipes.NomEquipeColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("La valeur pour la colonne \'Nom\' dans la table \'equipes\' est DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("La valeur pour la colonne \'NomEquipe\' dans la table \'equipes\' est DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableequipes.NomColumn] = value;
+                    this[this.tableequipes.NomEquipeColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string Description {
+            public string DescriptionEquipe {
                 get {
                     try {
-                        return ((string)(this[this.tableequipes.DescriptionColumn]));
+                        return ((string)(this[this.tableequipes.DescriptionEquipeColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("La valeur pour la colonne \'Description\' dans la table \'equipes\' est DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("La valeur pour la colonne \'DescriptionEquipe\' dans la table \'equipes\' est DBNull." +
+                                "", e);
                     }
                 }
                 set {
-                    this[this.tableequipes.DescriptionColumn] = value;
+                    this[this.tableequipes.DescriptionEquipeColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsNomNull() {
-                return this.IsNull(this.tableequipes.NomColumn);
+            public bool IsNomEquipeNull() {
+                return this.IsNull(this.tableequipes.NomEquipeColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetNomNull() {
-                this[this.tableequipes.NomColumn] = global::System.Convert.DBNull;
+            public void SetNomEquipeNull() {
+                this[this.tableequipes.NomEquipeColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsDescriptionNull() {
-                return this.IsNull(this.tableequipes.DescriptionColumn);
+            public bool IsDescriptionEquipeNull() {
+                return this.IsNull(this.tableequipes.DescriptionEquipeColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetDescriptionNull() {
-                this[this.tableequipes.DescriptionColumn] = global::System.Convert.DBNull;
+            public void SetDescriptionEquipeNull() {
+                this[this.tableequipes.DescriptionEquipeColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -7647,17 +7345,18 @@ namespace GestionPong {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string Description {
+            public string DescriptionForfait {
                 get {
                     try {
-                        return ((string)(this[this.tableforfaits.DescriptionColumn]));
+                        return ((string)(this[this.tableforfaits.DescriptionForfaitColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("La valeur pour la colonne \'Description\' dans la table \'forfaits\' est DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("La valeur pour la colonne \'DescriptionForfait\' dans la table \'forfaits\' est DBNul" +
+                                "l.", e);
                     }
                 }
                 set {
-                    this[this.tableforfaits.DescriptionColumn] = value;
+                    this[this.tableforfaits.DescriptionForfaitColumn] = value;
                 }
             }
             
@@ -7711,14 +7410,14 @@ namespace GestionPong {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsDescriptionNull() {
-                return this.IsNull(this.tableforfaits.DescriptionColumn);
+            public bool IsDescriptionForfaitNull() {
+                return this.IsNull(this.tableforfaits.DescriptionForfaitColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetDescriptionNull() {
-                this[this.tableforfaits.DescriptionColumn] = global::System.Convert.DBNull;
+            public void SetDescriptionForfaitNull() {
+                this[this.tableforfaits.DescriptionForfaitColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -7770,12 +7469,12 @@ namespace GestionPong {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public registretransactionsRow[] GetregistretransactionsRows() {
-                if ((this.Table.ChildRelations["FK_ID_Forfaits_RegistreTransactions"] == null)) {
-                    return new registretransactionsRow[0];
+            public transactionsRow[] GettransactionsRows() {
+                if ((this.Table.ChildRelations["FK_ID_Forfaits_Transactions"] == null)) {
+                    return new transactionsRow[0];
                 }
                 else {
-                    return ((registretransactionsRow[])(base.GetChildRows(this.Table.ChildRelations["FK_ID_Forfaits_RegistreTransactions"])));
+                    return ((transactionsRow[])(base.GetChildRows(this.Table.ChildRelations["FK_ID_Forfaits_Transactions"])));
                 }
             }
         }
@@ -7965,17 +7664,17 @@ namespace GestionPong {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string Nom {
+            public string NomJoueur {
                 get {
                     try {
-                        return ((string)(this[this.tablejoueurs.NomColumn]));
+                        return ((string)(this[this.tablejoueurs.NomJoueurColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("La valeur pour la colonne \'Nom\' dans la table \'joueurs\' est DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("La valeur pour la colonne \'NomJoueur\' dans la table \'joueurs\' est DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tablejoueurs.NomColumn] = value;
+                    this[this.tablejoueurs.NomJoueurColumn] = value;
                 }
             }
             
@@ -8193,14 +7892,14 @@ namespace GestionPong {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsNomNull() {
-                return this.IsNull(this.tablejoueurs.NomColumn);
+            public bool IsNomJoueurNull() {
+                return this.IsNull(this.tablejoueurs.NomJoueurColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetNomNull() {
-                this[this.tablejoueurs.NomColumn] = global::System.Convert.DBNull;
+            public void SetNomJoueurNull() {
+                this[this.tablejoueurs.NomJoueurColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -8418,30 +8117,30 @@ namespace GestionPong {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string Nom {
+            public string Marque {
                 get {
                     try {
-                        return ((string)(this[this.tablemarquecredit.NomColumn]));
+                        return ((string)(this[this.tablemarquecredit.MarqueColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("La valeur pour la colonne \'Nom\' dans la table \'marquecredit\' est DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("La valeur pour la colonne \'Marque\' dans la table \'marquecredit\' est DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tablemarquecredit.NomColumn] = value;
+                    this[this.tablemarquecredit.MarqueColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsNomNull() {
-                return this.IsNull(this.tablemarquecredit.NomColumn);
+            public bool IsMarqueNull() {
+                return this.IsNull(this.tablemarquecredit.MarqueColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetNomNull() {
-                this[this.tablemarquecredit.NomColumn] = global::System.Convert.DBNull;
+            public void SetMarqueNull() {
+                this[this.tablemarquecredit.MarqueColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -8766,30 +8465,30 @@ namespace GestionPong {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string Nom {
+            public string NomPays {
                 get {
                     try {
-                        return ((string)(this[this.tablepays.NomColumn]));
+                        return ((string)(this[this.tablepays.NomPaysColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("La valeur pour la colonne \'Nom\' dans la table \'pays\' est DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("La valeur pour la colonne \'NomPays\' dans la table \'pays\' est DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tablepays.NomColumn] = value;
+                    this[this.tablepays.NomPaysColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsNomNull() {
-                return this.IsNull(this.tablepays.NomColumn);
+            public bool IsNomPaysNull() {
+                return this.IsNull(this.tablepays.NomPaysColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetNomNull() {
-                this[this.tablepays.NomColumn] = global::System.Convert.DBNull;
+            public void SetNomPaysNull() {
+                this[this.tablepays.NomPaysColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -8831,17 +8530,17 @@ namespace GestionPong {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string Nom {
+            public string NomProvince {
                 get {
                     try {
-                        return ((string)(this[this.tableprovince.NomColumn]));
+                        return ((string)(this[this.tableprovince.NomProvinceColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("La valeur pour la colonne \'Nom\' dans la table \'province\' est DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("La valeur pour la colonne \'NomProvince\' dans la table \'province\' est DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableprovince.NomColumn] = value;
+                    this[this.tableprovince.NomProvinceColumn] = value;
                 }
             }
             
@@ -8874,14 +8573,14 @@ namespace GestionPong {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsNomNull() {
-                return this.IsNull(this.tableprovince.NomColumn);
+            public bool IsNomProvinceNull() {
+                return this.IsNull(this.tableprovince.NomProvinceColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetNomNull() {
-                this[this.tableprovince.NomColumn] = global::System.Convert.DBNull;
+            public void SetNomProvinceNull() {
+                this[this.tableprovince.NomProvinceColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -8904,112 +8603,6 @@ namespace GestionPong {
                 }
                 else {
                     return ((villeRow[])(base.GetChildRows(this.Table.ChildRelations["FK_ID_Province_Ville"])));
-                }
-            }
-        }
-        
-        /// <summary>
-        ///Represents strongly named DataRow class.
-        ///</summary>
-        public partial class registretransactionsRow : global::System.Data.DataRow {
-            
-            private registretransactionsDataTable tableregistretransactions;
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            internal registretransactionsRow(global::System.Data.DataRowBuilder rb) : 
-                    base(rb) {
-                this.tableregistretransactions = ((registretransactionsDataTable)(this.Table));
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public int ID {
-                get {
-                    return ((int)(this[this.tableregistretransactions.IDColumn]));
-                }
-                set {
-                    this[this.tableregistretransactions.IDColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public System.DateTime DateTransaction {
-                get {
-                    try {
-                        return ((global::System.DateTime)(this[this.tableregistretransactions.DateTransactionColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("La valeur pour la colonne \'DateTransaction\' dans la table \'registretransactions\' " +
-                                "est DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableregistretransactions.DateTransactionColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public int ID_Forfaits {
-                get {
-                    try {
-                        return ((int)(this[this.tableregistretransactions.ID_ForfaitsColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("La valeur pour la colonne \'ID_Forfaits\' dans la table \'registretransactions\' est " +
-                                "DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableregistretransactions.ID_ForfaitsColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public forfaitsRow forfaitsRow {
-                get {
-                    return ((forfaitsRow)(this.GetParentRow(this.Table.ParentRelations["FK_ID_Forfaits_RegistreTransactions"])));
-                }
-                set {
-                    this.SetParentRow(value, this.Table.ParentRelations["FK_ID_Forfaits_RegistreTransactions"]);
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsDateTransactionNull() {
-                return this.IsNull(this.tableregistretransactions.DateTransactionColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetDateTransactionNull() {
-                this[this.tableregistretransactions.DateTransactionColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsID_ForfaitsNull() {
-                return this.IsNull(this.tableregistretransactions.ID_ForfaitsColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetID_ForfaitsNull() {
-                this[this.tableregistretransactions.ID_ForfaitsColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public transactionsRow[] GettransactionsRows() {
-                if ((this.Table.ChildRelations["FK_ID_RegistreTransactions_Transactions"] == null)) {
-                    return new transactionsRow[0];
-                }
-                else {
-                    return ((transactionsRow[])(base.GetChildRows(this.Table.ChildRelations["FK_ID_RegistreTransactions_Transactions"])));
                 }
             }
         }
@@ -9145,31 +8738,31 @@ namespace GestionPong {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string Description {
+            public string DescriptionInvitation {
                 get {
                     try {
-                        return ((string)(this[this.tablestatutinvitations.DescriptionColumn]));
+                        return ((string)(this[this.tablestatutinvitations.DescriptionInvitationColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("La valeur pour la colonne \'Description\' dans la table \'statutinvitations\' est DBN" +
-                                "ull.", e);
+                        throw new global::System.Data.StrongTypingException("La valeur pour la colonne \'DescriptionInvitation\' dans la table \'statutinvitation" +
+                                "s\' est DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tablestatutinvitations.DescriptionColumn] = value;
+                    this[this.tablestatutinvitations.DescriptionInvitationColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsDescriptionNull() {
-                return this.IsNull(this.tablestatutinvitations.DescriptionColumn);
+            public bool IsDescriptionInvitationNull() {
+                return this.IsNull(this.tablestatutinvitations.DescriptionInvitationColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetDescriptionNull() {
-                this[this.tablestatutinvitations.DescriptionColumn] = global::System.Convert.DBNull;
+            public void SetDescriptionInvitationNull() {
+                this[this.tablestatutinvitations.DescriptionInvitationColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -9211,17 +8804,17 @@ namespace GestionPong {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string Description {
+            public string DescriptionTaxe {
                 get {
                     try {
-                        return ((string)(this[this.tabletaxes.DescriptionColumn]));
+                        return ((string)(this[this.tabletaxes.DescriptionTaxeColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("La valeur pour la colonne \'Description\' dans la table \'taxes\' est DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("La valeur pour la colonne \'DescriptionTaxe\' dans la table \'taxes\' est DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tabletaxes.DescriptionColumn] = value;
+                    this[this.tabletaxes.DescriptionTaxeColumn] = value;
                 }
             }
             
@@ -9243,14 +8836,14 @@ namespace GestionPong {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsDescriptionNull() {
-                return this.IsNull(this.tabletaxes.DescriptionColumn);
+            public bool IsDescriptionTaxeNull() {
+                return this.IsNull(this.tabletaxes.DescriptionTaxeColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetDescriptionNull() {
-                this[this.tabletaxes.DescriptionColumn] = global::System.Convert.DBNull;
+            public void SetDescriptionTaxeNull() {
+                this[this.tabletaxes.DescriptionTaxeColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -9304,17 +8897,17 @@ namespace GestionPong {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string Premium {
+            public string PremiumTournoi {
                 get {
                     try {
-                        return ((string)(this[this.tabletournois.PremiumColumn]));
+                        return ((string)(this[this.tabletournois.PremiumTournoiColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("La valeur pour la colonne \'Premium\' dans la table \'tournois\' est DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("La valeur pour la colonne \'PremiumTournoi\' dans la table \'tournois\' est DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tabletournois.PremiumColumn] = value;
+                    this[this.tabletournois.PremiumTournoiColumn] = value;
                 }
             }
             
@@ -9336,14 +8929,14 @@ namespace GestionPong {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsPremiumNull() {
-                return this.IsNull(this.tabletournois.PremiumColumn);
+            public bool IsPremiumTournoiNull() {
+                return this.IsNull(this.tabletournois.PremiumTournoiColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetPremiumNull() {
-                this[this.tabletournois.PremiumColumn] = global::System.Convert.DBNull;
+            public void SetPremiumTournoiNull() {
+                this[this.tabletournois.PremiumTournoiColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -9386,6 +8979,17 @@ namespace GestionPong {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public int ID {
+                get {
+                    return ((int)(this[this.tabletransactions.IDColumn]));
+                }
+                set {
+                    this[this.tabletransactions.IDColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public int ID_Joueurs {
                 get {
                     return ((int)(this[this.tabletransactions.ID_JoueursColumn]));
@@ -9397,12 +9001,34 @@ namespace GestionPong {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public int ID_RegistreTransactions {
+            public int ID_Forfaits {
                 get {
-                    return ((int)(this[this.tabletransactions.ID_RegistreTransactionsColumn]));
+                    return ((int)(this[this.tabletransactions.ID_ForfaitsColumn]));
                 }
                 set {
-                    this[this.tabletransactions.ID_RegistreTransactionsColumn] = value;
+                    this[this.tabletransactions.ID_ForfaitsColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public System.DateTime DateTransaction {
+                get {
+                    return ((global::System.DateTime)(this[this.tabletransactions.DateTransactionColumn]));
+                }
+                set {
+                    this[this.tabletransactions.DateTransactionColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public forfaitsRow forfaitsRow {
+                get {
+                    return ((forfaitsRow)(this.GetParentRow(this.Table.ParentRelations["FK_ID_Forfaits_Transactions"])));
+                }
+                set {
+                    this.SetParentRow(value, this.Table.ParentRelations["FK_ID_Forfaits_Transactions"]);
                 }
             }
             
@@ -9414,17 +9040,6 @@ namespace GestionPong {
                 }
                 set {
                     this.SetParentRow(value, this.Table.ParentRelations["FK_ID_Joueurs_Transactions"]);
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public registretransactionsRow registretransactionsRow {
-                get {
-                    return ((registretransactionsRow)(this.GetParentRow(this.Table.ParentRelations["FK_ID_RegistreTransactions_Transactions"])));
-                }
-                set {
-                    this.SetParentRow(value, this.Table.ParentRelations["FK_ID_RegistreTransactions_Transactions"]);
                 }
             }
         }
@@ -9456,17 +9071,17 @@ namespace GestionPong {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string Nom {
+            public string NomVille {
                 get {
                     try {
-                        return ((string)(this[this.tableville.NomColumn]));
+                        return ((string)(this[this.tableville.NomVilleColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("La valeur pour la colonne \'Nom\' dans la table \'ville\' est DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("La valeur pour la colonne \'NomVille\' dans la table \'ville\' est DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableville.NomColumn] = value;
+                    this[this.tableville.NomVilleColumn] = value;
                 }
             }
             
@@ -9499,14 +9114,14 @@ namespace GestionPong {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsNomNull() {
-                return this.IsNull(this.tableville.NomColumn);
+            public bool IsNomVilleNull() {
+                return this.IsNull(this.tableville.NomVilleColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetNomNull() {
-                this[this.tableville.NomColumn] = global::System.Convert.DBNull;
+            public void SetNomVilleNull() {
+                this[this.tableville.NomVilleColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -9961,40 +9576,6 @@ namespace GestionPong {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public provinceRow Row {
-                get {
-                    return this.eventRow;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataRowAction Action {
-                get {
-                    return this.eventAction;
-                }
-            }
-        }
-        
-        /// <summary>
-        ///Row event argument class
-        ///</summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public class registretransactionsRowChangeEvent : global::System.EventArgs {
-            
-            private registretransactionsRow eventRow;
-            
-            private global::System.Data.DataRowAction eventAction;
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public registretransactionsRowChangeEvent(registretransactionsRow row, global::System.Data.DataRowAction action) {
-                this.eventRow = row;
-                this.eventAction = action;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public registretransactionsRow Row {
                 get {
                     return this.eventRow;
                 }
@@ -10571,7 +10152,7 @@ namespace GestionPong.DataSetPongTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitConnection() {
             this._connection = new global::MySql.Data.MySqlClient.MySqlConnection();
-            this._connection.ConnectionString = global::GestionPong.Properties.Settings.Default.pongConnectionString;
+            this._connection.ConnectionString = global::GestionPong.Properties.Settings.Default.pongConnectionString1;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -11074,7 +10655,7 @@ namespace GestionPong.DataSetPongTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitConnection() {
             this._connection = new global::MySql.Data.MySqlClient.MySqlConnection();
-            this._connection.ConnectionString = global::GestionPong.Properties.Settings.Default.pongConnectionString;
+            this._connection.ConnectionString = global::GestionPong.Properties.Settings.Default.pongConnectionString1;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -11467,7 +11048,7 @@ namespace GestionPong.DataSetPongTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitConnection() {
             this._connection = new global::MySql.Data.MySqlClient.MySqlConnection();
-            this._connection.ConnectionString = global::GestionPong.Properties.Settings.Default.pongConnectionString;
+            this._connection.ConnectionString = global::GestionPong.Properties.Settings.Default.pongConnectionString1;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -11735,12 +11316,12 @@ namespace GestionPong.DataSetPongTableAdapters {
             tableMapping.SourceTable = "Table";
             tableMapping.DataSetTable = "couleurplaquette";
             tableMapping.ColumnMappings.Add("ID", "ID");
-            tableMapping.ColumnMappings.Add("Description", "Description");
+            tableMapping.ColumnMappings.Add("Couleur", "Couleur");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::MySql.Data.MySqlClient.MySqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = "DELETE FROM `couleurplaquette` WHERE ((`ID` = @p1) AND ((@p2 = 1 AND `Description" +
-                "` IS NULL) OR (`Description` = @p3)))";
+            this._adapter.DeleteCommand.CommandText = "DELETE FROM `couleurplaquette` WHERE ((`ID` = @p1) AND ((@p2 = 1 AND `Couleur` IS" +
+                " NULL) OR (`Couleur` = @p3)))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             global::MySql.Data.MySqlClient.MySqlParameter param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p1";
@@ -11755,7 +11336,7 @@ namespace GestionPong.DataSetPongTableAdapters {
             param.DbType = global::System.Data.DbType.Int32;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
             param.IsNullable = true;
-            param.SourceColumn = "Description";
+            param.SourceColumn = "Couleur";
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
             param.SourceColumnNullMapping = true;
             this._adapter.DeleteCommand.Parameters.Add(param);
@@ -11764,31 +11345,31 @@ namespace GestionPong.DataSetPongTableAdapters {
             param.DbType = global::System.Data.DbType.String;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
             param.IsNullable = true;
-            param.SourceColumn = "Description";
+            param.SourceColumn = "Couleur";
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
             this._adapter.DeleteCommand.Parameters.Add(param);
             this._adapter.InsertCommand = new global::MySql.Data.MySqlClient.MySqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = "INSERT INTO `couleurplaquette` (`Description`) VALUES (@p1)";
+            this._adapter.InsertCommand.CommandText = "INSERT INTO `couleurplaquette` (`Couleur`) VALUES (@p1)";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p1";
             param.DbType = global::System.Data.DbType.String;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
             param.IsNullable = true;
-            param.SourceColumn = "Description";
+            param.SourceColumn = "Couleur";
             this._adapter.InsertCommand.Parameters.Add(param);
             this._adapter.UpdateCommand = new global::MySql.Data.MySqlClient.MySqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = "UPDATE `couleurplaquette` SET `Description` = @p1 WHERE ((`ID` = @p2) AND ((@p3 =" +
-                " 1 AND `Description` IS NULL) OR (`Description` = @p4)))";
+            this._adapter.UpdateCommand.CommandText = "UPDATE `couleurplaquette` SET `Couleur` = @p1 WHERE ((`ID` = @p2) AND ((@p3 = 1 A" +
+                "ND `Couleur` IS NULL) OR (`Couleur` = @p4)))";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p1";
             param.DbType = global::System.Data.DbType.String;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
             param.IsNullable = true;
-            param.SourceColumn = "Description";
+            param.SourceColumn = "Couleur";
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p2";
@@ -11803,7 +11384,7 @@ namespace GestionPong.DataSetPongTableAdapters {
             param.DbType = global::System.Data.DbType.Int32;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
             param.IsNullable = true;
-            param.SourceColumn = "Description";
+            param.SourceColumn = "Couleur";
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
             param.SourceColumnNullMapping = true;
             this._adapter.UpdateCommand.Parameters.Add(param);
@@ -11812,7 +11393,7 @@ namespace GestionPong.DataSetPongTableAdapters {
             param.DbType = global::System.Data.DbType.String;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
             param.IsNullable = true;
-            param.SourceColumn = "Description";
+            param.SourceColumn = "Couleur";
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
             this._adapter.UpdateCommand.Parameters.Add(param);
         }
@@ -11821,7 +11402,7 @@ namespace GestionPong.DataSetPongTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitConnection() {
             this._connection = new global::MySql.Data.MySqlClient.MySqlConnection();
-            this._connection.ConnectionString = global::GestionPong.Properties.Settings.Default.pongConnectionString;
+            this._connection.ConnectionString = global::GestionPong.Properties.Settings.Default.pongConnectionString1;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -11830,7 +11411,7 @@ namespace GestionPong.DataSetPongTableAdapters {
             this._commandCollection = new global::MySql.Data.MySqlClient.MySqlCommand[1];
             this._commandCollection[0] = new global::MySql.Data.MySqlClient.MySqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT `ID`, `Description` FROM `couleurplaquette`";
+            this._commandCollection[0].CommandText = "SELECT `ID`, `Couleur` FROM `couleurplaquette`";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -12103,13 +11684,14 @@ namespace GestionPong.DataSetPongTableAdapters {
             tableMapping.SourceTable = "Table";
             tableMapping.DataSetTable = "equipes";
             tableMapping.ColumnMappings.Add("ID", "ID");
-            tableMapping.ColumnMappings.Add("Nom", "Nom");
-            tableMapping.ColumnMappings.Add("Description", "Description");
+            tableMapping.ColumnMappings.Add("NomEquipe", "NomEquipe");
+            tableMapping.ColumnMappings.Add("DescriptionEquipe", "DescriptionEquipe");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::MySql.Data.MySqlClient.MySqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = "DELETE FROM `equipes` WHERE ((`ID` = @p1) AND ((@p2 = 1 AND `Nom` IS NULL) OR (`N" +
-                "om` = @p3)) AND ((@p4 = 1 AND `Description` IS NULL) OR (`Description` = @p5)))";
+            this._adapter.DeleteCommand.CommandText = "DELETE FROM `equipes` WHERE ((`ID` = @p1) AND ((@p2 = 1 AND `NomEquipe` IS NULL) " +
+                "OR (`NomEquipe` = @p3)) AND ((@p4 = 1 AND `DescriptionEquipe` IS NULL) OR (`Desc" +
+                "riptionEquipe` = @p5)))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             global::MySql.Data.MySqlClient.MySqlParameter param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p1";
@@ -12124,7 +11706,7 @@ namespace GestionPong.DataSetPongTableAdapters {
             param.DbType = global::System.Data.DbType.Int32;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
             param.IsNullable = true;
-            param.SourceColumn = "Nom";
+            param.SourceColumn = "NomEquipe";
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
             param.SourceColumnNullMapping = true;
             this._adapter.DeleteCommand.Parameters.Add(param);
@@ -12133,7 +11715,7 @@ namespace GestionPong.DataSetPongTableAdapters {
             param.DbType = global::System.Data.DbType.String;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
             param.IsNullable = true;
-            param.SourceColumn = "Nom";
+            param.SourceColumn = "NomEquipe";
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
             this._adapter.DeleteCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
@@ -12141,7 +11723,7 @@ namespace GestionPong.DataSetPongTableAdapters {
             param.DbType = global::System.Data.DbType.Int32;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
             param.IsNullable = true;
-            param.SourceColumn = "Description";
+            param.SourceColumn = "DescriptionEquipe";
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
             param.SourceColumnNullMapping = true;
             this._adapter.DeleteCommand.Parameters.Add(param);
@@ -12150,46 +11732,46 @@ namespace GestionPong.DataSetPongTableAdapters {
             param.DbType = global::System.Data.DbType.String;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
             param.IsNullable = true;
-            param.SourceColumn = "Description";
+            param.SourceColumn = "DescriptionEquipe";
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
             this._adapter.DeleteCommand.Parameters.Add(param);
             this._adapter.InsertCommand = new global::MySql.Data.MySqlClient.MySqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = "INSERT INTO `equipes` (`Nom`, `Description`) VALUES (@p1, @p2)";
+            this._adapter.InsertCommand.CommandText = "INSERT INTO `equipes` (`NomEquipe`, `DescriptionEquipe`) VALUES (@p1, @p2)";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p1";
             param.DbType = global::System.Data.DbType.String;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
             param.IsNullable = true;
-            param.SourceColumn = "Nom";
+            param.SourceColumn = "NomEquipe";
             this._adapter.InsertCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p2";
             param.DbType = global::System.Data.DbType.String;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
             param.IsNullable = true;
-            param.SourceColumn = "Description";
+            param.SourceColumn = "DescriptionEquipe";
             this._adapter.InsertCommand.Parameters.Add(param);
             this._adapter.UpdateCommand = new global::MySql.Data.MySqlClient.MySqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = "UPDATE `equipes` SET `Nom` = @p1, `Description` = @p2 WHERE ((`ID` = @p3) AND ((@" +
-                "p4 = 1 AND `Nom` IS NULL) OR (`Nom` = @p5)) AND ((@p6 = 1 AND `Description` IS N" +
-                "ULL) OR (`Description` = @p7)))";
+            this._adapter.UpdateCommand.CommandText = "UPDATE `equipes` SET `NomEquipe` = @p1, `DescriptionEquipe` = @p2 WHERE ((`ID` = " +
+                "@p3) AND ((@p4 = 1 AND `NomEquipe` IS NULL) OR (`NomEquipe` = @p5)) AND ((@p6 = " +
+                "1 AND `DescriptionEquipe` IS NULL) OR (`DescriptionEquipe` = @p7)))";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p1";
             param.DbType = global::System.Data.DbType.String;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
             param.IsNullable = true;
-            param.SourceColumn = "Nom";
+            param.SourceColumn = "NomEquipe";
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p2";
             param.DbType = global::System.Data.DbType.String;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
             param.IsNullable = true;
-            param.SourceColumn = "Description";
+            param.SourceColumn = "DescriptionEquipe";
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p3";
@@ -12204,7 +11786,7 @@ namespace GestionPong.DataSetPongTableAdapters {
             param.DbType = global::System.Data.DbType.Int32;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
             param.IsNullable = true;
-            param.SourceColumn = "Nom";
+            param.SourceColumn = "NomEquipe";
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
             param.SourceColumnNullMapping = true;
             this._adapter.UpdateCommand.Parameters.Add(param);
@@ -12213,7 +11795,7 @@ namespace GestionPong.DataSetPongTableAdapters {
             param.DbType = global::System.Data.DbType.String;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
             param.IsNullable = true;
-            param.SourceColumn = "Nom";
+            param.SourceColumn = "NomEquipe";
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
@@ -12221,7 +11803,7 @@ namespace GestionPong.DataSetPongTableAdapters {
             param.DbType = global::System.Data.DbType.Int32;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
             param.IsNullable = true;
-            param.SourceColumn = "Description";
+            param.SourceColumn = "DescriptionEquipe";
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
             param.SourceColumnNullMapping = true;
             this._adapter.UpdateCommand.Parameters.Add(param);
@@ -12230,7 +11812,7 @@ namespace GestionPong.DataSetPongTableAdapters {
             param.DbType = global::System.Data.DbType.String;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
             param.IsNullable = true;
-            param.SourceColumn = "Description";
+            param.SourceColumn = "DescriptionEquipe";
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
             this._adapter.UpdateCommand.Parameters.Add(param);
         }
@@ -12239,7 +11821,7 @@ namespace GestionPong.DataSetPongTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitConnection() {
             this._connection = new global::MySql.Data.MySqlClient.MySqlConnection();
-            this._connection.ConnectionString = global::GestionPong.Properties.Settings.Default.pongConnectionString;
+            this._connection.ConnectionString = global::GestionPong.Properties.Settings.Default.pongConnectionString1;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -12248,7 +11830,7 @@ namespace GestionPong.DataSetPongTableAdapters {
             this._commandCollection = new global::MySql.Data.MySqlClient.MySqlCommand[1];
             this._commandCollection[0] = new global::MySql.Data.MySqlClient.MySqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT `ID`, `Nom`, `Description` FROM `equipes`";
+            this._commandCollection[0].CommandText = "SELECT `ID`, `NomEquipe`, `DescriptionEquipe` FROM `equipes`";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -12549,14 +12131,14 @@ namespace GestionPong.DataSetPongTableAdapters {
             tableMapping.SourceTable = "Table";
             tableMapping.DataSetTable = "forfaits";
             tableMapping.ColumnMappings.Add("ID", "ID");
-            tableMapping.ColumnMappings.Add("Description", "Description");
+            tableMapping.ColumnMappings.Add("DescriptionForfait", "DescriptionForfait");
             tableMapping.ColumnMappings.Add("NombreParties", "NombreParties");
             tableMapping.ColumnMappings.Add("MoisPremium", "MoisPremium");
             tableMapping.ColumnMappings.Add("Prix", "Prix");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::MySql.Data.MySqlClient.MySqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = @"DELETE FROM `forfaits` WHERE ((`ID` = @p1) AND ((@p2 = 1 AND `Description` IS NULL) OR (`Description` = @p3)) AND ((@p4 = 1 AND `NombreParties` IS NULL) OR (`NombreParties` = @p5)) AND ((@p6 = 1 AND `MoisPremium` IS NULL) OR (`MoisPremium` = @p7)) AND ((@p8 = 1 AND `Prix` IS NULL) OR (`Prix` = @p9)))";
+            this._adapter.DeleteCommand.CommandText = @"DELETE FROM `forfaits` WHERE ((`ID` = @p1) AND ((@p2 = 1 AND `DescriptionForfait` IS NULL) OR (`DescriptionForfait` = @p3)) AND ((@p4 = 1 AND `NombreParties` IS NULL) OR (`NombreParties` = @p5)) AND ((@p6 = 1 AND `MoisPremium` IS NULL) OR (`MoisPremium` = @p7)) AND ((@p8 = 1 AND `Prix` IS NULL) OR (`Prix` = @p9)))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             global::MySql.Data.MySqlClient.MySqlParameter param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p1";
@@ -12571,7 +12153,7 @@ namespace GestionPong.DataSetPongTableAdapters {
             param.DbType = global::System.Data.DbType.Int32;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
             param.IsNullable = true;
-            param.SourceColumn = "Description";
+            param.SourceColumn = "DescriptionForfait";
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
             param.SourceColumnNullMapping = true;
             this._adapter.DeleteCommand.Parameters.Add(param);
@@ -12580,7 +12162,7 @@ namespace GestionPong.DataSetPongTableAdapters {
             param.DbType = global::System.Data.DbType.String;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
             param.IsNullable = true;
-            param.SourceColumn = "Description";
+            param.SourceColumn = "DescriptionForfait";
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
             this._adapter.DeleteCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
@@ -12636,15 +12218,15 @@ namespace GestionPong.DataSetPongTableAdapters {
             this._adapter.DeleteCommand.Parameters.Add(param);
             this._adapter.InsertCommand = new global::MySql.Data.MySqlClient.MySqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = "INSERT INTO `forfaits` (`Description`, `NombreParties`, `MoisPremium`, `Prix`) VA" +
-                "LUES (@p1, @p2, @p3, @p4)";
+            this._adapter.InsertCommand.CommandText = "INSERT INTO `forfaits` (`DescriptionForfait`, `NombreParties`, `MoisPremium`, `Pr" +
+                "ix`) VALUES (@p1, @p2, @p3, @p4)";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p1";
             param.DbType = global::System.Data.DbType.String;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
             param.IsNullable = true;
-            param.SourceColumn = "Description";
+            param.SourceColumn = "DescriptionForfait";
             this._adapter.InsertCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p2";
@@ -12669,14 +12251,14 @@ namespace GestionPong.DataSetPongTableAdapters {
             this._adapter.InsertCommand.Parameters.Add(param);
             this._adapter.UpdateCommand = new global::MySql.Data.MySqlClient.MySqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE `forfaits` SET `Description` = @p1, `NombreParties` = @p2, `MoisPremium` = @p3, `Prix` = @p4 WHERE ((`ID` = @p5) AND ((@p6 = 1 AND `Description` IS NULL) OR (`Description` = @p7)) AND ((@p8 = 1 AND `NombreParties` IS NULL) OR (`NombreParties` = @p9)) AND ((@p10 = 1 AND `MoisPremium` IS NULL) OR (`MoisPremium` = @p11)) AND ((@p12 = 1 AND `Prix` IS NULL) OR (`Prix` = @p13)))";
+            this._adapter.UpdateCommand.CommandText = @"UPDATE `forfaits` SET `DescriptionForfait` = @p1, `NombreParties` = @p2, `MoisPremium` = @p3, `Prix` = @p4 WHERE ((`ID` = @p5) AND ((@p6 = 1 AND `DescriptionForfait` IS NULL) OR (`DescriptionForfait` = @p7)) AND ((@p8 = 1 AND `NombreParties` IS NULL) OR (`NombreParties` = @p9)) AND ((@p10 = 1 AND `MoisPremium` IS NULL) OR (`MoisPremium` = @p11)) AND ((@p12 = 1 AND `Prix` IS NULL) OR (`Prix` = @p13)))";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p1";
             param.DbType = global::System.Data.DbType.String;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
             param.IsNullable = true;
-            param.SourceColumn = "Description";
+            param.SourceColumn = "DescriptionForfait";
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p2";
@@ -12712,7 +12294,7 @@ namespace GestionPong.DataSetPongTableAdapters {
             param.DbType = global::System.Data.DbType.Int32;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
             param.IsNullable = true;
-            param.SourceColumn = "Description";
+            param.SourceColumn = "DescriptionForfait";
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
             param.SourceColumnNullMapping = true;
             this._adapter.UpdateCommand.Parameters.Add(param);
@@ -12721,7 +12303,7 @@ namespace GestionPong.DataSetPongTableAdapters {
             param.DbType = global::System.Data.DbType.String;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
             param.IsNullable = true;
-            param.SourceColumn = "Description";
+            param.SourceColumn = "DescriptionForfait";
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
@@ -12781,7 +12363,7 @@ namespace GestionPong.DataSetPongTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitConnection() {
             this._connection = new global::MySql.Data.MySqlClient.MySqlConnection();
-            this._connection.ConnectionString = global::GestionPong.Properties.Settings.Default.pongConnectionString;
+            this._connection.ConnectionString = global::GestionPong.Properties.Settings.Default.pongConnectionString1;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -12790,8 +12372,8 @@ namespace GestionPong.DataSetPongTableAdapters {
             this._commandCollection = new global::MySql.Data.MySqlClient.MySqlCommand[1];
             this._commandCollection[0] = new global::MySql.Data.MySqlClient.MySqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT `ID`, `Description`, `NombreParties`, `MoisPremium`, `Prix` FROM `forfaits" +
-                "`";
+            this._commandCollection[0].CommandText = "SELECT `ID`, `DescriptionForfait`, `NombreParties`, `MoisPremium`, `Prix` FROM `f" +
+                "orfaits`";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -13230,7 +12812,7 @@ namespace GestionPong.DataSetPongTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitConnection() {
             this._connection = new global::MySql.Data.MySqlClient.MySqlConnection();
-            this._connection.ConnectionString = global::GestionPong.Properties.Settings.Default.pongConnectionString;
+            this._connection.ConnectionString = global::GestionPong.Properties.Settings.Default.pongConnectionString1;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -13632,7 +13214,7 @@ namespace GestionPong.DataSetPongTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitConnection() {
             this._connection = new global::MySql.Data.MySqlClient.MySqlConnection();
-            this._connection.ConnectionString = global::GestionPong.Properties.Settings.Default.pongConnectionString;
+            this._connection.ConnectionString = global::GestionPong.Properties.Settings.Default.pongConnectionString1;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -13928,7 +13510,7 @@ namespace GestionPong.DataSetPongTableAdapters {
             tableMapping.SourceTable = "Table";
             tableMapping.DataSetTable = "joueurs";
             tableMapping.ColumnMappings.Add("ID", "ID");
-            tableMapping.ColumnMappings.Add("Nom", "Nom");
+            tableMapping.ColumnMappings.Add("NomJoueur", "NomJoueur");
             tableMapping.ColumnMappings.Add("Prenom", "Prenom");
             tableMapping.ColumnMappings.Add("Pseudonyme", "Pseudonyme");
             tableMapping.ColumnMappings.Add("Courriel", "Courriel");
@@ -13943,7 +13525,7 @@ namespace GestionPong.DataSetPongTableAdapters {
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::MySql.Data.MySqlClient.MySqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = @"DELETE FROM `joueurs` WHERE ((`ID` = @p1) AND ((@p2 = 1 AND `Nom` IS NULL) OR (`Nom` = @p3)) AND ((@p4 = 1 AND `Prenom` IS NULL) OR (`Prenom` = @p5)) AND ((@p6 = 1 AND `Pseudonyme` IS NULL) OR (`Pseudonyme` = @p7)) AND ((@p8 = 1 AND `Courriel` IS NULL) OR (`Courriel` = @p9)) AND ((@p10 = 1 AND `MotdePasse` IS NULL) OR (`MotdePasse` = @p11)) AND ((@p12 = 1 AND `DateNaissance` IS NULL) OR (`DateNaissance` = @p13)) AND ((@p14 = 1 AND `Photo` IS NULL) OR (`Photo` = @p15)) AND ((@p16 = 1 AND `DateExpirationPremium` IS NULL) OR (`DateExpirationPremium` = @p17)) AND ((@p18 = 1 AND `DateDerniereConnexion` IS NULL) OR (`DateDerniereConnexion` = @p19)) AND ((@p20 = 1 AND `ID_Adresse` IS NULL) OR (`ID_Adresse` = @p21)) AND ((@p22 = 1 AND `ID_Equipes` IS NULL) OR (`ID_Equipes` = @p23)) AND ((@p24 = 1 AND `ID_CouleurPlaquette` IS NULL) OR (`ID_CouleurPlaquette` = @p25)))";
+            this._adapter.DeleteCommand.CommandText = @"DELETE FROM `joueurs` WHERE ((`ID` = @p1) AND ((@p2 = 1 AND `NomJoueur` IS NULL) OR (`NomJoueur` = @p3)) AND ((@p4 = 1 AND `Prenom` IS NULL) OR (`Prenom` = @p5)) AND ((@p6 = 1 AND `Pseudonyme` IS NULL) OR (`Pseudonyme` = @p7)) AND ((@p8 = 1 AND `Courriel` IS NULL) OR (`Courriel` = @p9)) AND ((@p10 = 1 AND `MotdePasse` IS NULL) OR (`MotdePasse` = @p11)) AND ((@p12 = 1 AND `DateNaissance` IS NULL) OR (`DateNaissance` = @p13)) AND ((@p14 = 1 AND `Photo` IS NULL) OR (`Photo` = @p15)) AND ((@p16 = 1 AND `DateExpirationPremium` IS NULL) OR (`DateExpirationPremium` = @p17)) AND ((@p18 = 1 AND `DateDerniereConnexion` IS NULL) OR (`DateDerniereConnexion` = @p19)) AND ((@p20 = 1 AND `ID_Adresse` IS NULL) OR (`ID_Adresse` = @p21)) AND ((@p22 = 1 AND `ID_Equipes` IS NULL) OR (`ID_Equipes` = @p23)) AND ((@p24 = 1 AND `ID_CouleurPlaquette` IS NULL) OR (`ID_CouleurPlaquette` = @p25)))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             global::MySql.Data.MySqlClient.MySqlParameter param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p1";
@@ -13958,7 +13540,7 @@ namespace GestionPong.DataSetPongTableAdapters {
             param.DbType = global::System.Data.DbType.Int32;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
             param.IsNullable = true;
-            param.SourceColumn = "Nom";
+            param.SourceColumn = "NomJoueur";
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
             param.SourceColumnNullMapping = true;
             this._adapter.DeleteCommand.Parameters.Add(param);
@@ -13967,7 +13549,7 @@ namespace GestionPong.DataSetPongTableAdapters {
             param.DbType = global::System.Data.DbType.String;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
             param.IsNullable = true;
-            param.SourceColumn = "Nom";
+            param.SourceColumn = "NomJoueur";
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
             this._adapter.DeleteCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
@@ -14158,14 +13740,14 @@ namespace GestionPong.DataSetPongTableAdapters {
             this._adapter.DeleteCommand.Parameters.Add(param);
             this._adapter.InsertCommand = new global::MySql.Data.MySqlClient.MySqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = @"INSERT INTO `joueurs` (`Nom`, `Prenom`, `Pseudonyme`, `Courriel`, `MotdePasse`, `DateNaissance`, `Photo`, `DateExpirationPremium`, `DateDerniereConnexion`, `ID_Adresse`, `ID_Equipes`, `ID_CouleurPlaquette`) VALUES (@p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10, @p11, @p12)";
+            this._adapter.InsertCommand.CommandText = @"INSERT INTO `joueurs` (`NomJoueur`, `Prenom`, `Pseudonyme`, `Courriel`, `MotdePasse`, `DateNaissance`, `Photo`, `DateExpirationPremium`, `DateDerniereConnexion`, `ID_Adresse`, `ID_Equipes`, `ID_CouleurPlaquette`) VALUES (@p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10, @p11, @p12)";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p1";
             param.DbType = global::System.Data.DbType.String;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
             param.IsNullable = true;
-            param.SourceColumn = "Nom";
+            param.SourceColumn = "NomJoueur";
             this._adapter.InsertCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p2";
@@ -14245,14 +13827,14 @@ namespace GestionPong.DataSetPongTableAdapters {
             this._adapter.InsertCommand.Parameters.Add(param);
             this._adapter.UpdateCommand = new global::MySql.Data.MySqlClient.MySqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE `joueurs` SET `Nom` = @p1, `Prenom` = @p2, `Pseudonyme` = @p3, `Courriel` = @p4, `MotdePasse` = @p5, `DateNaissance` = @p6, `Photo` = @p7, `DateExpirationPremium` = @p8, `DateDerniereConnexion` = @p9, `ID_Adresse` = @p10, `ID_Equipes` = @p11, `ID_CouleurPlaquette` = @p12 WHERE ((`ID` = @p13) AND ((@p14 = 1 AND `Nom` IS NULL) OR (`Nom` = @p15)) AND ((@p16 = 1 AND `Prenom` IS NULL) OR (`Prenom` = @p17)) AND ((@p18 = 1 AND `Pseudonyme` IS NULL) OR (`Pseudonyme` = @p19)) AND ((@p20 = 1 AND `Courriel` IS NULL) OR (`Courriel` = @p21)) AND ((@p22 = 1 AND `MotdePasse` IS NULL) OR (`MotdePasse` = @p23)) AND ((@p24 = 1 AND `DateNaissance` IS NULL) OR (`DateNaissance` = @p25)) AND ((@p26 = 1 AND `Photo` IS NULL) OR (`Photo` = @p27)) AND ((@p28 = 1 AND `DateExpirationPremium` IS NULL) OR (`DateExpirationPremium` = @p29)) AND ((@p30 = 1 AND `DateDerniereConnexion` IS NULL) OR (`DateDerniereConnexion` = @p31)) AND ((@p32 = 1 AND `ID_Adresse` IS NULL) OR (`ID_Adresse` = @p33)) AND ((@p34 = 1 AND `ID_Equipes` IS NULL) OR (`ID_Equipes` = @p35)) AND ((@p36 = 1 AND `ID_CouleurPlaquette` IS NULL) OR (`ID_CouleurPlaquette` = @p37)))";
+            this._adapter.UpdateCommand.CommandText = @"UPDATE `joueurs` SET `NomJoueur` = @p1, `Prenom` = @p2, `Pseudonyme` = @p3, `Courriel` = @p4, `MotdePasse` = @p5, `DateNaissance` = @p6, `Photo` = @p7, `DateExpirationPremium` = @p8, `DateDerniereConnexion` = @p9, `ID_Adresse` = @p10, `ID_Equipes` = @p11, `ID_CouleurPlaquette` = @p12 WHERE ((`ID` = @p13) AND ((@p14 = 1 AND `NomJoueur` IS NULL) OR (`NomJoueur` = @p15)) AND ((@p16 = 1 AND `Prenom` IS NULL) OR (`Prenom` = @p17)) AND ((@p18 = 1 AND `Pseudonyme` IS NULL) OR (`Pseudonyme` = @p19)) AND ((@p20 = 1 AND `Courriel` IS NULL) OR (`Courriel` = @p21)) AND ((@p22 = 1 AND `MotdePasse` IS NULL) OR (`MotdePasse` = @p23)) AND ((@p24 = 1 AND `DateNaissance` IS NULL) OR (`DateNaissance` = @p25)) AND ((@p26 = 1 AND `Photo` IS NULL) OR (`Photo` = @p27)) AND ((@p28 = 1 AND `DateExpirationPremium` IS NULL) OR (`DateExpirationPremium` = @p29)) AND ((@p30 = 1 AND `DateDerniereConnexion` IS NULL) OR (`DateDerniereConnexion` = @p31)) AND ((@p32 = 1 AND `ID_Adresse` IS NULL) OR (`ID_Adresse` = @p33)) AND ((@p34 = 1 AND `ID_Equipes` IS NULL) OR (`ID_Equipes` = @p35)) AND ((@p36 = 1 AND `ID_CouleurPlaquette` IS NULL) OR (`ID_CouleurPlaquette` = @p37)))";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p1";
             param.DbType = global::System.Data.DbType.String;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
             param.IsNullable = true;
-            param.SourceColumn = "Nom";
+            param.SourceColumn = "NomJoueur";
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p2";
@@ -14343,7 +13925,7 @@ namespace GestionPong.DataSetPongTableAdapters {
             param.DbType = global::System.Data.DbType.Int32;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
             param.IsNullable = true;
-            param.SourceColumn = "Nom";
+            param.SourceColumn = "NomJoueur";
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
             param.SourceColumnNullMapping = true;
             this._adapter.UpdateCommand.Parameters.Add(param);
@@ -14352,7 +13934,7 @@ namespace GestionPong.DataSetPongTableAdapters {
             param.DbType = global::System.Data.DbType.String;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
             param.IsNullable = true;
-            param.SourceColumn = "Nom";
+            param.SourceColumn = "NomJoueur";
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
@@ -14547,7 +14129,7 @@ namespace GestionPong.DataSetPongTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitConnection() {
             this._connection = new global::MySql.Data.MySqlClient.MySqlConnection();
-            this._connection.ConnectionString = global::GestionPong.Properties.Settings.Default.pongConnectionString;
+            this._connection.ConnectionString = global::GestionPong.Properties.Settings.Default.pongConnectionString1;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -14556,9 +14138,9 @@ namespace GestionPong.DataSetPongTableAdapters {
             this._commandCollection = new global::MySql.Data.MySqlClient.MySqlCommand[1];
             this._commandCollection[0] = new global::MySql.Data.MySqlClient.MySqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT `ID`, `Nom`, `Prenom`, `Pseudonyme`, `Courriel`, `MotdePasse`, `DateNaissa" +
-                "nce`, `Photo`, `DateExpirationPremium`, `DateDerniereConnexion`, `ID_Adresse`, `" +
-                "ID_Equipes`, `ID_CouleurPlaquette` FROM `joueurs`";
+            this._commandCollection[0].CommandText = "SELECT `ID`, `NomJoueur`, `Prenom`, `Pseudonyme`, `Courriel`, `MotdePasse`, `Date" +
+                "Naissance`, `Photo`, `DateExpirationPremium`, `DateDerniereConnexion`, `ID_Adres" +
+                "se`, `ID_Equipes`, `ID_CouleurPlaquette` FROM `joueurs`";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -15164,12 +14746,12 @@ namespace GestionPong.DataSetPongTableAdapters {
             tableMapping.SourceTable = "Table";
             tableMapping.DataSetTable = "marquecredit";
             tableMapping.ColumnMappings.Add("ID", "ID");
-            tableMapping.ColumnMappings.Add("Nom", "Nom");
+            tableMapping.ColumnMappings.Add("Marque", "Marque");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::MySql.Data.MySqlClient.MySqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = "DELETE FROM `marquecredit` WHERE ((`ID` = @p1) AND ((@p2 = 1 AND `Nom` IS NULL) O" +
-                "R (`Nom` = @p3)))";
+            this._adapter.DeleteCommand.CommandText = "DELETE FROM `marquecredit` WHERE ((`ID` = @p1) AND ((@p2 = 1 AND `Marque` IS NULL" +
+                ") OR (`Marque` = @p3)))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             global::MySql.Data.MySqlClient.MySqlParameter param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p1";
@@ -15184,7 +14766,7 @@ namespace GestionPong.DataSetPongTableAdapters {
             param.DbType = global::System.Data.DbType.Int32;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
             param.IsNullable = true;
-            param.SourceColumn = "Nom";
+            param.SourceColumn = "Marque";
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
             param.SourceColumnNullMapping = true;
             this._adapter.DeleteCommand.Parameters.Add(param);
@@ -15193,31 +14775,31 @@ namespace GestionPong.DataSetPongTableAdapters {
             param.DbType = global::System.Data.DbType.String;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
             param.IsNullable = true;
-            param.SourceColumn = "Nom";
+            param.SourceColumn = "Marque";
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
             this._adapter.DeleteCommand.Parameters.Add(param);
             this._adapter.InsertCommand = new global::MySql.Data.MySqlClient.MySqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = "INSERT INTO `marquecredit` (`Nom`) VALUES (@p1)";
+            this._adapter.InsertCommand.CommandText = "INSERT INTO `marquecredit` (`Marque`) VALUES (@p1)";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p1";
             param.DbType = global::System.Data.DbType.String;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
             param.IsNullable = true;
-            param.SourceColumn = "Nom";
+            param.SourceColumn = "Marque";
             this._adapter.InsertCommand.Parameters.Add(param);
             this._adapter.UpdateCommand = new global::MySql.Data.MySqlClient.MySqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = "UPDATE `marquecredit` SET `Nom` = @p1 WHERE ((`ID` = @p2) AND ((@p3 = 1 AND `Nom`" +
-                " IS NULL) OR (`Nom` = @p4)))";
+            this._adapter.UpdateCommand.CommandText = "UPDATE `marquecredit` SET `Marque` = @p1 WHERE ((`ID` = @p2) AND ((@p3 = 1 AND `M" +
+                "arque` IS NULL) OR (`Marque` = @p4)))";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p1";
             param.DbType = global::System.Data.DbType.String;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
             param.IsNullable = true;
-            param.SourceColumn = "Nom";
+            param.SourceColumn = "Marque";
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p2";
@@ -15232,7 +14814,7 @@ namespace GestionPong.DataSetPongTableAdapters {
             param.DbType = global::System.Data.DbType.Int32;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
             param.IsNullable = true;
-            param.SourceColumn = "Nom";
+            param.SourceColumn = "Marque";
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
             param.SourceColumnNullMapping = true;
             this._adapter.UpdateCommand.Parameters.Add(param);
@@ -15241,7 +14823,7 @@ namespace GestionPong.DataSetPongTableAdapters {
             param.DbType = global::System.Data.DbType.String;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
             param.IsNullable = true;
-            param.SourceColumn = "Nom";
+            param.SourceColumn = "Marque";
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
             this._adapter.UpdateCommand.Parameters.Add(param);
         }
@@ -15250,7 +14832,7 @@ namespace GestionPong.DataSetPongTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitConnection() {
             this._connection = new global::MySql.Data.MySqlClient.MySqlConnection();
-            this._connection.ConnectionString = global::GestionPong.Properties.Settings.Default.pongConnectionString;
+            this._connection.ConnectionString = global::GestionPong.Properties.Settings.Default.pongConnectionString1;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -15259,7 +14841,7 @@ namespace GestionPong.DataSetPongTableAdapters {
             this._commandCollection = new global::MySql.Data.MySqlClient.MySqlCommand[1];
             this._commandCollection[0] = new global::MySql.Data.MySqlClient.MySqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT `ID`, `Nom` FROM `marquecredit`";
+            this._commandCollection[0].CommandText = "SELECT `ID`, `Marque` FROM `marquecredit`";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -15961,7 +15543,7 @@ namespace GestionPong.DataSetPongTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitConnection() {
             this._connection = new global::MySql.Data.MySqlClient.MySqlConnection();
-            this._connection.ConnectionString = global::GestionPong.Properties.Settings.Default.pongConnectionString;
+            this._connection.ConnectionString = global::GestionPong.Properties.Settings.Default.pongConnectionString1;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -16457,12 +16039,12 @@ namespace GestionPong.DataSetPongTableAdapters {
             tableMapping.SourceTable = "Table";
             tableMapping.DataSetTable = "pays";
             tableMapping.ColumnMappings.Add("ID", "ID");
-            tableMapping.ColumnMappings.Add("Nom", "Nom");
+            tableMapping.ColumnMappings.Add("NomPays", "NomPays");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::MySql.Data.MySqlClient.MySqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = "DELETE FROM `pays` WHERE ((`ID` = @p1) AND ((@p2 = 1 AND `Nom` IS NULL) OR (`Nom`" +
-                " = @p3)))";
+            this._adapter.DeleteCommand.CommandText = "DELETE FROM `pays` WHERE ((`ID` = @p1) AND ((@p2 = 1 AND `NomPays` IS NULL) OR (`" +
+                "NomPays` = @p3)))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             global::MySql.Data.MySqlClient.MySqlParameter param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p1";
@@ -16477,7 +16059,7 @@ namespace GestionPong.DataSetPongTableAdapters {
             param.DbType = global::System.Data.DbType.Int32;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
             param.IsNullable = true;
-            param.SourceColumn = "Nom";
+            param.SourceColumn = "NomPays";
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
             param.SourceColumnNullMapping = true;
             this._adapter.DeleteCommand.Parameters.Add(param);
@@ -16486,31 +16068,31 @@ namespace GestionPong.DataSetPongTableAdapters {
             param.DbType = global::System.Data.DbType.String;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
             param.IsNullable = true;
-            param.SourceColumn = "Nom";
+            param.SourceColumn = "NomPays";
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
             this._adapter.DeleteCommand.Parameters.Add(param);
             this._adapter.InsertCommand = new global::MySql.Data.MySqlClient.MySqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = "INSERT INTO `pays` (`Nom`) VALUES (@p1)";
+            this._adapter.InsertCommand.CommandText = "INSERT INTO `pays` (`NomPays`) VALUES (@p1)";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p1";
             param.DbType = global::System.Data.DbType.String;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
             param.IsNullable = true;
-            param.SourceColumn = "Nom";
+            param.SourceColumn = "NomPays";
             this._adapter.InsertCommand.Parameters.Add(param);
             this._adapter.UpdateCommand = new global::MySql.Data.MySqlClient.MySqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = "UPDATE `pays` SET `Nom` = @p1 WHERE ((`ID` = @p2) AND ((@p3 = 1 AND `Nom` IS NULL" +
-                ") OR (`Nom` = @p4)))";
+            this._adapter.UpdateCommand.CommandText = "UPDATE `pays` SET `NomPays` = @p1 WHERE ((`ID` = @p2) AND ((@p3 = 1 AND `NomPays`" +
+                " IS NULL) OR (`NomPays` = @p4)))";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p1";
             param.DbType = global::System.Data.DbType.String;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
             param.IsNullable = true;
-            param.SourceColumn = "Nom";
+            param.SourceColumn = "NomPays";
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p2";
@@ -16525,7 +16107,7 @@ namespace GestionPong.DataSetPongTableAdapters {
             param.DbType = global::System.Data.DbType.Int32;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
             param.IsNullable = true;
-            param.SourceColumn = "Nom";
+            param.SourceColumn = "NomPays";
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
             param.SourceColumnNullMapping = true;
             this._adapter.UpdateCommand.Parameters.Add(param);
@@ -16534,7 +16116,7 @@ namespace GestionPong.DataSetPongTableAdapters {
             param.DbType = global::System.Data.DbType.String;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
             param.IsNullable = true;
-            param.SourceColumn = "Nom";
+            param.SourceColumn = "NomPays";
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
             this._adapter.UpdateCommand.Parameters.Add(param);
         }
@@ -16543,7 +16125,7 @@ namespace GestionPong.DataSetPongTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitConnection() {
             this._connection = new global::MySql.Data.MySqlClient.MySqlConnection();
-            this._connection.ConnectionString = global::GestionPong.Properties.Settings.Default.pongConnectionString;
+            this._connection.ConnectionString = global::GestionPong.Properties.Settings.Default.pongConnectionString1;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -16552,7 +16134,7 @@ namespace GestionPong.DataSetPongTableAdapters {
             this._commandCollection = new global::MySql.Data.MySqlClient.MySqlCommand[1];
             this._commandCollection[0] = new global::MySql.Data.MySqlClient.MySqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT `ID`, `Nom` FROM `pays`";
+            this._commandCollection[0].CommandText = "SELECT `ID`, `NomPays` FROM `pays`";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -16825,13 +16407,14 @@ namespace GestionPong.DataSetPongTableAdapters {
             tableMapping.SourceTable = "Table";
             tableMapping.DataSetTable = "province";
             tableMapping.ColumnMappings.Add("ID", "ID");
-            tableMapping.ColumnMappings.Add("Nom", "Nom");
+            tableMapping.ColumnMappings.Add("NomProvince", "NomProvince");
             tableMapping.ColumnMappings.Add("ID_Pays", "ID_Pays");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::MySql.Data.MySqlClient.MySqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = "DELETE FROM `province` WHERE ((`ID` = @p1) AND ((@p2 = 1 AND `Nom` IS NULL) OR (`" +
-                "Nom` = @p3)) AND ((@p4 = 1 AND `ID_Pays` IS NULL) OR (`ID_Pays` = @p5)))";
+            this._adapter.DeleteCommand.CommandText = "DELETE FROM `province` WHERE ((`ID` = @p1) AND ((@p2 = 1 AND `NomProvince` IS NUL" +
+                "L) OR (`NomProvince` = @p3)) AND ((@p4 = 1 AND `ID_Pays` IS NULL) OR (`ID_Pays` " +
+                "= @p5)))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             global::MySql.Data.MySqlClient.MySqlParameter param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p1";
@@ -16846,7 +16429,7 @@ namespace GestionPong.DataSetPongTableAdapters {
             param.DbType = global::System.Data.DbType.Int32;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
             param.IsNullable = true;
-            param.SourceColumn = "Nom";
+            param.SourceColumn = "NomProvince";
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
             param.SourceColumnNullMapping = true;
             this._adapter.DeleteCommand.Parameters.Add(param);
@@ -16855,7 +16438,7 @@ namespace GestionPong.DataSetPongTableAdapters {
             param.DbType = global::System.Data.DbType.String;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
             param.IsNullable = true;
-            param.SourceColumn = "Nom";
+            param.SourceColumn = "NomProvince";
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
             this._adapter.DeleteCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
@@ -16877,14 +16460,14 @@ namespace GestionPong.DataSetPongTableAdapters {
             this._adapter.DeleteCommand.Parameters.Add(param);
             this._adapter.InsertCommand = new global::MySql.Data.MySqlClient.MySqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = "INSERT INTO `province` (`Nom`, `ID_Pays`) VALUES (@p1, @p2)";
+            this._adapter.InsertCommand.CommandText = "INSERT INTO `province` (`NomProvince`, `ID_Pays`) VALUES (@p1, @p2)";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p1";
             param.DbType = global::System.Data.DbType.String;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
             param.IsNullable = true;
-            param.SourceColumn = "Nom";
+            param.SourceColumn = "NomProvince";
             this._adapter.InsertCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p2";
@@ -16895,16 +16478,16 @@ namespace GestionPong.DataSetPongTableAdapters {
             this._adapter.InsertCommand.Parameters.Add(param);
             this._adapter.UpdateCommand = new global::MySql.Data.MySqlClient.MySqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = "UPDATE `province` SET `Nom` = @p1, `ID_Pays` = @p2 WHERE ((`ID` = @p3) AND ((@p4 " +
-                "= 1 AND `Nom` IS NULL) OR (`Nom` = @p5)) AND ((@p6 = 1 AND `ID_Pays` IS NULL) OR" +
-                " (`ID_Pays` = @p7)))";
+            this._adapter.UpdateCommand.CommandText = "UPDATE `province` SET `NomProvince` = @p1, `ID_Pays` = @p2 WHERE ((`ID` = @p3) AN" +
+                "D ((@p4 = 1 AND `NomProvince` IS NULL) OR (`NomProvince` = @p5)) AND ((@p6 = 1 A" +
+                "ND `ID_Pays` IS NULL) OR (`ID_Pays` = @p7)))";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p1";
             param.DbType = global::System.Data.DbType.String;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
             param.IsNullable = true;
-            param.SourceColumn = "Nom";
+            param.SourceColumn = "NomProvince";
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p2";
@@ -16926,7 +16509,7 @@ namespace GestionPong.DataSetPongTableAdapters {
             param.DbType = global::System.Data.DbType.Int32;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
             param.IsNullable = true;
-            param.SourceColumn = "Nom";
+            param.SourceColumn = "NomProvince";
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
             param.SourceColumnNullMapping = true;
             this._adapter.UpdateCommand.Parameters.Add(param);
@@ -16935,7 +16518,7 @@ namespace GestionPong.DataSetPongTableAdapters {
             param.DbType = global::System.Data.DbType.String;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
             param.IsNullable = true;
-            param.SourceColumn = "Nom";
+            param.SourceColumn = "NomProvince";
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
@@ -16961,7 +16544,7 @@ namespace GestionPong.DataSetPongTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitConnection() {
             this._connection = new global::MySql.Data.MySqlClient.MySqlConnection();
-            this._connection.ConnectionString = global::GestionPong.Properties.Settings.Default.pongConnectionString;
+            this._connection.ConnectionString = global::GestionPong.Properties.Settings.Default.pongConnectionString1;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -16970,7 +16553,7 @@ namespace GestionPong.DataSetPongTableAdapters {
             this._commandCollection = new global::MySql.Data.MySqlClient.MySqlCommand[1];
             this._commandCollection[0] = new global::MySql.Data.MySqlClient.MySqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT `ID`, `Nom`, `ID_Pays` FROM `province`";
+            this._commandCollection[0].CommandText = "SELECT `ID`, `NomProvince`, `ID_Pays` FROM `province`";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -17123,455 +16706,6 @@ namespace GestionPong.DataSetPongTableAdapters {
             else {
                 this.Adapter.UpdateCommand.Parameters[3].Value = ((object)(0));
                 this.Adapter.UpdateCommand.Parameters[4].Value = ((string)(p5));
-            }
-            if ((p7.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[5].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[6].Value = ((int)(p7.Value));
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[5].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[6].Value = global::System.DBNull.Value;
-            }
-            global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
-            if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
-                        != global::System.Data.ConnectionState.Open)) {
-                this.Adapter.UpdateCommand.Connection.Open();
-            }
-            try {
-                int returnValue = this.Adapter.UpdateCommand.ExecuteNonQuery();
-                return returnValue;
-            }
-            finally {
-                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
-                    this.Adapter.UpdateCommand.Connection.Close();
-                }
-            }
-        }
-    }
-    
-    /// <summary>
-    ///Represents the connection and commands used to retrieve and save data.
-    ///</summary>
-    [global::System.ComponentModel.DesignerCategoryAttribute("code")]
-    [global::System.ComponentModel.ToolboxItem(true)]
-    [global::System.ComponentModel.DataObjectAttribute(true)]
-    [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
-        ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
-    [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-    public partial class registretransactionsTableAdapter : global::System.ComponentModel.Component {
-        
-        private global::MySql.Data.MySqlClient.MySqlDataAdapter _adapter;
-        
-        private global::MySql.Data.MySqlClient.MySqlConnection _connection;
-        
-        private global::MySql.Data.MySqlClient.MySqlTransaction _transaction;
-        
-        private global::MySql.Data.MySqlClient.MySqlCommand[] _commandCollection;
-        
-        private bool _clearBeforeFill;
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public registretransactionsTableAdapter() {
-            this.ClearBeforeFill = true;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        protected internal global::MySql.Data.MySqlClient.MySqlDataAdapter Adapter {
-            get {
-                if ((this._adapter == null)) {
-                    this.InitAdapter();
-                }
-                return this._adapter;
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        internal global::MySql.Data.MySqlClient.MySqlConnection Connection {
-            get {
-                if ((this._connection == null)) {
-                    this.InitConnection();
-                }
-                return this._connection;
-            }
-            set {
-                this._connection = value;
-                if ((this.Adapter.InsertCommand != null)) {
-                    this.Adapter.InsertCommand.Connection = value;
-                }
-                if ((this.Adapter.DeleteCommand != null)) {
-                    this.Adapter.DeleteCommand.Connection = value;
-                }
-                if ((this.Adapter.UpdateCommand != null)) {
-                    this.Adapter.UpdateCommand.Connection = value;
-                }
-                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
-                    if ((this.CommandCollection[i] != null)) {
-                        ((global::MySql.Data.MySqlClient.MySqlCommand)(this.CommandCollection[i])).Connection = value;
-                    }
-                }
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        internal global::MySql.Data.MySqlClient.MySqlTransaction Transaction {
-            get {
-                return this._transaction;
-            }
-            set {
-                this._transaction = value;
-                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
-                    this.CommandCollection[i].Transaction = this._transaction;
-                }
-                if (((this.Adapter != null) 
-                            && (this.Adapter.DeleteCommand != null))) {
-                    this.Adapter.DeleteCommand.Transaction = this._transaction;
-                }
-                if (((this.Adapter != null) 
-                            && (this.Adapter.InsertCommand != null))) {
-                    this.Adapter.InsertCommand.Transaction = this._transaction;
-                }
-                if (((this.Adapter != null) 
-                            && (this.Adapter.UpdateCommand != null))) {
-                    this.Adapter.UpdateCommand.Transaction = this._transaction;
-                }
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        protected global::MySql.Data.MySqlClient.MySqlCommand[] CommandCollection {
-            get {
-                if ((this._commandCollection == null)) {
-                    this.InitCommandCollection();
-                }
-                return this._commandCollection;
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public bool ClearBeforeFill {
-            get {
-                return this._clearBeforeFill;
-            }
-            set {
-                this._clearBeforeFill = value;
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        private void InitAdapter() {
-            this._adapter = new global::MySql.Data.MySqlClient.MySqlDataAdapter();
-            global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
-            tableMapping.SourceTable = "Table";
-            tableMapping.DataSetTable = "registretransactions";
-            tableMapping.ColumnMappings.Add("ID", "ID");
-            tableMapping.ColumnMappings.Add("DateTransaction", "DateTransaction");
-            tableMapping.ColumnMappings.Add("ID_Forfaits", "ID_Forfaits");
-            this._adapter.TableMappings.Add(tableMapping);
-            this._adapter.DeleteCommand = new global::MySql.Data.MySqlClient.MySqlCommand();
-            this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = "DELETE FROM `registretransactions` WHERE ((`ID` = @p1) AND ((@p2 = 1 AND `DateTra" +
-                "nsaction` IS NULL) OR (`DateTransaction` = @p3)) AND ((@p4 = 1 AND `ID_Forfaits`" +
-                " IS NULL) OR (`ID_Forfaits` = @p5)))";
-            this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
-            global::MySql.Data.MySqlClient.MySqlParameter param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@p1";
-            param.DbType = global::System.Data.DbType.Int32;
-            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
-            param.IsNullable = true;
-            param.SourceColumn = "ID";
-            param.SourceVersion = global::System.Data.DataRowVersion.Original;
-            this._adapter.DeleteCommand.Parameters.Add(param);
-            param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@p2";
-            param.DbType = global::System.Data.DbType.Int32;
-            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
-            param.IsNullable = true;
-            param.SourceColumn = "DateTransaction";
-            param.SourceVersion = global::System.Data.DataRowVersion.Original;
-            param.SourceColumnNullMapping = true;
-            this._adapter.DeleteCommand.Parameters.Add(param);
-            param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@p3";
-            param.DbType = global::System.Data.DbType.DateTime;
-            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.DateTime;
-            param.IsNullable = true;
-            param.SourceColumn = "DateTransaction";
-            param.SourceVersion = global::System.Data.DataRowVersion.Original;
-            this._adapter.DeleteCommand.Parameters.Add(param);
-            param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@p4";
-            param.DbType = global::System.Data.DbType.Int32;
-            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
-            param.IsNullable = true;
-            param.SourceColumn = "ID_Forfaits";
-            param.SourceVersion = global::System.Data.DataRowVersion.Original;
-            param.SourceColumnNullMapping = true;
-            this._adapter.DeleteCommand.Parameters.Add(param);
-            param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@p5";
-            param.DbType = global::System.Data.DbType.Int32;
-            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
-            param.IsNullable = true;
-            param.SourceColumn = "ID_Forfaits";
-            param.SourceVersion = global::System.Data.DataRowVersion.Original;
-            this._adapter.DeleteCommand.Parameters.Add(param);
-            this._adapter.InsertCommand = new global::MySql.Data.MySqlClient.MySqlCommand();
-            this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = "INSERT INTO `registretransactions` (`DateTransaction`, `ID_Forfaits`) VALUES (@p1" +
-                ", @p2)";
-            this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
-            param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@p1";
-            param.DbType = global::System.Data.DbType.DateTime;
-            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.DateTime;
-            param.IsNullable = true;
-            param.SourceColumn = "DateTransaction";
-            this._adapter.InsertCommand.Parameters.Add(param);
-            param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@p2";
-            param.DbType = global::System.Data.DbType.Int32;
-            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
-            param.IsNullable = true;
-            param.SourceColumn = "ID_Forfaits";
-            this._adapter.InsertCommand.Parameters.Add(param);
-            this._adapter.UpdateCommand = new global::MySql.Data.MySqlClient.MySqlCommand();
-            this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = "UPDATE `registretransactions` SET `DateTransaction` = @p1, `ID_Forfaits` = @p2 WH" +
-                "ERE ((`ID` = @p3) AND ((@p4 = 1 AND `DateTransaction` IS NULL) OR (`DateTransact" +
-                "ion` = @p5)) AND ((@p6 = 1 AND `ID_Forfaits` IS NULL) OR (`ID_Forfaits` = @p7)))" +
-                "";
-            this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
-            param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@p1";
-            param.DbType = global::System.Data.DbType.DateTime;
-            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.DateTime;
-            param.IsNullable = true;
-            param.SourceColumn = "DateTransaction";
-            this._adapter.UpdateCommand.Parameters.Add(param);
-            param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@p2";
-            param.DbType = global::System.Data.DbType.Int32;
-            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
-            param.IsNullable = true;
-            param.SourceColumn = "ID_Forfaits";
-            this._adapter.UpdateCommand.Parameters.Add(param);
-            param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@p3";
-            param.DbType = global::System.Data.DbType.Int32;
-            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
-            param.IsNullable = true;
-            param.SourceColumn = "ID";
-            param.SourceVersion = global::System.Data.DataRowVersion.Original;
-            this._adapter.UpdateCommand.Parameters.Add(param);
-            param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@p4";
-            param.DbType = global::System.Data.DbType.Int32;
-            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
-            param.IsNullable = true;
-            param.SourceColumn = "DateTransaction";
-            param.SourceVersion = global::System.Data.DataRowVersion.Original;
-            param.SourceColumnNullMapping = true;
-            this._adapter.UpdateCommand.Parameters.Add(param);
-            param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@p5";
-            param.DbType = global::System.Data.DbType.DateTime;
-            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.DateTime;
-            param.IsNullable = true;
-            param.SourceColumn = "DateTransaction";
-            param.SourceVersion = global::System.Data.DataRowVersion.Original;
-            this._adapter.UpdateCommand.Parameters.Add(param);
-            param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@p6";
-            param.DbType = global::System.Data.DbType.Int32;
-            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
-            param.IsNullable = true;
-            param.SourceColumn = "ID_Forfaits";
-            param.SourceVersion = global::System.Data.DataRowVersion.Original;
-            param.SourceColumnNullMapping = true;
-            this._adapter.UpdateCommand.Parameters.Add(param);
-            param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@p7";
-            param.DbType = global::System.Data.DbType.Int32;
-            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
-            param.IsNullable = true;
-            param.SourceColumn = "ID_Forfaits";
-            param.SourceVersion = global::System.Data.DataRowVersion.Original;
-            this._adapter.UpdateCommand.Parameters.Add(param);
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        private void InitConnection() {
-            this._connection = new global::MySql.Data.MySqlClient.MySqlConnection();
-            this._connection.ConnectionString = global::GestionPong.Properties.Settings.Default.pongConnectionString;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        private void InitCommandCollection() {
-            this._commandCollection = new global::MySql.Data.MySqlClient.MySqlCommand[1];
-            this._commandCollection[0] = new global::MySql.Data.MySqlClient.MySqlCommand();
-            this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT `ID`, `DateTransaction`, `ID_Forfaits` FROM `registretransactions`";
-            this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(DataSetPong.registretransactionsDataTable dataTable) {
-            this.Adapter.SelectCommand = this.CommandCollection[0];
-            if ((this.ClearBeforeFill == true)) {
-                dataTable.Clear();
-            }
-            int returnValue = this.Adapter.Fill(dataTable);
-            return returnValue;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual DataSetPong.registretransactionsDataTable GetData() {
-            this.Adapter.SelectCommand = this.CommandCollection[0];
-            DataSetPong.registretransactionsDataTable dataTable = new DataSetPong.registretransactionsDataTable();
-            this.Adapter.Fill(dataTable);
-            return dataTable;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(DataSetPong.registretransactionsDataTable dataTable) {
-            return this.Adapter.Update(dataTable);
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(DataSetPong dataSet) {
-            return this.Adapter.Update(dataSet, "registretransactions");
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(global::System.Data.DataRow dataRow) {
-            return this.Adapter.Update(new global::System.Data.DataRow[] {
-                        dataRow});
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(global::System.Data.DataRow[] dataRows) {
-            return this.Adapter.Update(dataRows);
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(int p1, global::System.Nullable<global::System.DateTime> p3, global::System.Nullable<int> p5) {
-            this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(p1));
-            if ((p3.HasValue == true)) {
-                this.Adapter.DeleteCommand.Parameters[1].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[2].Value = ((System.DateTime)(p3.Value));
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[1].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[2].Value = global::System.DBNull.Value;
-            }
-            if ((p5.HasValue == true)) {
-                this.Adapter.DeleteCommand.Parameters[3].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[4].Value = ((int)(p5.Value));
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[3].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[4].Value = global::System.DBNull.Value;
-            }
-            global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
-            if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
-                        != global::System.Data.ConnectionState.Open)) {
-                this.Adapter.DeleteCommand.Connection.Open();
-            }
-            try {
-                int returnValue = this.Adapter.DeleteCommand.ExecuteNonQuery();
-                return returnValue;
-            }
-            finally {
-                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
-                    this.Adapter.DeleteCommand.Connection.Close();
-                }
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(global::System.Nullable<global::System.DateTime> p1, global::System.Nullable<int> p2) {
-            if ((p1.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[0].Value = ((System.DateTime)(p1.Value));
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[0].Value = global::System.DBNull.Value;
-            }
-            if ((p2.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[1].Value = ((int)(p2.Value));
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[1].Value = global::System.DBNull.Value;
-            }
-            global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
-            if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
-                        != global::System.Data.ConnectionState.Open)) {
-                this.Adapter.InsertCommand.Connection.Open();
-            }
-            try {
-                int returnValue = this.Adapter.InsertCommand.ExecuteNonQuery();
-                return returnValue;
-            }
-            finally {
-                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
-                    this.Adapter.InsertCommand.Connection.Close();
-                }
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(global::System.Nullable<global::System.DateTime> p1, global::System.Nullable<int> p2, int p3, global::System.Nullable<global::System.DateTime> p5, global::System.Nullable<int> p7) {
-            if ((p1.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[0].Value = ((System.DateTime)(p1.Value));
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[0].Value = global::System.DBNull.Value;
-            }
-            if ((p2.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[1].Value = ((int)(p2.Value));
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[1].Value = global::System.DBNull.Value;
-            }
-            this.Adapter.UpdateCommand.Parameters[2].Value = ((int)(p3));
-            if ((p5.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[3].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[4].Value = ((System.DateTime)(p5.Value));
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[3].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[4].Value = global::System.DBNull.Value;
             }
             if ((p7.HasValue == true)) {
                 this.Adapter.UpdateCommand.Parameters[5].Value = ((object)(0));
@@ -17857,7 +16991,7 @@ namespace GestionPong.DataSetPongTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitConnection() {
             this._connection = new global::MySql.Data.MySqlClient.MySqlConnection();
-            this._connection.ConnectionString = global::GestionPong.Properties.Settings.Default.pongConnectionString;
+            this._connection.ConnectionString = global::GestionPong.Properties.Settings.Default.pongConnectionString1;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -18167,12 +17301,12 @@ namespace GestionPong.DataSetPongTableAdapters {
             tableMapping.SourceTable = "Table";
             tableMapping.DataSetTable = "statutinvitations";
             tableMapping.ColumnMappings.Add("ID", "ID");
-            tableMapping.ColumnMappings.Add("Description", "Description");
+            tableMapping.ColumnMappings.Add("DescriptionInvitation", "DescriptionInvitation");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::MySql.Data.MySqlClient.MySqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
             this._adapter.DeleteCommand.CommandText = "DELETE FROM `statutinvitations` WHERE ((`ID` = @p1) AND ((@p2 = 1 AND `Descriptio" +
-                "n` IS NULL) OR (`Description` = @p3)))";
+                "nInvitation` IS NULL) OR (`DescriptionInvitation` = @p3)))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             global::MySql.Data.MySqlClient.MySqlParameter param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p1";
@@ -18187,7 +17321,7 @@ namespace GestionPong.DataSetPongTableAdapters {
             param.DbType = global::System.Data.DbType.Int32;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
             param.IsNullable = true;
-            param.SourceColumn = "Description";
+            param.SourceColumn = "DescriptionInvitation";
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
             param.SourceColumnNullMapping = true;
             this._adapter.DeleteCommand.Parameters.Add(param);
@@ -18196,31 +17330,32 @@ namespace GestionPong.DataSetPongTableAdapters {
             param.DbType = global::System.Data.DbType.String;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
             param.IsNullable = true;
-            param.SourceColumn = "Description";
+            param.SourceColumn = "DescriptionInvitation";
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
             this._adapter.DeleteCommand.Parameters.Add(param);
             this._adapter.InsertCommand = new global::MySql.Data.MySqlClient.MySqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = "INSERT INTO `statutinvitations` (`Description`) VALUES (@p1)";
+            this._adapter.InsertCommand.CommandText = "INSERT INTO `statutinvitations` (`DescriptionInvitation`) VALUES (@p1)";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p1";
             param.DbType = global::System.Data.DbType.String;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
             param.IsNullable = true;
-            param.SourceColumn = "Description";
+            param.SourceColumn = "DescriptionInvitation";
             this._adapter.InsertCommand.Parameters.Add(param);
             this._adapter.UpdateCommand = new global::MySql.Data.MySqlClient.MySqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = "UPDATE `statutinvitations` SET `Description` = @p1 WHERE ((`ID` = @p2) AND ((@p3 " +
-                "= 1 AND `Description` IS NULL) OR (`Description` = @p4)))";
+            this._adapter.UpdateCommand.CommandText = "UPDATE `statutinvitations` SET `DescriptionInvitation` = @p1 WHERE ((`ID` = @p2) " +
+                "AND ((@p3 = 1 AND `DescriptionInvitation` IS NULL) OR (`DescriptionInvitation` =" +
+                " @p4)))";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p1";
             param.DbType = global::System.Data.DbType.String;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
             param.IsNullable = true;
-            param.SourceColumn = "Description";
+            param.SourceColumn = "DescriptionInvitation";
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p2";
@@ -18235,7 +17370,7 @@ namespace GestionPong.DataSetPongTableAdapters {
             param.DbType = global::System.Data.DbType.Int32;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
             param.IsNullable = true;
-            param.SourceColumn = "Description";
+            param.SourceColumn = "DescriptionInvitation";
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
             param.SourceColumnNullMapping = true;
             this._adapter.UpdateCommand.Parameters.Add(param);
@@ -18244,7 +17379,7 @@ namespace GestionPong.DataSetPongTableAdapters {
             param.DbType = global::System.Data.DbType.String;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
             param.IsNullable = true;
-            param.SourceColumn = "Description";
+            param.SourceColumn = "DescriptionInvitation";
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
             this._adapter.UpdateCommand.Parameters.Add(param);
         }
@@ -18253,7 +17388,7 @@ namespace GestionPong.DataSetPongTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitConnection() {
             this._connection = new global::MySql.Data.MySqlClient.MySqlConnection();
-            this._connection.ConnectionString = global::GestionPong.Properties.Settings.Default.pongConnectionString;
+            this._connection.ConnectionString = global::GestionPong.Properties.Settings.Default.pongConnectionString1;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -18262,7 +17397,7 @@ namespace GestionPong.DataSetPongTableAdapters {
             this._commandCollection = new global::MySql.Data.MySqlClient.MySqlCommand[1];
             this._commandCollection[0] = new global::MySql.Data.MySqlClient.MySqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT `ID`, `Description` FROM `statutinvitations`";
+            this._commandCollection[0].CommandText = "SELECT `ID`, `DescriptionInvitation` FROM `statutinvitations`";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -18535,13 +17670,14 @@ namespace GestionPong.DataSetPongTableAdapters {
             tableMapping.SourceTable = "Table";
             tableMapping.DataSetTable = "taxes";
             tableMapping.ColumnMappings.Add("ID", "ID");
-            tableMapping.ColumnMappings.Add("Description", "Description");
+            tableMapping.ColumnMappings.Add("DescriptionTaxe", "DescriptionTaxe");
             tableMapping.ColumnMappings.Add("Taxe", "Taxe");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::MySql.Data.MySqlClient.MySqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = "DELETE FROM `taxes` WHERE ((`ID` = @p1) AND ((@p2 = 1 AND `Description` IS NULL) " +
-                "OR (`Description` = @p3)) AND ((@p4 = 1 AND `Taxe` IS NULL) OR (`Taxe` = @p5)))";
+            this._adapter.DeleteCommand.CommandText = "DELETE FROM `taxes` WHERE ((`ID` = @p1) AND ((@p2 = 1 AND `DescriptionTaxe` IS NU" +
+                "LL) OR (`DescriptionTaxe` = @p3)) AND ((@p4 = 1 AND `Taxe` IS NULL) OR (`Taxe` =" +
+                " @p5)))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             global::MySql.Data.MySqlClient.MySqlParameter param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p1";
@@ -18556,7 +17692,7 @@ namespace GestionPong.DataSetPongTableAdapters {
             param.DbType = global::System.Data.DbType.Int32;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
             param.IsNullable = true;
-            param.SourceColumn = "Description";
+            param.SourceColumn = "DescriptionTaxe";
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
             param.SourceColumnNullMapping = true;
             this._adapter.DeleteCommand.Parameters.Add(param);
@@ -18565,7 +17701,7 @@ namespace GestionPong.DataSetPongTableAdapters {
             param.DbType = global::System.Data.DbType.String;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
             param.IsNullable = true;
-            param.SourceColumn = "Description";
+            param.SourceColumn = "DescriptionTaxe";
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
             this._adapter.DeleteCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
@@ -18587,14 +17723,14 @@ namespace GestionPong.DataSetPongTableAdapters {
             this._adapter.DeleteCommand.Parameters.Add(param);
             this._adapter.InsertCommand = new global::MySql.Data.MySqlClient.MySqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = "INSERT INTO `taxes` (`Description`, `Taxe`) VALUES (@p1, @p2)";
+            this._adapter.InsertCommand.CommandText = "INSERT INTO `taxes` (`DescriptionTaxe`, `Taxe`) VALUES (@p1, @p2)";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p1";
             param.DbType = global::System.Data.DbType.String;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
             param.IsNullable = true;
-            param.SourceColumn = "Description";
+            param.SourceColumn = "DescriptionTaxe";
             this._adapter.InsertCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p2";
@@ -18605,16 +17741,16 @@ namespace GestionPong.DataSetPongTableAdapters {
             this._adapter.InsertCommand.Parameters.Add(param);
             this._adapter.UpdateCommand = new global::MySql.Data.MySqlClient.MySqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = "UPDATE `taxes` SET `Description` = @p1, `Taxe` = @p2 WHERE ((`ID` = @p3) AND ((@p" +
-                "4 = 1 AND `Description` IS NULL) OR (`Description` = @p5)) AND ((@p6 = 1 AND `Ta" +
-                "xe` IS NULL) OR (`Taxe` = @p7)))";
+            this._adapter.UpdateCommand.CommandText = "UPDATE `taxes` SET `DescriptionTaxe` = @p1, `Taxe` = @p2 WHERE ((`ID` = @p3) AND " +
+                "((@p4 = 1 AND `DescriptionTaxe` IS NULL) OR (`DescriptionTaxe` = @p5)) AND ((@p6" +
+                " = 1 AND `Taxe` IS NULL) OR (`Taxe` = @p7)))";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p1";
             param.DbType = global::System.Data.DbType.String;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
             param.IsNullable = true;
-            param.SourceColumn = "Description";
+            param.SourceColumn = "DescriptionTaxe";
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p2";
@@ -18636,7 +17772,7 @@ namespace GestionPong.DataSetPongTableAdapters {
             param.DbType = global::System.Data.DbType.Int32;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
             param.IsNullable = true;
-            param.SourceColumn = "Description";
+            param.SourceColumn = "DescriptionTaxe";
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
             param.SourceColumnNullMapping = true;
             this._adapter.UpdateCommand.Parameters.Add(param);
@@ -18645,7 +17781,7 @@ namespace GestionPong.DataSetPongTableAdapters {
             param.DbType = global::System.Data.DbType.String;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
             param.IsNullable = true;
-            param.SourceColumn = "Description";
+            param.SourceColumn = "DescriptionTaxe";
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
@@ -18671,7 +17807,7 @@ namespace GestionPong.DataSetPongTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitConnection() {
             this._connection = new global::MySql.Data.MySqlClient.MySqlConnection();
-            this._connection.ConnectionString = global::GestionPong.Properties.Settings.Default.pongConnectionString;
+            this._connection.ConnectionString = global::GestionPong.Properties.Settings.Default.pongConnectionString1;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -18680,7 +17816,7 @@ namespace GestionPong.DataSetPongTableAdapters {
             this._commandCollection = new global::MySql.Data.MySqlClient.MySqlCommand[1];
             this._commandCollection[0] = new global::MySql.Data.MySqlClient.MySqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT `ID`, `Description`, `Taxe` FROM `taxes`";
+            this._commandCollection[0].CommandText = "SELECT `ID`, `DescriptionTaxe`, `Taxe` FROM `taxes`";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -18981,14 +18117,14 @@ namespace GestionPong.DataSetPongTableAdapters {
             tableMapping.SourceTable = "Table";
             tableMapping.DataSetTable = "tournois";
             tableMapping.ColumnMappings.Add("ID", "ID");
-            tableMapping.ColumnMappings.Add("Premium", "Premium");
+            tableMapping.ColumnMappings.Add("PremiumTournoi", "PremiumTournoi");
             tableMapping.ColumnMappings.Add("NombreJoueurs", "NombreJoueurs");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::MySql.Data.MySqlClient.MySqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = "DELETE FROM `tournois` WHERE ((`ID` = @p1) AND ((@p2 = 1 AND `Premium` IS NULL) O" +
-                "R (`Premium` = @p3)) AND ((@p4 = 1 AND `NombreJoueurs` IS NULL) OR (`NombreJoueu" +
-                "rs` = @p5)))";
+            this._adapter.DeleteCommand.CommandText = "DELETE FROM `tournois` WHERE ((`ID` = @p1) AND ((@p2 = 1 AND `PremiumTournoi` IS " +
+                "NULL) OR (`PremiumTournoi` = @p3)) AND ((@p4 = 1 AND `NombreJoueurs` IS NULL) OR" +
+                " (`NombreJoueurs` = @p5)))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             global::MySql.Data.MySqlClient.MySqlParameter param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p1";
@@ -19003,7 +18139,7 @@ namespace GestionPong.DataSetPongTableAdapters {
             param.DbType = global::System.Data.DbType.Int32;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
             param.IsNullable = true;
-            param.SourceColumn = "Premium";
+            param.SourceColumn = "PremiumTournoi";
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
             param.SourceColumnNullMapping = true;
             this._adapter.DeleteCommand.Parameters.Add(param);
@@ -19012,7 +18148,7 @@ namespace GestionPong.DataSetPongTableAdapters {
             param.DbType = global::System.Data.DbType.String;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
             param.IsNullable = true;
-            param.SourceColumn = "Premium";
+            param.SourceColumn = "PremiumTournoi";
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
             this._adapter.DeleteCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
@@ -19034,14 +18170,14 @@ namespace GestionPong.DataSetPongTableAdapters {
             this._adapter.DeleteCommand.Parameters.Add(param);
             this._adapter.InsertCommand = new global::MySql.Data.MySqlClient.MySqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = "INSERT INTO `tournois` (`Premium`, `NombreJoueurs`) VALUES (@p1, @p2)";
+            this._adapter.InsertCommand.CommandText = "INSERT INTO `tournois` (`PremiumTournoi`, `NombreJoueurs`) VALUES (@p1, @p2)";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p1";
             param.DbType = global::System.Data.DbType.String;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
             param.IsNullable = true;
-            param.SourceColumn = "Premium";
+            param.SourceColumn = "PremiumTournoi";
             this._adapter.InsertCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p2";
@@ -19052,16 +18188,16 @@ namespace GestionPong.DataSetPongTableAdapters {
             this._adapter.InsertCommand.Parameters.Add(param);
             this._adapter.UpdateCommand = new global::MySql.Data.MySqlClient.MySqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = "UPDATE `tournois` SET `Premium` = @p1, `NombreJoueurs` = @p2 WHERE ((`ID` = @p3) " +
-                "AND ((@p4 = 1 AND `Premium` IS NULL) OR (`Premium` = @p5)) AND ((@p6 = 1 AND `No" +
-                "mbreJoueurs` IS NULL) OR (`NombreJoueurs` = @p7)))";
+            this._adapter.UpdateCommand.CommandText = "UPDATE `tournois` SET `PremiumTournoi` = @p1, `NombreJoueurs` = @p2 WHERE ((`ID` " +
+                "= @p3) AND ((@p4 = 1 AND `PremiumTournoi` IS NULL) OR (`PremiumTournoi` = @p5)) " +
+                "AND ((@p6 = 1 AND `NombreJoueurs` IS NULL) OR (`NombreJoueurs` = @p7)))";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p1";
             param.DbType = global::System.Data.DbType.String;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
             param.IsNullable = true;
-            param.SourceColumn = "Premium";
+            param.SourceColumn = "PremiumTournoi";
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p2";
@@ -19083,7 +18219,7 @@ namespace GestionPong.DataSetPongTableAdapters {
             param.DbType = global::System.Data.DbType.Int32;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
             param.IsNullable = true;
-            param.SourceColumn = "Premium";
+            param.SourceColumn = "PremiumTournoi";
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
             param.SourceColumnNullMapping = true;
             this._adapter.UpdateCommand.Parameters.Add(param);
@@ -19092,7 +18228,7 @@ namespace GestionPong.DataSetPongTableAdapters {
             param.DbType = global::System.Data.DbType.String;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
             param.IsNullable = true;
-            param.SourceColumn = "Premium";
+            param.SourceColumn = "PremiumTournoi";
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
@@ -19118,7 +18254,7 @@ namespace GestionPong.DataSetPongTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitConnection() {
             this._connection = new global::MySql.Data.MySqlClient.MySqlConnection();
-            this._connection.ConnectionString = global::GestionPong.Properties.Settings.Default.pongConnectionString;
+            this._connection.ConnectionString = global::GestionPong.Properties.Settings.Default.pongConnectionString1;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -19127,7 +18263,7 @@ namespace GestionPong.DataSetPongTableAdapters {
             this._commandCollection = new global::MySql.Data.MySqlClient.MySqlCommand[1];
             this._commandCollection[0] = new global::MySql.Data.MySqlClient.MySqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT `ID`, `Premium`, `NombreJoueurs` FROM `tournois`";
+            this._commandCollection[0].CommandText = "SELECT `ID`, `PremiumTournoi`, `NombreJoueurs` FROM `tournois`";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -19427,20 +18563,22 @@ namespace GestionPong.DataSetPongTableAdapters {
             global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
             tableMapping.SourceTable = "Table";
             tableMapping.DataSetTable = "transactions";
+            tableMapping.ColumnMappings.Add("ID", "ID");
             tableMapping.ColumnMappings.Add("ID_Joueurs", "ID_Joueurs");
-            tableMapping.ColumnMappings.Add("ID_RegistreTransactions", "ID_RegistreTransactions");
+            tableMapping.ColumnMappings.Add("ID_Forfaits", "ID_Forfaits");
+            tableMapping.ColumnMappings.Add("DateTransaction", "DateTransaction");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::MySql.Data.MySqlClient.MySqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = "DELETE FROM `transactions` WHERE ((`ID_Joueurs` = @p1) AND (`ID_RegistreTransacti" +
-                "ons` = @p2))";
+            this._adapter.DeleteCommand.CommandText = "DELETE FROM `transactions` WHERE ((`ID` = @p1) AND (`ID_Joueurs` = @p2) AND (`ID_" +
+                "Forfaits` = @p3) AND (`DateTransaction` = @p4))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             global::MySql.Data.MySqlClient.MySqlParameter param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p1";
             param.DbType = global::System.Data.DbType.Int32;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
             param.IsNullable = true;
-            param.SourceColumn = "ID_Joueurs";
+            param.SourceColumn = "ID";
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
             this._adapter.DeleteCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
@@ -19448,13 +18586,29 @@ namespace GestionPong.DataSetPongTableAdapters {
             param.DbType = global::System.Data.DbType.Int32;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
             param.IsNullable = true;
-            param.SourceColumn = "ID_RegistreTransactions";
+            param.SourceColumn = "ID_Joueurs";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            this._adapter.DeleteCommand.Parameters.Add(param);
+            param = new global::MySql.Data.MySqlClient.MySqlParameter();
+            param.ParameterName = "@p3";
+            param.DbType = global::System.Data.DbType.Int32;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
+            param.IsNullable = true;
+            param.SourceColumn = "ID_Forfaits";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            this._adapter.DeleteCommand.Parameters.Add(param);
+            param = new global::MySql.Data.MySqlClient.MySqlParameter();
+            param.ParameterName = "@p4";
+            param.DbType = global::System.Data.DbType.DateTime;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.DateTime;
+            param.IsNullable = true;
+            param.SourceColumn = "DateTransaction";
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
             this._adapter.DeleteCommand.Parameters.Add(param);
             this._adapter.InsertCommand = new global::MySql.Data.MySqlClient.MySqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = "INSERT INTO `transactions` (`ID_Joueurs`, `ID_RegistreTransactions`) VALUES (@p1," +
-                " @p2)";
+            this._adapter.InsertCommand.CommandText = "INSERT INTO `transactions` (`ID_Joueurs`, `ID_Forfaits`, `DateTransaction`) VALUE" +
+                "S (@p1, @p2, @p3)";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p1";
@@ -19468,12 +18622,20 @@ namespace GestionPong.DataSetPongTableAdapters {
             param.DbType = global::System.Data.DbType.Int32;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
             param.IsNullable = true;
-            param.SourceColumn = "ID_RegistreTransactions";
+            param.SourceColumn = "ID_Forfaits";
+            this._adapter.InsertCommand.Parameters.Add(param);
+            param = new global::MySql.Data.MySqlClient.MySqlParameter();
+            param.ParameterName = "@p3";
+            param.DbType = global::System.Data.DbType.DateTime;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.DateTime;
+            param.IsNullable = true;
+            param.SourceColumn = "DateTransaction";
             this._adapter.InsertCommand.Parameters.Add(param);
             this._adapter.UpdateCommand = new global::MySql.Data.MySqlClient.MySqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = "UPDATE `transactions` SET `ID_Joueurs` = @p1, `ID_RegistreTransactions` = @p2 WHE" +
-                "RE ((`ID_Joueurs` = @p3) AND (`ID_RegistreTransactions` = @p4))";
+            this._adapter.UpdateCommand.CommandText = "UPDATE `transactions` SET `ID_Joueurs` = @p1, `ID_Forfaits` = @p2, `DateTransacti" +
+                "on` = @p3 WHERE ((`ID` = @p4) AND (`ID_Joueurs` = @p5) AND (`ID_Forfaits` = @p6)" +
+                " AND (`DateTransaction` = @p7))";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p1";
@@ -19487,10 +18649,25 @@ namespace GestionPong.DataSetPongTableAdapters {
             param.DbType = global::System.Data.DbType.Int32;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
             param.IsNullable = true;
-            param.SourceColumn = "ID_RegistreTransactions";
+            param.SourceColumn = "ID_Forfaits";
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p3";
+            param.DbType = global::System.Data.DbType.DateTime;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.DateTime;
+            param.IsNullable = true;
+            param.SourceColumn = "DateTransaction";
+            this._adapter.UpdateCommand.Parameters.Add(param);
+            param = new global::MySql.Data.MySqlClient.MySqlParameter();
+            param.ParameterName = "@p4";
+            param.DbType = global::System.Data.DbType.Int32;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
+            param.IsNullable = true;
+            param.SourceColumn = "ID";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            this._adapter.UpdateCommand.Parameters.Add(param);
+            param = new global::MySql.Data.MySqlClient.MySqlParameter();
+            param.ParameterName = "@p5";
             param.DbType = global::System.Data.DbType.Int32;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
             param.IsNullable = true;
@@ -19498,11 +18675,19 @@ namespace GestionPong.DataSetPongTableAdapters {
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@p4";
+            param.ParameterName = "@p6";
             param.DbType = global::System.Data.DbType.Int32;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
             param.IsNullable = true;
-            param.SourceColumn = "ID_RegistreTransactions";
+            param.SourceColumn = "ID_Forfaits";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            this._adapter.UpdateCommand.Parameters.Add(param);
+            param = new global::MySql.Data.MySqlClient.MySqlParameter();
+            param.ParameterName = "@p7";
+            param.DbType = global::System.Data.DbType.DateTime;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.DateTime;
+            param.IsNullable = true;
+            param.SourceColumn = "DateTransaction";
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
             this._adapter.UpdateCommand.Parameters.Add(param);
         }
@@ -19511,7 +18696,7 @@ namespace GestionPong.DataSetPongTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitConnection() {
             this._connection = new global::MySql.Data.MySqlClient.MySqlConnection();
-            this._connection.ConnectionString = global::GestionPong.Properties.Settings.Default.pongConnectionString;
+            this._connection.ConnectionString = global::GestionPong.Properties.Settings.Default.pongConnectionString1;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -19520,7 +18705,7 @@ namespace GestionPong.DataSetPongTableAdapters {
             this._commandCollection = new global::MySql.Data.MySqlClient.MySqlCommand[1];
             this._commandCollection[0] = new global::MySql.Data.MySqlClient.MySqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT `ID_Joueurs`, `ID_RegistreTransactions` FROM `transactions`";
+            this._commandCollection[0].CommandText = "SELECT `ID`, `ID_Joueurs`, `ID_Forfaits`, `DateTransaction` FROM `transactions`";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -19581,9 +18766,11 @@ namespace GestionPong.DataSetPongTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(int p1, int p2) {
+        public virtual int Delete(int p1, int p2, int p3, System.DateTime p4) {
             this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(p1));
             this.Adapter.DeleteCommand.Parameters[1].Value = ((int)(p2));
+            this.Adapter.DeleteCommand.Parameters[2].Value = ((int)(p3));
+            this.Adapter.DeleteCommand.Parameters[3].Value = ((System.DateTime)(p4));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
             if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -19604,9 +18791,10 @@ namespace GestionPong.DataSetPongTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(int p1, int p2) {
+        public virtual int Insert(int p1, int p2, System.DateTime p3) {
             this.Adapter.InsertCommand.Parameters[0].Value = ((int)(p1));
             this.Adapter.InsertCommand.Parameters[1].Value = ((int)(p2));
+            this.Adapter.InsertCommand.Parameters[2].Value = ((System.DateTime)(p3));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -19627,11 +18815,14 @@ namespace GestionPong.DataSetPongTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(int p1, int p2, int p3, int p4) {
+        public virtual int Update(int p1, int p2, System.DateTime p3, int p4, int p5, int p6, System.DateTime p7) {
             this.Adapter.UpdateCommand.Parameters[0].Value = ((int)(p1));
             this.Adapter.UpdateCommand.Parameters[1].Value = ((int)(p2));
-            this.Adapter.UpdateCommand.Parameters[2].Value = ((int)(p3));
+            this.Adapter.UpdateCommand.Parameters[2].Value = ((System.DateTime)(p3));
             this.Adapter.UpdateCommand.Parameters[3].Value = ((int)(p4));
+            this.Adapter.UpdateCommand.Parameters[4].Value = ((int)(p5));
+            this.Adapter.UpdateCommand.Parameters[5].Value = ((int)(p6));
+            this.Adapter.UpdateCommand.Parameters[6].Value = ((System.DateTime)(p7));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -19646,14 +18837,6 @@ namespace GestionPong.DataSetPongTableAdapters {
                     this.Adapter.UpdateCommand.Connection.Close();
                 }
             }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(int p3, int p4) {
-            return this.Update(p3, p4, p3, p4);
         }
     }
     
@@ -19779,13 +18962,14 @@ namespace GestionPong.DataSetPongTableAdapters {
             tableMapping.SourceTable = "Table";
             tableMapping.DataSetTable = "ville";
             tableMapping.ColumnMappings.Add("ID", "ID");
-            tableMapping.ColumnMappings.Add("Nom", "Nom");
+            tableMapping.ColumnMappings.Add("NomVille", "NomVille");
             tableMapping.ColumnMappings.Add("ID_Province", "ID_Province");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::MySql.Data.MySqlClient.MySqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = "DELETE FROM `ville` WHERE ((`ID` = @p1) AND ((@p2 = 1 AND `Nom` IS NULL) OR (`Nom" +
-                "` = @p3)) AND ((@p4 = 1 AND `ID_Province` IS NULL) OR (`ID_Province` = @p5)))";
+            this._adapter.DeleteCommand.CommandText = "DELETE FROM `ville` WHERE ((`ID` = @p1) AND ((@p2 = 1 AND `NomVille` IS NULL) OR " +
+                "(`NomVille` = @p3)) AND ((@p4 = 1 AND `ID_Province` IS NULL) OR (`ID_Province` =" +
+                " @p5)))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             global::MySql.Data.MySqlClient.MySqlParameter param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p1";
@@ -19800,7 +18984,7 @@ namespace GestionPong.DataSetPongTableAdapters {
             param.DbType = global::System.Data.DbType.Int32;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
             param.IsNullable = true;
-            param.SourceColumn = "Nom";
+            param.SourceColumn = "NomVille";
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
             param.SourceColumnNullMapping = true;
             this._adapter.DeleteCommand.Parameters.Add(param);
@@ -19809,7 +18993,7 @@ namespace GestionPong.DataSetPongTableAdapters {
             param.DbType = global::System.Data.DbType.String;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
             param.IsNullable = true;
-            param.SourceColumn = "Nom";
+            param.SourceColumn = "NomVille";
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
             this._adapter.DeleteCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
@@ -19831,14 +19015,14 @@ namespace GestionPong.DataSetPongTableAdapters {
             this._adapter.DeleteCommand.Parameters.Add(param);
             this._adapter.InsertCommand = new global::MySql.Data.MySqlClient.MySqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = "INSERT INTO `ville` (`Nom`, `ID_Province`) VALUES (@p1, @p2)";
+            this._adapter.InsertCommand.CommandText = "INSERT INTO `ville` (`NomVille`, `ID_Province`) VALUES (@p1, @p2)";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p1";
             param.DbType = global::System.Data.DbType.String;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
             param.IsNullable = true;
-            param.SourceColumn = "Nom";
+            param.SourceColumn = "NomVille";
             this._adapter.InsertCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p2";
@@ -19849,16 +19033,16 @@ namespace GestionPong.DataSetPongTableAdapters {
             this._adapter.InsertCommand.Parameters.Add(param);
             this._adapter.UpdateCommand = new global::MySql.Data.MySqlClient.MySqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = "UPDATE `ville` SET `Nom` = @p1, `ID_Province` = @p2 WHERE ((`ID` = @p3) AND ((@p4" +
-                " = 1 AND `Nom` IS NULL) OR (`Nom` = @p5)) AND ((@p6 = 1 AND `ID_Province` IS NUL" +
-                "L) OR (`ID_Province` = @p7)))";
+            this._adapter.UpdateCommand.CommandText = "UPDATE `ville` SET `NomVille` = @p1, `ID_Province` = @p2 WHERE ((`ID` = @p3) AND " +
+                "((@p4 = 1 AND `NomVille` IS NULL) OR (`NomVille` = @p5)) AND ((@p6 = 1 AND `ID_P" +
+                "rovince` IS NULL) OR (`ID_Province` = @p7)))";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p1";
             param.DbType = global::System.Data.DbType.String;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
             param.IsNullable = true;
-            param.SourceColumn = "Nom";
+            param.SourceColumn = "NomVille";
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p2";
@@ -19880,7 +19064,7 @@ namespace GestionPong.DataSetPongTableAdapters {
             param.DbType = global::System.Data.DbType.Int32;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
             param.IsNullable = true;
-            param.SourceColumn = "Nom";
+            param.SourceColumn = "NomVille";
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
             param.SourceColumnNullMapping = true;
             this._adapter.UpdateCommand.Parameters.Add(param);
@@ -19889,7 +19073,7 @@ namespace GestionPong.DataSetPongTableAdapters {
             param.DbType = global::System.Data.DbType.String;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
             param.IsNullable = true;
-            param.SourceColumn = "Nom";
+            param.SourceColumn = "NomVille";
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
@@ -19915,7 +19099,7 @@ namespace GestionPong.DataSetPongTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitConnection() {
             this._connection = new global::MySql.Data.MySqlClient.MySqlConnection();
-            this._connection.ConnectionString = global::GestionPong.Properties.Settings.Default.pongConnectionString;
+            this._connection.ConnectionString = global::GestionPong.Properties.Settings.Default.pongConnectionString1;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -19924,7 +19108,7 @@ namespace GestionPong.DataSetPongTableAdapters {
             this._commandCollection = new global::MySql.Data.MySqlClient.MySqlCommand[1];
             this._commandCollection[0] = new global::MySql.Data.MySqlClient.MySqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT `ID`, `Nom`, `ID_Province` FROM `ville`";
+            this._commandCollection[0].CommandText = "SELECT `ID`, `NomVille`, `ID_Province` FROM `ville`";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -20141,8 +19325,6 @@ namespace GestionPong.DataSetPongTableAdapters {
         
         private provinceTableAdapter _provinceTableAdapter;
         
-        private registretransactionsTableAdapter _registretransactionsTableAdapter;
-        
         private rondesTableAdapter _rondesTableAdapter;
         
         private statutinvitationsTableAdapter _statutinvitationsTableAdapter;
@@ -20357,20 +19539,6 @@ namespace GestionPong.DataSetPongTableAdapters {
         [global::System.ComponentModel.EditorAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterManagerPropertyEditor, Microso" +
             "ft.VSDesigner, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3" +
             "a", "System.Drawing.Design.UITypeEditor")]
-        public registretransactionsTableAdapter registretransactionsTableAdapter {
-            get {
-                return this._registretransactionsTableAdapter;
-            }
-            set {
-                this._registretransactionsTableAdapter = value;
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.EditorAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterManagerPropertyEditor, Microso" +
-            "ft.VSDesigner, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3" +
-            "a", "System.Drawing.Design.UITypeEditor")]
         public rondesTableAdapter rondesTableAdapter {
             get {
                 return this._rondesTableAdapter;
@@ -20521,10 +19689,6 @@ namespace GestionPong.DataSetPongTableAdapters {
                             && (this._provinceTableAdapter.Connection != null))) {
                     return this._provinceTableAdapter.Connection;
                 }
-                if (((this._registretransactionsTableAdapter != null) 
-                            && (this._registretransactionsTableAdapter.Connection != null))) {
-                    return this._registretransactionsTableAdapter.Connection;
-                }
                 if (((this._rondesTableAdapter != null) 
                             && (this._rondesTableAdapter.Connection != null))) {
                     return this._rondesTableAdapter.Connection;
@@ -20601,9 +19765,6 @@ namespace GestionPong.DataSetPongTableAdapters {
                 if ((this._provinceTableAdapter != null)) {
                     count = (count + 1);
                 }
-                if ((this._registretransactionsTableAdapter != null)) {
-                    count = (count + 1);
-                }
                 if ((this._rondesTableAdapter != null)) {
                     count = (count + 1);
                 }
@@ -20669,15 +19830,6 @@ namespace GestionPong.DataSetPongTableAdapters {
                     allChangedRows.AddRange(updatedRows);
                 }
             }
-            if ((this._forfaitsTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.forfaits.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
-                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
-                if (((updatedRows != null) 
-                            && (0 < updatedRows.Length))) {
-                    result = (result + this._forfaitsTableAdapter.Update(updatedRows));
-                    allChangedRows.AddRange(updatedRows);
-                }
-            }
             if ((this._marquecreditTableAdapter != null)) {
                 global::System.Data.DataRow[] updatedRows = dataSet.marquecredit.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
                 updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
@@ -20714,21 +19866,21 @@ namespace GestionPong.DataSetPongTableAdapters {
                     allChangedRows.AddRange(updatedRows);
                 }
             }
+            if ((this._forfaitsTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.forfaits.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
+                if (((updatedRows != null) 
+                            && (0 < updatedRows.Length))) {
+                    result = (result + this._forfaitsTableAdapter.Update(updatedRows));
+                    allChangedRows.AddRange(updatedRows);
+                }
+            }
             if ((this._joueursTableAdapter != null)) {
                 global::System.Data.DataRow[] updatedRows = dataSet.joueurs.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
                 updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
                 if (((updatedRows != null) 
                             && (0 < updatedRows.Length))) {
                     result = (result + this._joueursTableAdapter.Update(updatedRows));
-                    allChangedRows.AddRange(updatedRows);
-                }
-            }
-            if ((this._registretransactionsTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.registretransactions.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
-                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
-                if (((updatedRows != null) 
-                            && (0 < updatedRows.Length))) {
-                    result = (result + this._registretransactionsTableAdapter.Update(updatedRows));
                     allChangedRows.AddRange(updatedRows);
                 }
             }
@@ -20855,14 +20007,6 @@ namespace GestionPong.DataSetPongTableAdapters {
                     allAddedRows.AddRange(addedRows);
                 }
             }
-            if ((this._forfaitsTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.forfaits.Select(null, null, global::System.Data.DataViewRowState.Added);
-                if (((addedRows != null) 
-                            && (0 < addedRows.Length))) {
-                    result = (result + this._forfaitsTableAdapter.Update(addedRows));
-                    allAddedRows.AddRange(addedRows);
-                }
-            }
             if ((this._marquecreditTableAdapter != null)) {
                 global::System.Data.DataRow[] addedRows = dataSet.marquecredit.Select(null, null, global::System.Data.DataViewRowState.Added);
                 if (((addedRows != null) 
@@ -20895,19 +20039,19 @@ namespace GestionPong.DataSetPongTableAdapters {
                     allAddedRows.AddRange(addedRows);
                 }
             }
+            if ((this._forfaitsTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.forfaits.Select(null, null, global::System.Data.DataViewRowState.Added);
+                if (((addedRows != null) 
+                            && (0 < addedRows.Length))) {
+                    result = (result + this._forfaitsTableAdapter.Update(addedRows));
+                    allAddedRows.AddRange(addedRows);
+                }
+            }
             if ((this._joueursTableAdapter != null)) {
                 global::System.Data.DataRow[] addedRows = dataSet.joueurs.Select(null, null, global::System.Data.DataViewRowState.Added);
                 if (((addedRows != null) 
                             && (0 < addedRows.Length))) {
                     result = (result + this._joueursTableAdapter.Update(addedRows));
-                    allAddedRows.AddRange(addedRows);
-                }
-            }
-            if ((this._registretransactionsTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.registretransactions.Select(null, null, global::System.Data.DataViewRowState.Added);
-                if (((addedRows != null) 
-                            && (0 < addedRows.Length))) {
-                    result = (result + this._registretransactionsTableAdapter.Update(addedRows));
                     allAddedRows.AddRange(addedRows);
                 }
             }
@@ -21065,19 +20209,19 @@ namespace GestionPong.DataSetPongTableAdapters {
                     allChangedRows.AddRange(deletedRows);
                 }
             }
-            if ((this._registretransactionsTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.registretransactions.Select(null, null, global::System.Data.DataViewRowState.Deleted);
-                if (((deletedRows != null) 
-                            && (0 < deletedRows.Length))) {
-                    result = (result + this._registretransactionsTableAdapter.Update(deletedRows));
-                    allChangedRows.AddRange(deletedRows);
-                }
-            }
             if ((this._joueursTableAdapter != null)) {
                 global::System.Data.DataRow[] deletedRows = dataSet.joueurs.Select(null, null, global::System.Data.DataViewRowState.Deleted);
                 if (((deletedRows != null) 
                             && (0 < deletedRows.Length))) {
                     result = (result + this._joueursTableAdapter.Update(deletedRows));
+                    allChangedRows.AddRange(deletedRows);
+                }
+            }
+            if ((this._forfaitsTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.forfaits.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+                if (((deletedRows != null) 
+                            && (0 < deletedRows.Length))) {
+                    result = (result + this._forfaitsTableAdapter.Update(deletedRows));
                     allChangedRows.AddRange(deletedRows);
                 }
             }
@@ -21110,14 +20254,6 @@ namespace GestionPong.DataSetPongTableAdapters {
                 if (((deletedRows != null) 
                             && (0 < deletedRows.Length))) {
                     result = (result + this._marquecreditTableAdapter.Update(deletedRows));
-                    allChangedRows.AddRange(deletedRows);
-                }
-            }
-            if ((this._forfaitsTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.forfaits.Select(null, null, global::System.Data.DataViewRowState.Deleted);
-                if (((deletedRows != null) 
-                            && (0 < deletedRows.Length))) {
-                    result = (result + this._forfaitsTableAdapter.Update(deletedRows));
                     allChangedRows.AddRange(deletedRows);
                 }
             }
@@ -21254,11 +20390,6 @@ namespace GestionPong.DataSetPongTableAdapters {
             }
             if (((this._provinceTableAdapter != null) 
                         && (this.MatchTableAdapterConnection(this._provinceTableAdapter.Connection) == false))) {
-                throw new global::System.ArgumentException("Tous les TableAdapters managés par un TableAdapterManager doivent utiliser la mêm" +
-                        "e chaîne de connexion.");
-            }
-            if (((this._registretransactionsTableAdapter != null) 
-                        && (this.MatchTableAdapterConnection(this._registretransactionsTableAdapter.Connection) == false))) {
                 throw new global::System.ArgumentException("Tous les TableAdapters managés par un TableAdapterManager doivent utiliser la mêm" +
                         "e chaîne de connexion.");
             }
@@ -21443,15 +20574,6 @@ namespace GestionPong.DataSetPongTableAdapters {
                         adaptersWithAcceptChangesDuringUpdate.Add(this._provinceTableAdapter.Adapter);
                     }
                 }
-                if ((this._registretransactionsTableAdapter != null)) {
-                    revertConnections.Add(this._registretransactionsTableAdapter, this._registretransactionsTableAdapter.Connection);
-                    this._registretransactionsTableAdapter.Connection = ((global::MySql.Data.MySqlClient.MySqlConnection)(workConnection));
-                    this._registretransactionsTableAdapter.Transaction = ((global::MySql.Data.MySqlClient.MySqlTransaction)(workTransaction));
-                    if (this._registretransactionsTableAdapter.Adapter.AcceptChangesDuringUpdate) {
-                        this._registretransactionsTableAdapter.Adapter.AcceptChangesDuringUpdate = false;
-                        adaptersWithAcceptChangesDuringUpdate.Add(this._registretransactionsTableAdapter.Adapter);
-                    }
-                }
                 if ((this._rondesTableAdapter != null)) {
                     revertConnections.Add(this._rondesTableAdapter, this._rondesTableAdapter.Connection);
                     this._rondesTableAdapter.Connection = ((global::MySql.Data.MySqlClient.MySqlConnection)(workConnection));
@@ -21615,10 +20737,6 @@ namespace GestionPong.DataSetPongTableAdapters {
                 if ((this._provinceTableAdapter != null)) {
                     this._provinceTableAdapter.Connection = ((global::MySql.Data.MySqlClient.MySqlConnection)(revertConnections[this._provinceTableAdapter]));
                     this._provinceTableAdapter.Transaction = null;
-                }
-                if ((this._registretransactionsTableAdapter != null)) {
-                    this._registretransactionsTableAdapter.Connection = ((global::MySql.Data.MySqlClient.MySqlConnection)(revertConnections[this._registretransactionsTableAdapter]));
-                    this._registretransactionsTableAdapter.Transaction = null;
                 }
                 if ((this._rondesTableAdapter != null)) {
                     this._rondesTableAdapter.Connection = ((global::MySql.Data.MySqlClient.MySqlConnection)(revertConnections[this._rondesTableAdapter]));

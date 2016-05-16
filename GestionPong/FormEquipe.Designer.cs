@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.groupBoxEquipeActuelle = new System.Windows.Forms.GroupBox();
             this.labelDescription = new System.Windows.Forms.Label();
             this.labelDescriptionCP = new System.Windows.Forms.Label();
@@ -41,12 +42,29 @@
             this.buttonCreer = new System.Windows.Forms.Button();
             this.buttonVoirInvitations = new System.Windows.Forms.Button();
             this.buttonOK = new System.Windows.Forms.Button();
+            this.buttonRafraichir = new System.Windows.Forms.Button();
+            this.fKIDEquipesJoueursBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.fKIDEquipesJoueursBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.joueursBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.dataSetPong = new GestionPong.DataSetPong();
+            this.equipesBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.joueursBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.joueursTableAdapter = new GestionPong.DataSetPongTableAdapters.joueursTableAdapter();
+            this.equipesTableAdapter = new GestionPong.DataSetPongTableAdapters.equipesTableAdapter();
+            this.pseudonymeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBoxEquipeActuelle.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewJoueurs)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.fKIDEquipesJoueursBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.fKIDEquipesJoueursBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.joueursBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSetPong)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.equipesBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.joueursBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBoxEquipeActuelle
             // 
+            this.groupBoxEquipeActuelle.Controls.Add(this.buttonRafraichir);
             this.groupBoxEquipeActuelle.Controls.Add(this.labelDescription);
             this.groupBoxEquipeActuelle.Controls.Add(this.labelDescriptionCP);
             this.groupBoxEquipeActuelle.Controls.Add(this.buttonInviter);
@@ -110,9 +128,16 @@
             // 
             // dataGridViewJoueurs
             // 
+            this.dataGridViewJoueurs.AllowUserToAddRows = false;
+            this.dataGridViewJoueurs.AllowUserToDeleteRows = false;
+            this.dataGridViewJoueurs.AutoGenerateColumns = false;
             this.dataGridViewJoueurs.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewJoueurs.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.pseudonymeDataGridViewTextBoxColumn});
+            this.dataGridViewJoueurs.DataSource = this.joueursBindingSource1;
             this.dataGridViewJoueurs.Location = new System.Drawing.Point(10, 106);
             this.dataGridViewJoueurs.Name = "dataGridViewJoueurs";
+            this.dataGridViewJoueurs.ReadOnly = true;
             this.dataGridViewJoueurs.Size = new System.Drawing.Size(240, 150);
             this.dataGridViewJoueurs.TabIndex = 2;
             // 
@@ -142,6 +167,7 @@
             this.buttonQuitterEquipe.TabIndex = 1;
             this.buttonQuitterEquipe.Text = "Quitter l\'équipe";
             this.buttonQuitterEquipe.UseVisualStyleBackColor = true;
+            this.buttonQuitterEquipe.Click += new System.EventHandler(this.buttonQuitterEquipe_Click);
             // 
             // buttonCreer
             // 
@@ -173,6 +199,62 @@
             this.buttonOK.UseVisualStyleBackColor = true;
             this.buttonOK.Click += new System.EventHandler(this.buttonOK_Click);
             // 
+            // buttonRafraichir
+            // 
+            this.buttonRafraichir.Location = new System.Drawing.Point(10, 77);
+            this.buttonRafraichir.Name = "buttonRafraichir";
+            this.buttonRafraichir.Size = new System.Drawing.Size(74, 23);
+            this.buttonRafraichir.TabIndex = 7;
+            this.buttonRafraichir.Text = "Rafraîchir";
+            this.buttonRafraichir.UseVisualStyleBackColor = true;
+            this.buttonRafraichir.Click += new System.EventHandler(this.buttonRafraichir_Click);
+            // 
+            // fKIDEquipesJoueursBindingSource
+            // 
+            this.fKIDEquipesJoueursBindingSource.DataMember = "FK_ID_Equipes_Joueurs";
+            this.fKIDEquipesJoueursBindingSource.DataSource = this.equipesBindingSource;
+            // 
+            // fKIDEquipesJoueursBindingSource1
+            // 
+            this.fKIDEquipesJoueursBindingSource1.DataMember = "FK_ID_Equipes_Joueurs";
+            this.fKIDEquipesJoueursBindingSource1.DataSource = this.equipesBindingSource;
+            // 
+            // joueursBindingSource1
+            // 
+            this.joueursBindingSource1.DataMember = "joueurs";
+            this.joueursBindingSource1.DataSource = this.dataSetPong;
+            // 
+            // dataSetPong
+            // 
+            this.dataSetPong.DataSetName = "DataSetPong";
+            this.dataSetPong.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // equipesBindingSource
+            // 
+            this.equipesBindingSource.DataMember = "equipes";
+            this.equipesBindingSource.DataSource = this.dataSetPong;
+            // 
+            // joueursBindingSource
+            // 
+            this.joueursBindingSource.DataMember = "joueurs";
+            this.joueursBindingSource.DataSource = this.dataSetPong;
+            // 
+            // joueursTableAdapter
+            // 
+            this.joueursTableAdapter.ClearBeforeFill = true;
+            // 
+            // equipesTableAdapter
+            // 
+            this.equipesTableAdapter.ClearBeforeFill = true;
+            // 
+            // pseudonymeDataGridViewTextBoxColumn
+            // 
+            this.pseudonymeDataGridViewTextBoxColumn.DataPropertyName = "Pseudonyme";
+            this.pseudonymeDataGridViewTextBoxColumn.HeaderText = "Joueurs";
+            this.pseudonymeDataGridViewTextBoxColumn.Name = "pseudonymeDataGridViewTextBoxColumn";
+            this.pseudonymeDataGridViewTextBoxColumn.ReadOnly = true;
+            this.pseudonymeDataGridViewTextBoxColumn.Width = 180;
+            // 
             // FormEquipe
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -185,9 +267,16 @@
             this.Controls.Add(this.groupBoxEquipeActuelle);
             this.Name = "FormEquipe";
             this.Text = "Équipe";
+            this.Load += new System.EventHandler(this.FormEquipe_Load);
             this.groupBoxEquipeActuelle.ResumeLayout(false);
             this.groupBoxEquipeActuelle.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewJoueurs)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.fKIDEquipesJoueursBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.fKIDEquipesJoueursBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.joueursBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSetPong)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.equipesBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.joueursBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -207,5 +296,15 @@
         private System.Windows.Forms.Label labelDescription;
         private System.Windows.Forms.Label labelDescriptionCP;
         private System.Windows.Forms.Button buttonOK;
+        private DataSetPong dataSetPong;
+        private System.Windows.Forms.BindingSource joueursBindingSource;
+        private DataSetPongTableAdapters.joueursTableAdapter joueursTableAdapter;
+        private System.Windows.Forms.Button buttonRafraichir;
+        private System.Windows.Forms.BindingSource equipesBindingSource;
+        private DataSetPongTableAdapters.equipesTableAdapter equipesTableAdapter;
+        private System.Windows.Forms.BindingSource joueursBindingSource1;
+        private System.Windows.Forms.BindingSource fKIDEquipesJoueursBindingSource;
+        private System.Windows.Forms.BindingSource fKIDEquipesJoueursBindingSource1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn pseudonymeDataGridViewTextBoxColumn;
     }
 }

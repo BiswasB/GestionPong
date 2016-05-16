@@ -27,10 +27,32 @@ namespace GestionPong.Properties {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
         [global::System.Configuration.DefaultSettingValueAttribute("server=127.0.0.1;user id=root;database=pong;allowuservariables=True;persistsecuri" +
-            "tyinfo=True")]
+            "tyinfo=True;password=123456")]
         public string pongConnectionString {
             get {
                 return ((string)(this["pongConnectionString"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("server=127.0.0.1;user id=root;database=pong;persistsecurityinfo=True;password=123" +
+            "456")]
+        public string pongConnectionString1 {
+            get {
+                return ((string)(this["pongConnectionString1"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("server=127.0.0.1;user id=root;database=pong;persistsecurityinfo=True;password=123" +
+            "456")]
+        public string pongConnectionString2 {
+            get {
+                return ((string)(this["pongConnectionString2"]));
             }
         }
     }

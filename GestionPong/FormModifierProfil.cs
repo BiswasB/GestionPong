@@ -33,7 +33,7 @@ namespace GestionPong
             try
             {
                 //Établir la connexion
-                con = new MySqlConnection(Properties.Settings.Default."__________" ); //À faire: Nom de connexion string.
+                //con = new MySqlConnection(Properties.Settings.Default."__________" ); //À faire: Nom de connexion string.
                 con.Open();
                 //Créer la commande
                 commandText = "SELECT Pseudonyme, Prenom, Nom, Courriel, DateDeNaissance FROM Joueurs WHERE ID = @ID"; //Commande à exécuter
@@ -47,7 +47,11 @@ namespace GestionPong
                 //cmd.Parameters.Add(new MySqlParameter("@Courriel", MySql.Data.MySqlClient.MySqlDbType.VarChar, -1, "Courriel"));
                 //cmd.Parameters.Add(new MySqlParameter("@DateDeNaissance", MySql.Data.MySqlClient.MySqlDbType.VarChar, -1, "DateDeNaissance"));
                 //Récupérer la valeur de l'ID
-                cmd.Parameters["@ID"].Value = 
+                //cmd.Parameters["@ID"].Value = 
+            }
+            catch
+            {
+
             }
         }
     }

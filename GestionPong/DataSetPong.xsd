@@ -2,14 +2,16 @@
 <xs:schema id="DataSetPong" targetNamespace="http://tempuri.org/DataSetPong.xsd" xmlns:mstns="http://tempuri.org/DataSetPong.xsd" xmlns="http://tempuri.org/DataSetPong.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
   <xs:annotation>
     <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
-      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="2" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
         <Connections>
           <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="pongConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="pongConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.GestionPong.Properties.Settings.GlobalReference.Default.pongConnectionString" Provider="MySql.Data.MySqlClient" />
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="pongConnectionString1" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="pongConnectionString1 (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.GestionPong.Properties.Settings.GlobalReference.Default.pongConnectionString1" Provider="MySql.Data.MySqlClient" />
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="pongConnectionString2" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="pongConnectionString2 (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.GestionPong.Properties.Settings.GlobalReference.Default.pongConnectionString1" Provider="MySql.Data.MySqlClient" />
         </Connections>
         <Tables>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="adresseTableAdapter" GeneratorDataComponentClassName="adresseTableAdapter" Name="adresse" UserDataComponentName="adresseTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="pongConnectionString (Settings)" DbObjectName="pong.adresse" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="pongConnectionString2 (Settings)" DbObjectName="pong.adresse" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <DeleteCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
                     <CommandText>DELETE FROM `adresse` WHERE ((`ID` = @p1) AND ((@p2 = 1 AND `NumeroCivique` IS NULL) OR (`NumeroCivique` = @p3)) AND ((@p4 = 1 AND `Rue` IS NULL) OR (`Rue` = @p5)) AND ((@p6 = 1 AND `CodePostal` IS NULL) OR (`CodePostal` = @p7)) AND ((@p8 = 1 AND `ID_Ville` IS NULL) OR (`ID_Ville` = @p9)))</CommandText>
@@ -76,7 +78,7 @@
           </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="cartescreditTableAdapter" GeneratorDataComponentClassName="cartescreditTableAdapter" Name="cartescredit" UserDataComponentName="cartescreditTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="pongConnectionString (Settings)" DbObjectName="pong.cartescredit" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="pongConnectionString2 (Settings)" DbObjectName="pong.cartescredit" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <DeleteCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
                     <CommandText>DELETE FROM `cartescredit` WHERE ((`ID` = @p1) AND ((@p2 = 1 AND `Numero` IS NULL) OR (`Numero` = @p3)) AND ((@p4 = 1 AND `ID_MarquesCredit` IS NULL) OR (`ID_MarquesCredit` = @p5)))</CommandText>
@@ -129,7 +131,7 @@
           </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="cartescredit_joueursTableAdapter" GeneratorDataComponentClassName="cartescredit_joueursTableAdapter" Name="cartescredit_joueurs" UserDataComponentName="cartescredit_joueursTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="pongConnectionString (Settings)" DbObjectName="pong.cartescredit_joueurs" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="pongConnectionString2 (Settings)" DbObjectName="pong.cartescredit_joueurs" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <DeleteCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
                     <CommandText>DELETE FROM `cartescredit_joueurs` WHERE ((`ID_Joueurs` = @p1) AND (`ID_CartesCredit` = @p2))</CommandText>
@@ -175,39 +177,39 @@
           </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="couleurplaquetteTableAdapter" GeneratorDataComponentClassName="couleurplaquetteTableAdapter" Name="couleurplaquette" UserDataComponentName="couleurplaquetteTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="pongConnectionString (Settings)" DbObjectName="pong.couleurplaquette" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="pongConnectionString2 (Settings)" DbObjectName="pong.couleurplaquette" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <DeleteCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
-                    <CommandText>DELETE FROM `couleurplaquette` WHERE ((`ID` = @p1) AND ((@p2 = 1 AND `Description` IS NULL) OR (`Description` = @p3)))</CommandText>
+                    <CommandText>DELETE FROM `couleurplaquette` WHERE ((`ID` = @p1) AND ((@p2 = 1 AND `Couleur` IS NULL) OR (`Couleur` = @p3)))</CommandText>
                     <Parameters>
                       <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@p1" Precision="0" ProviderType="Int32" Scale="0" Size="0" SourceColumn="ID" SourceColumnNullMapping="false" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@p2" Precision="0" ProviderType="Int32" Scale="0" Size="0" SourceColumn="Description" SourceColumnNullMapping="true" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@p3" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="Description" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@p2" Precision="0" ProviderType="Int32" Scale="0" Size="0" SourceColumn="Couleur" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@p3" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="Couleur" SourceColumnNullMapping="false" SourceVersion="Original" />
                     </Parameters>
                   </DbCommand>
                 </DeleteCommand>
                 <InsertCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
-                    <CommandText>INSERT INTO `couleurplaquette` (`Description`) VALUES (@p1)</CommandText>
+                    <CommandText>INSERT INTO `couleurplaquette` (`Couleur`) VALUES (@p1)</CommandText>
                     <Parameters>
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@p1" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="Description" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@p1" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="Couleur" SourceColumnNullMapping="false" SourceVersion="Current" />
                     </Parameters>
                   </DbCommand>
                 </InsertCommand>
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
-                    <CommandText>SELECT `ID`, `Description` FROM `couleurplaquette`</CommandText>
+                    <CommandText>SELECT `ID`, `Couleur` FROM `couleurplaquette`</CommandText>
                     <Parameters />
                   </DbCommand>
                 </SelectCommand>
                 <UpdateCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
-                    <CommandText>UPDATE `couleurplaquette` SET `Description` = @p1 WHERE ((`ID` = @p2) AND ((@p3 = 1 AND `Description` IS NULL) OR (`Description` = @p4)))</CommandText>
+                    <CommandText>UPDATE `couleurplaquette` SET `Couleur` = @p1 WHERE ((`ID` = @p2) AND ((@p3 = 1 AND `Couleur` IS NULL) OR (`Couleur` = @p4)))</CommandText>
                     <Parameters>
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@p1" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="Description" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@p1" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="Couleur" SourceColumnNullMapping="false" SourceVersion="Current" />
                       <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@p2" Precision="0" ProviderType="Int32" Scale="0" Size="0" SourceColumn="ID" SourceColumnNullMapping="false" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@p3" Precision="0" ProviderType="Int32" Scale="0" Size="0" SourceColumn="Description" SourceColumnNullMapping="true" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@p4" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="Description" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@p3" Precision="0" ProviderType="Int32" Scale="0" Size="0" SourceColumn="Couleur" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@p4" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="Couleur" SourceColumnNullMapping="false" SourceVersion="Original" />
                     </Parameters>
                   </DbCommand>
                 </UpdateCommand>
@@ -215,51 +217,51 @@
             </MainSource>
             <Mappings>
               <Mapping SourceColumn="ID" DataSetColumn="ID" />
-              <Mapping SourceColumn="Description" DataSetColumn="Description" />
+              <Mapping SourceColumn="Couleur" DataSetColumn="Couleur" />
             </Mappings>
             <Sources />
           </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="equipesTableAdapter" GeneratorDataComponentClassName="equipesTableAdapter" Name="equipes" UserDataComponentName="equipesTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="pongConnectionString (Settings)" DbObjectName="pong.equipes" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="pongConnectionString2 (Settings)" DbObjectName="pong.equipes" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <DeleteCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
-                    <CommandText>DELETE FROM `equipes` WHERE ((`ID` = @p1) AND ((@p2 = 1 AND `Nom` IS NULL) OR (`Nom` = @p3)) AND ((@p4 = 1 AND `Description` IS NULL) OR (`Description` = @p5)))</CommandText>
+                    <CommandText>DELETE FROM `equipes` WHERE ((`ID` = @p1) AND ((@p2 = 1 AND `NomEquipe` IS NULL) OR (`NomEquipe` = @p3)) AND ((@p4 = 1 AND `DescriptionEquipe` IS NULL) OR (`DescriptionEquipe` = @p5)))</CommandText>
                     <Parameters>
                       <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@p1" Precision="0" ProviderType="Int32" Scale="0" Size="0" SourceColumn="ID" SourceColumnNullMapping="false" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@p2" Precision="0" ProviderType="Int32" Scale="0" Size="0" SourceColumn="Nom" SourceColumnNullMapping="true" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@p3" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="Nom" SourceColumnNullMapping="false" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@p4" Precision="0" ProviderType="Int32" Scale="0" Size="0" SourceColumn="Description" SourceColumnNullMapping="true" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@p5" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="Description" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@p2" Precision="0" ProviderType="Int32" Scale="0" Size="0" SourceColumn="NomEquipe" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@p3" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="NomEquipe" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@p4" Precision="0" ProviderType="Int32" Scale="0" Size="0" SourceColumn="DescriptionEquipe" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@p5" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="DescriptionEquipe" SourceColumnNullMapping="false" SourceVersion="Original" />
                     </Parameters>
                   </DbCommand>
                 </DeleteCommand>
                 <InsertCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
-                    <CommandText>INSERT INTO `equipes` (`Nom`, `Description`) VALUES (@p1, @p2)</CommandText>
+                    <CommandText>INSERT INTO `equipes` (`NomEquipe`, `DescriptionEquipe`) VALUES (@p1, @p2)</CommandText>
                     <Parameters>
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@p1" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="Nom" SourceColumnNullMapping="false" SourceVersion="Current" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@p2" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="Description" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@p1" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="NomEquipe" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@p2" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="DescriptionEquipe" SourceColumnNullMapping="false" SourceVersion="Current" />
                     </Parameters>
                   </DbCommand>
                 </InsertCommand>
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
-                    <CommandText>SELECT `ID`, `Nom`, `Description` FROM `equipes`</CommandText>
+                    <CommandText>SELECT `ID`, `NomEquipe`, `DescriptionEquipe` FROM `equipes`</CommandText>
                     <Parameters />
                   </DbCommand>
                 </SelectCommand>
                 <UpdateCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
-                    <CommandText>UPDATE `equipes` SET `Nom` = @p1, `Description` = @p2 WHERE ((`ID` = @p3) AND ((@p4 = 1 AND `Nom` IS NULL) OR (`Nom` = @p5)) AND ((@p6 = 1 AND `Description` IS NULL) OR (`Description` = @p7)))</CommandText>
+                    <CommandText>UPDATE `equipes` SET `NomEquipe` = @p1, `DescriptionEquipe` = @p2 WHERE ((`ID` = @p3) AND ((@p4 = 1 AND `NomEquipe` IS NULL) OR (`NomEquipe` = @p5)) AND ((@p6 = 1 AND `DescriptionEquipe` IS NULL) OR (`DescriptionEquipe` = @p7)))</CommandText>
                     <Parameters>
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@p1" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="Nom" SourceColumnNullMapping="false" SourceVersion="Current" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@p2" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="Description" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@p1" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="NomEquipe" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@p2" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="DescriptionEquipe" SourceColumnNullMapping="false" SourceVersion="Current" />
                       <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@p3" Precision="0" ProviderType="Int32" Scale="0" Size="0" SourceColumn="ID" SourceColumnNullMapping="false" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@p4" Precision="0" ProviderType="Int32" Scale="0" Size="0" SourceColumn="Nom" SourceColumnNullMapping="true" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@p5" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="Nom" SourceColumnNullMapping="false" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@p6" Precision="0" ProviderType="Int32" Scale="0" Size="0" SourceColumn="Description" SourceColumnNullMapping="true" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@p7" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="Description" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@p4" Precision="0" ProviderType="Int32" Scale="0" Size="0" SourceColumn="NomEquipe" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@p5" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="NomEquipe" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@p6" Precision="0" ProviderType="Int32" Scale="0" Size="0" SourceColumn="DescriptionEquipe" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@p7" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="DescriptionEquipe" SourceColumnNullMapping="false" SourceVersion="Original" />
                     </Parameters>
                   </DbCommand>
                 </UpdateCommand>
@@ -267,21 +269,21 @@
             </MainSource>
             <Mappings>
               <Mapping SourceColumn="ID" DataSetColumn="ID" />
-              <Mapping SourceColumn="Nom" DataSetColumn="Nom" />
-              <Mapping SourceColumn="Description" DataSetColumn="Description" />
+              <Mapping SourceColumn="NomEquipe" DataSetColumn="NomEquipe" />
+              <Mapping SourceColumn="DescriptionEquipe" DataSetColumn="DescriptionEquipe" />
             </Mappings>
             <Sources />
           </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="forfaitsTableAdapter" GeneratorDataComponentClassName="forfaitsTableAdapter" Name="forfaits" UserDataComponentName="forfaitsTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="pongConnectionString (Settings)" DbObjectName="pong.forfaits" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="pongConnectionString2 (Settings)" DbObjectName="pong.forfaits" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <DeleteCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
-                    <CommandText>DELETE FROM `forfaits` WHERE ((`ID` = @p1) AND ((@p2 = 1 AND `Description` IS NULL) OR (`Description` = @p3)) AND ((@p4 = 1 AND `NombreParties` IS NULL) OR (`NombreParties` = @p5)) AND ((@p6 = 1 AND `MoisPremium` IS NULL) OR (`MoisPremium` = @p7)) AND ((@p8 = 1 AND `Prix` IS NULL) OR (`Prix` = @p9)))</CommandText>
+                    <CommandText>DELETE FROM `forfaits` WHERE ((`ID` = @p1) AND ((@p2 = 1 AND `DescriptionForfait` IS NULL) OR (`DescriptionForfait` = @p3)) AND ((@p4 = 1 AND `NombreParties` IS NULL) OR (`NombreParties` = @p5)) AND ((@p6 = 1 AND `MoisPremium` IS NULL) OR (`MoisPremium` = @p7)) AND ((@p8 = 1 AND `Prix` IS NULL) OR (`Prix` = @p9)))</CommandText>
                     <Parameters>
                       <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@p1" Precision="0" ProviderType="Int32" Scale="0" Size="0" SourceColumn="ID" SourceColumnNullMapping="false" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@p2" Precision="0" ProviderType="Int32" Scale="0" Size="0" SourceColumn="Description" SourceColumnNullMapping="true" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@p3" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="Description" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@p2" Precision="0" ProviderType="Int32" Scale="0" Size="0" SourceColumn="DescriptionForfait" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@p3" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="DescriptionForfait" SourceColumnNullMapping="false" SourceVersion="Original" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@p4" Precision="0" ProviderType="Int32" Scale="0" Size="0" SourceColumn="NombreParties" SourceColumnNullMapping="true" SourceVersion="Original" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@p5" Precision="0" ProviderType="Int32" Scale="0" Size="0" SourceColumn="NombreParties" SourceColumnNullMapping="false" SourceVersion="Original" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@p6" Precision="0" ProviderType="Int32" Scale="0" Size="0" SourceColumn="MoisPremium" SourceColumnNullMapping="true" SourceVersion="Original" />
@@ -293,9 +295,9 @@
                 </DeleteCommand>
                 <InsertCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
-                    <CommandText>INSERT INTO `forfaits` (`Description`, `NombreParties`, `MoisPremium`, `Prix`) VALUES (@p1, @p2, @p3, @p4)</CommandText>
+                    <CommandText>INSERT INTO `forfaits` (`DescriptionForfait`, `NombreParties`, `MoisPremium`, `Prix`) VALUES (@p1, @p2, @p3, @p4)</CommandText>
                     <Parameters>
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@p1" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="Description" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@p1" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="DescriptionForfait" SourceColumnNullMapping="false" SourceVersion="Current" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@p2" Precision="0" ProviderType="Int32" Scale="0" Size="0" SourceColumn="NombreParties" SourceColumnNullMapping="false" SourceVersion="Current" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@p3" Precision="0" ProviderType="Int32" Scale="0" Size="0" SourceColumn="MoisPremium" SourceColumnNullMapping="false" SourceVersion="Current" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Double" Direction="Input" ParameterName="@p4" Precision="0" ProviderType="Double" Scale="0" Size="0" SourceColumn="Prix" SourceColumnNullMapping="false" SourceVersion="Current" />
@@ -304,21 +306,21 @@
                 </InsertCommand>
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
-                    <CommandText>SELECT `ID`, `Description`, `NombreParties`, `MoisPremium`, `Prix` FROM `forfaits`</CommandText>
+                    <CommandText>SELECT `ID`, `DescriptionForfait`, `NombreParties`, `MoisPremium`, `Prix` FROM `forfaits`</CommandText>
                     <Parameters />
                   </DbCommand>
                 </SelectCommand>
                 <UpdateCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
-                    <CommandText>UPDATE `forfaits` SET `Description` = @p1, `NombreParties` = @p2, `MoisPremium` = @p3, `Prix` = @p4 WHERE ((`ID` = @p5) AND ((@p6 = 1 AND `Description` IS NULL) OR (`Description` = @p7)) AND ((@p8 = 1 AND `NombreParties` IS NULL) OR (`NombreParties` = @p9)) AND ((@p10 = 1 AND `MoisPremium` IS NULL) OR (`MoisPremium` = @p11)) AND ((@p12 = 1 AND `Prix` IS NULL) OR (`Prix` = @p13)))</CommandText>
+                    <CommandText>UPDATE `forfaits` SET `DescriptionForfait` = @p1, `NombreParties` = @p2, `MoisPremium` = @p3, `Prix` = @p4 WHERE ((`ID` = @p5) AND ((@p6 = 1 AND `DescriptionForfait` IS NULL) OR (`DescriptionForfait` = @p7)) AND ((@p8 = 1 AND `NombreParties` IS NULL) OR (`NombreParties` = @p9)) AND ((@p10 = 1 AND `MoisPremium` IS NULL) OR (`MoisPremium` = @p11)) AND ((@p12 = 1 AND `Prix` IS NULL) OR (`Prix` = @p13)))</CommandText>
                     <Parameters>
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@p1" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="Description" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@p1" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="DescriptionForfait" SourceColumnNullMapping="false" SourceVersion="Current" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@p2" Precision="0" ProviderType="Int32" Scale="0" Size="0" SourceColumn="NombreParties" SourceColumnNullMapping="false" SourceVersion="Current" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@p3" Precision="0" ProviderType="Int32" Scale="0" Size="0" SourceColumn="MoisPremium" SourceColumnNullMapping="false" SourceVersion="Current" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Double" Direction="Input" ParameterName="@p4" Precision="0" ProviderType="Double" Scale="0" Size="0" SourceColumn="Prix" SourceColumnNullMapping="false" SourceVersion="Current" />
                       <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@p5" Precision="0" ProviderType="Int32" Scale="0" Size="0" SourceColumn="ID" SourceColumnNullMapping="false" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@p6" Precision="0" ProviderType="Int32" Scale="0" Size="0" SourceColumn="Description" SourceColumnNullMapping="true" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@p7" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="Description" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@p6" Precision="0" ProviderType="Int32" Scale="0" Size="0" SourceColumn="DescriptionForfait" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@p7" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="DescriptionForfait" SourceColumnNullMapping="false" SourceVersion="Original" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@p8" Precision="0" ProviderType="Int32" Scale="0" Size="0" SourceColumn="NombreParties" SourceColumnNullMapping="true" SourceVersion="Original" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@p9" Precision="0" ProviderType="Int32" Scale="0" Size="0" SourceColumn="NombreParties" SourceColumnNullMapping="false" SourceVersion="Original" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@p10" Precision="0" ProviderType="Int32" Scale="0" Size="0" SourceColumn="MoisPremium" SourceColumnNullMapping="true" SourceVersion="Original" />
@@ -332,7 +334,7 @@
             </MainSource>
             <Mappings>
               <Mapping SourceColumn="ID" DataSetColumn="ID" />
-              <Mapping SourceColumn="Description" DataSetColumn="Description" />
+              <Mapping SourceColumn="DescriptionForfait" DataSetColumn="DescriptionForfait" />
               <Mapping SourceColumn="NombreParties" DataSetColumn="NombreParties" />
               <Mapping SourceColumn="MoisPremium" DataSetColumn="MoisPremium" />
               <Mapping SourceColumn="Prix" DataSetColumn="Prix" />
@@ -341,7 +343,7 @@
           </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="forfaits_taxesTableAdapter" GeneratorDataComponentClassName="forfaits_taxesTableAdapter" Name="forfaits_taxes" UserDataComponentName="forfaits_taxesTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="pongConnectionString (Settings)" DbObjectName="pong.forfaits_taxes" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="pongConnectionString2 (Settings)" DbObjectName="pong.forfaits_taxes" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <DeleteCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
                     <CommandText>DELETE FROM `forfaits_taxes` WHERE ((`ID_Forfaits` = @p1) AND (`ID_Taxes` = @p2))</CommandText>
@@ -387,7 +389,7 @@
           </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="invitationsTableAdapter" GeneratorDataComponentClassName="invitationsTableAdapter" Name="invitations" UserDataComponentName="invitationsTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="pongConnectionString (Settings)" DbObjectName="pong.invitations" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="pongConnectionString2 (Settings)" DbObjectName="pong.invitations" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <DeleteCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
                     <CommandText>DELETE FROM `invitations` WHERE ((`ID_Joueurs` = @p1) AND (`ID_Equipes` = @p2) AND ((@p3 = 1 AND `ID_StatutInvitations` IS NULL) OR (`ID_StatutInvitations` = @p4)))</CommandText>
@@ -440,14 +442,14 @@
           </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="joueursTableAdapter" GeneratorDataComponentClassName="joueursTableAdapter" Name="joueurs" UserDataComponentName="joueursTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="pongConnectionString (Settings)" DbObjectName="pong.joueurs" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="pongConnectionString2 (Settings)" DbObjectName="pong.joueurs" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <DeleteCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
-                    <CommandText>DELETE FROM `joueurs` WHERE ((`ID` = @p1) AND ((@p2 = 1 AND `Nom` IS NULL) OR (`Nom` = @p3)) AND ((@p4 = 1 AND `Prenom` IS NULL) OR (`Prenom` = @p5)) AND ((@p6 = 1 AND `Pseudonyme` IS NULL) OR (`Pseudonyme` = @p7)) AND ((@p8 = 1 AND `Courriel` IS NULL) OR (`Courriel` = @p9)) AND ((@p10 = 1 AND `MotdePasse` IS NULL) OR (`MotdePasse` = @p11)) AND ((@p12 = 1 AND `DateNaissance` IS NULL) OR (`DateNaissance` = @p13)) AND ((@p14 = 1 AND `Photo` IS NULL) OR (`Photo` = @p15)) AND ((@p16 = 1 AND `DateExpirationPremium` IS NULL) OR (`DateExpirationPremium` = @p17)) AND ((@p18 = 1 AND `DateDerniereConnexion` IS NULL) OR (`DateDerniereConnexion` = @p19)) AND ((@p20 = 1 AND `ID_Adresse` IS NULL) OR (`ID_Adresse` = @p21)) AND ((@p22 = 1 AND `ID_Equipes` IS NULL) OR (`ID_Equipes` = @p23)) AND ((@p24 = 1 AND `ID_CouleurPlaquette` IS NULL) OR (`ID_CouleurPlaquette` = @p25)))</CommandText>
+                    <CommandText>DELETE FROM `joueurs` WHERE ((`ID` = @p1) AND ((@p2 = 1 AND `NomJoueur` IS NULL) OR (`NomJoueur` = @p3)) AND ((@p4 = 1 AND `Prenom` IS NULL) OR (`Prenom` = @p5)) AND ((@p6 = 1 AND `Pseudonyme` IS NULL) OR (`Pseudonyme` = @p7)) AND ((@p8 = 1 AND `Courriel` IS NULL) OR (`Courriel` = @p9)) AND ((@p10 = 1 AND `MotdePasse` IS NULL) OR (`MotdePasse` = @p11)) AND ((@p12 = 1 AND `DateNaissance` IS NULL) OR (`DateNaissance` = @p13)) AND ((@p14 = 1 AND `Photo` IS NULL) OR (`Photo` = @p15)) AND ((@p16 = 1 AND `DateExpirationPremium` IS NULL) OR (`DateExpirationPremium` = @p17)) AND ((@p18 = 1 AND `DateDerniereConnexion` IS NULL) OR (`DateDerniereConnexion` = @p19)) AND ((@p20 = 1 AND `ID_Adresse` IS NULL) OR (`ID_Adresse` = @p21)) AND ((@p22 = 1 AND `ID_Equipes` IS NULL) OR (`ID_Equipes` = @p23)) AND ((@p24 = 1 AND `ID_CouleurPlaquette` IS NULL) OR (`ID_CouleurPlaquette` = @p25)))</CommandText>
                     <Parameters>
                       <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@p1" Precision="0" ProviderType="Int32" Scale="0" Size="0" SourceColumn="ID" SourceColumnNullMapping="false" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@p2" Precision="0" ProviderType="Int32" Scale="0" Size="0" SourceColumn="Nom" SourceColumnNullMapping="true" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@p3" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="Nom" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@p2" Precision="0" ProviderType="Int32" Scale="0" Size="0" SourceColumn="NomJoueur" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@p3" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="NomJoueur" SourceColumnNullMapping="false" SourceVersion="Original" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@p4" Precision="0" ProviderType="Int32" Scale="0" Size="0" SourceColumn="Prenom" SourceColumnNullMapping="true" SourceVersion="Original" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@p5" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="Prenom" SourceColumnNullMapping="false" SourceVersion="Original" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@p6" Precision="0" ProviderType="Int32" Scale="0" Size="0" SourceColumn="Pseudonyme" SourceColumnNullMapping="true" SourceVersion="Original" />
@@ -475,9 +477,9 @@
                 </DeleteCommand>
                 <InsertCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
-                    <CommandText>INSERT INTO `joueurs` (`Nom`, `Prenom`, `Pseudonyme`, `Courriel`, `MotdePasse`, `DateNaissance`, `Photo`, `DateExpirationPremium`, `DateDerniereConnexion`, `ID_Adresse`, `ID_Equipes`, `ID_CouleurPlaquette`) VALUES (@p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10, @p11, @p12)</CommandText>
+                    <CommandText>INSERT INTO `joueurs` (`NomJoueur`, `Prenom`, `Pseudonyme`, `Courriel`, `MotdePasse`, `DateNaissance`, `Photo`, `DateExpirationPremium`, `DateDerniereConnexion`, `ID_Adresse`, `ID_Equipes`, `ID_CouleurPlaquette`) VALUES (@p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10, @p11, @p12)</CommandText>
                     <Parameters>
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@p1" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="Nom" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@p1" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="NomJoueur" SourceColumnNullMapping="false" SourceVersion="Current" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@p2" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="Prenom" SourceColumnNullMapping="false" SourceVersion="Current" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@p3" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="Pseudonyme" SourceColumnNullMapping="false" SourceVersion="Current" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@p4" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="Courriel" SourceColumnNullMapping="false" SourceVersion="Current" />
@@ -494,15 +496,15 @@
                 </InsertCommand>
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
-                    <CommandText>SELECT `ID`, `Nom`, `Prenom`, `Pseudonyme`, `Courriel`, `MotdePasse`, `DateNaissance`, `Photo`, `DateExpirationPremium`, `DateDerniereConnexion`, `ID_Adresse`, `ID_Equipes`, `ID_CouleurPlaquette` FROM `joueurs`</CommandText>
+                    <CommandText>SELECT `ID`, `NomJoueur`, `Prenom`, `Pseudonyme`, `Courriel`, `MotdePasse`, `DateNaissance`, `Photo`, `DateExpirationPremium`, `DateDerniereConnexion`, `ID_Adresse`, `ID_Equipes`, `ID_CouleurPlaquette` FROM `joueurs`</CommandText>
                     <Parameters />
                   </DbCommand>
                 </SelectCommand>
                 <UpdateCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
-                    <CommandText>UPDATE `joueurs` SET `Nom` = @p1, `Prenom` = @p2, `Pseudonyme` = @p3, `Courriel` = @p4, `MotdePasse` = @p5, `DateNaissance` = @p6, `Photo` = @p7, `DateExpirationPremium` = @p8, `DateDerniereConnexion` = @p9, `ID_Adresse` = @p10, `ID_Equipes` = @p11, `ID_CouleurPlaquette` = @p12 WHERE ((`ID` = @p13) AND ((@p14 = 1 AND `Nom` IS NULL) OR (`Nom` = @p15)) AND ((@p16 = 1 AND `Prenom` IS NULL) OR (`Prenom` = @p17)) AND ((@p18 = 1 AND `Pseudonyme` IS NULL) OR (`Pseudonyme` = @p19)) AND ((@p20 = 1 AND `Courriel` IS NULL) OR (`Courriel` = @p21)) AND ((@p22 = 1 AND `MotdePasse` IS NULL) OR (`MotdePasse` = @p23)) AND ((@p24 = 1 AND `DateNaissance` IS NULL) OR (`DateNaissance` = @p25)) AND ((@p26 = 1 AND `Photo` IS NULL) OR (`Photo` = @p27)) AND ((@p28 = 1 AND `DateExpirationPremium` IS NULL) OR (`DateExpirationPremium` = @p29)) AND ((@p30 = 1 AND `DateDerniereConnexion` IS NULL) OR (`DateDerniereConnexion` = @p31)) AND ((@p32 = 1 AND `ID_Adresse` IS NULL) OR (`ID_Adresse` = @p33)) AND ((@p34 = 1 AND `ID_Equipes` IS NULL) OR (`ID_Equipes` = @p35)) AND ((@p36 = 1 AND `ID_CouleurPlaquette` IS NULL) OR (`ID_CouleurPlaquette` = @p37)))</CommandText>
+                    <CommandText>UPDATE `joueurs` SET `NomJoueur` = @p1, `Prenom` = @p2, `Pseudonyme` = @p3, `Courriel` = @p4, `MotdePasse` = @p5, `DateNaissance` = @p6, `Photo` = @p7, `DateExpirationPremium` = @p8, `DateDerniereConnexion` = @p9, `ID_Adresse` = @p10, `ID_Equipes` = @p11, `ID_CouleurPlaquette` = @p12 WHERE ((`ID` = @p13) AND ((@p14 = 1 AND `NomJoueur` IS NULL) OR (`NomJoueur` = @p15)) AND ((@p16 = 1 AND `Prenom` IS NULL) OR (`Prenom` = @p17)) AND ((@p18 = 1 AND `Pseudonyme` IS NULL) OR (`Pseudonyme` = @p19)) AND ((@p20 = 1 AND `Courriel` IS NULL) OR (`Courriel` = @p21)) AND ((@p22 = 1 AND `MotdePasse` IS NULL) OR (`MotdePasse` = @p23)) AND ((@p24 = 1 AND `DateNaissance` IS NULL) OR (`DateNaissance` = @p25)) AND ((@p26 = 1 AND `Photo` IS NULL) OR (`Photo` = @p27)) AND ((@p28 = 1 AND `DateExpirationPremium` IS NULL) OR (`DateExpirationPremium` = @p29)) AND ((@p30 = 1 AND `DateDerniereConnexion` IS NULL) OR (`DateDerniereConnexion` = @p31)) AND ((@p32 = 1 AND `ID_Adresse` IS NULL) OR (`ID_Adresse` = @p33)) AND ((@p34 = 1 AND `ID_Equipes` IS NULL) OR (`ID_Equipes` = @p35)) AND ((@p36 = 1 AND `ID_CouleurPlaquette` IS NULL) OR (`ID_CouleurPlaquette` = @p37)))</CommandText>
                     <Parameters>
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@p1" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="Nom" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@p1" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="NomJoueur" SourceColumnNullMapping="false" SourceVersion="Current" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@p2" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="Prenom" SourceColumnNullMapping="false" SourceVersion="Current" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@p3" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="Pseudonyme" SourceColumnNullMapping="false" SourceVersion="Current" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@p4" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="Courriel" SourceColumnNullMapping="false" SourceVersion="Current" />
@@ -515,8 +517,8 @@
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@p11" Precision="0" ProviderType="Int32" Scale="0" Size="0" SourceColumn="ID_Equipes" SourceColumnNullMapping="false" SourceVersion="Current" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@p12" Precision="0" ProviderType="Int32" Scale="0" Size="0" SourceColumn="ID_CouleurPlaquette" SourceColumnNullMapping="false" SourceVersion="Current" />
                       <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@p13" Precision="0" ProviderType="Int32" Scale="0" Size="0" SourceColumn="ID" SourceColumnNullMapping="false" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@p14" Precision="0" ProviderType="Int32" Scale="0" Size="0" SourceColumn="Nom" SourceColumnNullMapping="true" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@p15" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="Nom" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@p14" Precision="0" ProviderType="Int32" Scale="0" Size="0" SourceColumn="NomJoueur" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@p15" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="NomJoueur" SourceColumnNullMapping="false" SourceVersion="Original" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@p16" Precision="0" ProviderType="Int32" Scale="0" Size="0" SourceColumn="Prenom" SourceColumnNullMapping="true" SourceVersion="Original" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@p17" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="Prenom" SourceColumnNullMapping="false" SourceVersion="Original" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@p18" Precision="0" ProviderType="Int32" Scale="0" Size="0" SourceColumn="Pseudonyme" SourceColumnNullMapping="true" SourceVersion="Original" />
@@ -546,7 +548,7 @@
             </MainSource>
             <Mappings>
               <Mapping SourceColumn="ID" DataSetColumn="ID" />
-              <Mapping SourceColumn="Nom" DataSetColumn="Nom" />
+              <Mapping SourceColumn="NomJoueur" DataSetColumn="NomJoueur" />
               <Mapping SourceColumn="Prenom" DataSetColumn="Prenom" />
               <Mapping SourceColumn="Pseudonyme" DataSetColumn="Pseudonyme" />
               <Mapping SourceColumn="Courriel" DataSetColumn="Courriel" />
@@ -563,39 +565,39 @@
           </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="marquecreditTableAdapter" GeneratorDataComponentClassName="marquecreditTableAdapter" Name="marquecredit" UserDataComponentName="marquecreditTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="pongConnectionString (Settings)" DbObjectName="pong.marquecredit" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="pongConnectionString2 (Settings)" DbObjectName="pong.marquecredit" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <DeleteCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
-                    <CommandText>DELETE FROM `marquecredit` WHERE ((`ID` = @p1) AND ((@p2 = 1 AND `Nom` IS NULL) OR (`Nom` = @p3)))</CommandText>
+                    <CommandText>DELETE FROM `marquecredit` WHERE ((`ID` = @p1) AND ((@p2 = 1 AND `Marque` IS NULL) OR (`Marque` = @p3)))</CommandText>
                     <Parameters>
                       <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@p1" Precision="0" ProviderType="Int32" Scale="0" Size="0" SourceColumn="ID" SourceColumnNullMapping="false" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@p2" Precision="0" ProviderType="Int32" Scale="0" Size="0" SourceColumn="Nom" SourceColumnNullMapping="true" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@p3" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="Nom" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@p2" Precision="0" ProviderType="Int32" Scale="0" Size="0" SourceColumn="Marque" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@p3" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="Marque" SourceColumnNullMapping="false" SourceVersion="Original" />
                     </Parameters>
                   </DbCommand>
                 </DeleteCommand>
                 <InsertCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
-                    <CommandText>INSERT INTO `marquecredit` (`Nom`) VALUES (@p1)</CommandText>
+                    <CommandText>INSERT INTO `marquecredit` (`Marque`) VALUES (@p1)</CommandText>
                     <Parameters>
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@p1" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="Nom" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@p1" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="Marque" SourceColumnNullMapping="false" SourceVersion="Current" />
                     </Parameters>
                   </DbCommand>
                 </InsertCommand>
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
-                    <CommandText>SELECT `ID`, `Nom` FROM `marquecredit`</CommandText>
+                    <CommandText>SELECT `ID`, `Marque` FROM `marquecredit`</CommandText>
                     <Parameters />
                   </DbCommand>
                 </SelectCommand>
                 <UpdateCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
-                    <CommandText>UPDATE `marquecredit` SET `Nom` = @p1 WHERE ((`ID` = @p2) AND ((@p3 = 1 AND `Nom` IS NULL) OR (`Nom` = @p4)))</CommandText>
+                    <CommandText>UPDATE `marquecredit` SET `Marque` = @p1 WHERE ((`ID` = @p2) AND ((@p3 = 1 AND `Marque` IS NULL) OR (`Marque` = @p4)))</CommandText>
                     <Parameters>
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@p1" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="Nom" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@p1" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="Marque" SourceColumnNullMapping="false" SourceVersion="Current" />
                       <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@p2" Precision="0" ProviderType="Int32" Scale="0" Size="0" SourceColumn="ID" SourceColumnNullMapping="false" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@p3" Precision="0" ProviderType="Int32" Scale="0" Size="0" SourceColumn="Nom" SourceColumnNullMapping="true" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@p4" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="Nom" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@p3" Precision="0" ProviderType="Int32" Scale="0" Size="0" SourceColumn="Marque" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@p4" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="Marque" SourceColumnNullMapping="false" SourceVersion="Original" />
                     </Parameters>
                   </DbCommand>
                 </UpdateCommand>
@@ -603,13 +605,13 @@
             </MainSource>
             <Mappings>
               <Mapping SourceColumn="ID" DataSetColumn="ID" />
-              <Mapping SourceColumn="Nom" DataSetColumn="Nom" />
+              <Mapping SourceColumn="Marque" DataSetColumn="Marque" />
             </Mappings>
             <Sources />
           </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="partiesTableAdapter" GeneratorDataComponentClassName="partiesTableAdapter" Name="parties" UserDataComponentName="partiesTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="pongConnectionString (Settings)" DbObjectName="pong.parties" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="pongConnectionString2 (Settings)" DbObjectName="pong.parties" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <DeleteCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
                     <CommandText>DELETE FROM `parties` WHERE ((`ID` = @p1) AND ((@p2 = 1 AND `ResultatJoueur1` IS NULL) OR (`ResultatJoueur1` = @p3)) AND ((@p4 = 1 AND `ResultatJoueur2` IS NULL) OR (`ResultatJoueur2` = @p5)) AND ((@p6 = 1 AND `DatePartie` IS NULL) OR (`DatePartie` = @p7)) AND ((@p8 = 1 AND `Duree` IS NULL) OR (`Duree` = @p9)) AND ((@p10 = 1 AND `RepriseVideo` IS NULL) OR (`RepriseVideo` = @p11)) AND ((@p12 = 1 AND `ID_Joueurs1` IS NULL) OR (`ID_Joueurs1` = @p13)) AND ((@p14 = 1 AND `ID_Joueurs2` IS NULL) OR (`ID_Joueurs2` = @p15)) AND ((@p16 = 1 AND `ID_Rondes` IS NULL) OR (`ID_Rondes` = @p17)))</CommandText>
@@ -704,39 +706,39 @@
           </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="paysTableAdapter" GeneratorDataComponentClassName="paysTableAdapter" Name="pays" UserDataComponentName="paysTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="pongConnectionString (Settings)" DbObjectName="pong.pays" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="pongConnectionString2 (Settings)" DbObjectName="pong.pays" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <DeleteCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
-                    <CommandText>DELETE FROM `pays` WHERE ((`ID` = @p1) AND ((@p2 = 1 AND `Nom` IS NULL) OR (`Nom` = @p3)))</CommandText>
+                    <CommandText>DELETE FROM `pays` WHERE ((`ID` = @p1) AND ((@p2 = 1 AND `NomPays` IS NULL) OR (`NomPays` = @p3)))</CommandText>
                     <Parameters>
                       <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@p1" Precision="0" ProviderType="Int32" Scale="0" Size="0" SourceColumn="ID" SourceColumnNullMapping="false" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@p2" Precision="0" ProviderType="Int32" Scale="0" Size="0" SourceColumn="Nom" SourceColumnNullMapping="true" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@p3" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="Nom" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@p2" Precision="0" ProviderType="Int32" Scale="0" Size="0" SourceColumn="NomPays" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@p3" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="NomPays" SourceColumnNullMapping="false" SourceVersion="Original" />
                     </Parameters>
                   </DbCommand>
                 </DeleteCommand>
                 <InsertCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
-                    <CommandText>INSERT INTO `pays` (`Nom`) VALUES (@p1)</CommandText>
+                    <CommandText>INSERT INTO `pays` (`NomPays`) VALUES (@p1)</CommandText>
                     <Parameters>
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@p1" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="Nom" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@p1" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="NomPays" SourceColumnNullMapping="false" SourceVersion="Current" />
                     </Parameters>
                   </DbCommand>
                 </InsertCommand>
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
-                    <CommandText>SELECT `ID`, `Nom` FROM `pays`</CommandText>
+                    <CommandText>SELECT `ID`, `NomPays` FROM `pays`</CommandText>
                     <Parameters />
                   </DbCommand>
                 </SelectCommand>
                 <UpdateCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
-                    <CommandText>UPDATE `pays` SET `Nom` = @p1 WHERE ((`ID` = @p2) AND ((@p3 = 1 AND `Nom` IS NULL) OR (`Nom` = @p4)))</CommandText>
+                    <CommandText>UPDATE `pays` SET `NomPays` = @p1 WHERE ((`ID` = @p2) AND ((@p3 = 1 AND `NomPays` IS NULL) OR (`NomPays` = @p4)))</CommandText>
                     <Parameters>
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@p1" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="Nom" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@p1" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="NomPays" SourceColumnNullMapping="false" SourceVersion="Current" />
                       <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@p2" Precision="0" ProviderType="Int32" Scale="0" Size="0" SourceColumn="ID" SourceColumnNullMapping="false" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@p3" Precision="0" ProviderType="Int32" Scale="0" Size="0" SourceColumn="Nom" SourceColumnNullMapping="true" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@p4" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="Nom" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@p3" Precision="0" ProviderType="Int32" Scale="0" Size="0" SourceColumn="NomPays" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@p4" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="NomPays" SourceColumnNullMapping="false" SourceVersion="Original" />
                     </Parameters>
                   </DbCommand>
                 </UpdateCommand>
@@ -744,20 +746,20 @@
             </MainSource>
             <Mappings>
               <Mapping SourceColumn="ID" DataSetColumn="ID" />
-              <Mapping SourceColumn="Nom" DataSetColumn="Nom" />
+              <Mapping SourceColumn="NomPays" DataSetColumn="NomPays" />
             </Mappings>
             <Sources />
           </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="provinceTableAdapter" GeneratorDataComponentClassName="provinceTableAdapter" Name="province" UserDataComponentName="provinceTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="pongConnectionString (Settings)" DbObjectName="pong.province" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="pongConnectionString2 (Settings)" DbObjectName="pong.province" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <DeleteCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
-                    <CommandText>DELETE FROM `province` WHERE ((`ID` = @p1) AND ((@p2 = 1 AND `Nom` IS NULL) OR (`Nom` = @p3)) AND ((@p4 = 1 AND `ID_Pays` IS NULL) OR (`ID_Pays` = @p5)))</CommandText>
+                    <CommandText>DELETE FROM `province` WHERE ((`ID` = @p1) AND ((@p2 = 1 AND `NomProvince` IS NULL) OR (`NomProvince` = @p3)) AND ((@p4 = 1 AND `ID_Pays` IS NULL) OR (`ID_Pays` = @p5)))</CommandText>
                     <Parameters>
                       <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@p1" Precision="0" ProviderType="Int32" Scale="0" Size="0" SourceColumn="ID" SourceColumnNullMapping="false" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@p2" Precision="0" ProviderType="Int32" Scale="0" Size="0" SourceColumn="Nom" SourceColumnNullMapping="true" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@p3" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="Nom" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@p2" Precision="0" ProviderType="Int32" Scale="0" Size="0" SourceColumn="NomProvince" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@p3" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="NomProvince" SourceColumnNullMapping="false" SourceVersion="Original" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@p4" Precision="0" ProviderType="Int32" Scale="0" Size="0" SourceColumn="ID_Pays" SourceColumnNullMapping="true" SourceVersion="Original" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@p5" Precision="0" ProviderType="Int32" Scale="0" Size="0" SourceColumn="ID_Pays" SourceColumnNullMapping="false" SourceVersion="Original" />
                     </Parameters>
@@ -765,28 +767,28 @@
                 </DeleteCommand>
                 <InsertCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
-                    <CommandText>INSERT INTO `province` (`Nom`, `ID_Pays`) VALUES (@p1, @p2)</CommandText>
+                    <CommandText>INSERT INTO `province` (`NomProvince`, `ID_Pays`) VALUES (@p1, @p2)</CommandText>
                     <Parameters>
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@p1" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="Nom" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@p1" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="NomProvince" SourceColumnNullMapping="false" SourceVersion="Current" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@p2" Precision="0" ProviderType="Int32" Scale="0" Size="0" SourceColumn="ID_Pays" SourceColumnNullMapping="false" SourceVersion="Current" />
                     </Parameters>
                   </DbCommand>
                 </InsertCommand>
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
-                    <CommandText>SELECT `ID`, `Nom`, `ID_Pays` FROM `province`</CommandText>
+                    <CommandText>SELECT `ID`, `NomProvince`, `ID_Pays` FROM `province`</CommandText>
                     <Parameters />
                   </DbCommand>
                 </SelectCommand>
                 <UpdateCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
-                    <CommandText>UPDATE `province` SET `Nom` = @p1, `ID_Pays` = @p2 WHERE ((`ID` = @p3) AND ((@p4 = 1 AND `Nom` IS NULL) OR (`Nom` = @p5)) AND ((@p6 = 1 AND `ID_Pays` IS NULL) OR (`ID_Pays` = @p7)))</CommandText>
+                    <CommandText>UPDATE `province` SET `NomProvince` = @p1, `ID_Pays` = @p2 WHERE ((`ID` = @p3) AND ((@p4 = 1 AND `NomProvince` IS NULL) OR (`NomProvince` = @p5)) AND ((@p6 = 1 AND `ID_Pays` IS NULL) OR (`ID_Pays` = @p7)))</CommandText>
                     <Parameters>
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@p1" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="Nom" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@p1" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="NomProvince" SourceColumnNullMapping="false" SourceVersion="Current" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@p2" Precision="0" ProviderType="Int32" Scale="0" Size="0" SourceColumn="ID_Pays" SourceColumnNullMapping="false" SourceVersion="Current" />
                       <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@p3" Precision="0" ProviderType="Int32" Scale="0" Size="0" SourceColumn="ID" SourceColumnNullMapping="false" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@p4" Precision="0" ProviderType="Int32" Scale="0" Size="0" SourceColumn="Nom" SourceColumnNullMapping="true" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@p5" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="Nom" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@p4" Precision="0" ProviderType="Int32" Scale="0" Size="0" SourceColumn="NomProvince" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@p5" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="NomProvince" SourceColumnNullMapping="false" SourceVersion="Original" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@p6" Precision="0" ProviderType="Int32" Scale="0" Size="0" SourceColumn="ID_Pays" SourceColumnNullMapping="true" SourceVersion="Original" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@p7" Precision="0" ProviderType="Int32" Scale="0" Size="0" SourceColumn="ID_Pays" SourceColumnNullMapping="false" SourceVersion="Original" />
                     </Parameters>
@@ -796,67 +798,14 @@
             </MainSource>
             <Mappings>
               <Mapping SourceColumn="ID" DataSetColumn="ID" />
-              <Mapping SourceColumn="Nom" DataSetColumn="Nom" />
+              <Mapping SourceColumn="NomProvince" DataSetColumn="NomProvince" />
               <Mapping SourceColumn="ID_Pays" DataSetColumn="ID_Pays" />
-            </Mappings>
-            <Sources />
-          </TableAdapter>
-          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="registretransactionsTableAdapter" GeneratorDataComponentClassName="registretransactionsTableAdapter" Name="registretransactions" UserDataComponentName="registretransactionsTableAdapter">
-            <MainSource>
-              <DbSource ConnectionRef="pongConnectionString (Settings)" DbObjectName="pong.registretransactions" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
-                <DeleteCommand>
-                  <DbCommand CommandType="Text" ModifiedByUser="false">
-                    <CommandText>DELETE FROM `registretransactions` WHERE ((`ID` = @p1) AND ((@p2 = 1 AND `DateTransaction` IS NULL) OR (`DateTransaction` = @p3)) AND ((@p4 = 1 AND `ID_Forfaits` IS NULL) OR (`ID_Forfaits` = @p5)))</CommandText>
-                    <Parameters>
-                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@p1" Precision="0" ProviderType="Int32" Scale="0" Size="0" SourceColumn="ID" SourceColumnNullMapping="false" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@p2" Precision="0" ProviderType="Int32" Scale="0" Size="0" SourceColumn="DateTransaction" SourceColumnNullMapping="true" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="@p3" Precision="0" ProviderType="DateTime" Scale="0" Size="0" SourceColumn="DateTransaction" SourceColumnNullMapping="false" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@p4" Precision="0" ProviderType="Int32" Scale="0" Size="0" SourceColumn="ID_Forfaits" SourceColumnNullMapping="true" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@p5" Precision="0" ProviderType="Int32" Scale="0" Size="0" SourceColumn="ID_Forfaits" SourceColumnNullMapping="false" SourceVersion="Original" />
-                    </Parameters>
-                  </DbCommand>
-                </DeleteCommand>
-                <InsertCommand>
-                  <DbCommand CommandType="Text" ModifiedByUser="false">
-                    <CommandText>INSERT INTO `registretransactions` (`DateTransaction`, `ID_Forfaits`) VALUES (@p1, @p2)</CommandText>
-                    <Parameters>
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="@p1" Precision="0" ProviderType="DateTime" Scale="0" Size="0" SourceColumn="DateTransaction" SourceColumnNullMapping="false" SourceVersion="Current" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@p2" Precision="0" ProviderType="Int32" Scale="0" Size="0" SourceColumn="ID_Forfaits" SourceColumnNullMapping="false" SourceVersion="Current" />
-                    </Parameters>
-                  </DbCommand>
-                </InsertCommand>
-                <SelectCommand>
-                  <DbCommand CommandType="Text" ModifiedByUser="false">
-                    <CommandText>SELECT `ID`, `DateTransaction`, `ID_Forfaits` FROM `registretransactions`</CommandText>
-                    <Parameters />
-                  </DbCommand>
-                </SelectCommand>
-                <UpdateCommand>
-                  <DbCommand CommandType="Text" ModifiedByUser="false">
-                    <CommandText>UPDATE `registretransactions` SET `DateTransaction` = @p1, `ID_Forfaits` = @p2 WHERE ((`ID` = @p3) AND ((@p4 = 1 AND `DateTransaction` IS NULL) OR (`DateTransaction` = @p5)) AND ((@p6 = 1 AND `ID_Forfaits` IS NULL) OR (`ID_Forfaits` = @p7)))</CommandText>
-                    <Parameters>
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="@p1" Precision="0" ProviderType="DateTime" Scale="0" Size="0" SourceColumn="DateTransaction" SourceColumnNullMapping="false" SourceVersion="Current" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@p2" Precision="0" ProviderType="Int32" Scale="0" Size="0" SourceColumn="ID_Forfaits" SourceColumnNullMapping="false" SourceVersion="Current" />
-                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@p3" Precision="0" ProviderType="Int32" Scale="0" Size="0" SourceColumn="ID" SourceColumnNullMapping="false" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@p4" Precision="0" ProviderType="Int32" Scale="0" Size="0" SourceColumn="DateTransaction" SourceColumnNullMapping="true" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="@p5" Precision="0" ProviderType="DateTime" Scale="0" Size="0" SourceColumn="DateTransaction" SourceColumnNullMapping="false" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@p6" Precision="0" ProviderType="Int32" Scale="0" Size="0" SourceColumn="ID_Forfaits" SourceColumnNullMapping="true" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@p7" Precision="0" ProviderType="Int32" Scale="0" Size="0" SourceColumn="ID_Forfaits" SourceColumnNullMapping="false" SourceVersion="Original" />
-                    </Parameters>
-                  </DbCommand>
-                </UpdateCommand>
-              </DbSource>
-            </MainSource>
-            <Mappings>
-              <Mapping SourceColumn="ID" DataSetColumn="ID" />
-              <Mapping SourceColumn="DateTransaction" DataSetColumn="DateTransaction" />
-              <Mapping SourceColumn="ID_Forfaits" DataSetColumn="ID_Forfaits" />
             </Mappings>
             <Sources />
           </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="rondesTableAdapter" GeneratorDataComponentClassName="rondesTableAdapter" Name="rondes" UserDataComponentName="rondesTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="pongConnectionString (Settings)" DbObjectName="pong.rondes" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="pongConnectionString2 (Settings)" DbObjectName="pong.rondes" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <DeleteCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
                     <CommandText>DELETE FROM `rondes` WHERE ((`ID` = @p1) AND ((@p2 = 1 AND `Niveau` IS NULL) OR (`Niveau` = @p3)) AND ((@p4 = 1 AND `ID_Tournois` IS NULL) OR (`ID_Tournois` = @p5)))</CommandText>
@@ -909,39 +858,39 @@
           </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="statutinvitationsTableAdapter" GeneratorDataComponentClassName="statutinvitationsTableAdapter" Name="statutinvitations" UserDataComponentName="statutinvitationsTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="pongConnectionString (Settings)" DbObjectName="pong.statutinvitations" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="pongConnectionString2 (Settings)" DbObjectName="pong.statutinvitations" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <DeleteCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
-                    <CommandText>DELETE FROM `statutinvitations` WHERE ((`ID` = @p1) AND ((@p2 = 1 AND `Description` IS NULL) OR (`Description` = @p3)))</CommandText>
+                    <CommandText>DELETE FROM `statutinvitations` WHERE ((`ID` = @p1) AND ((@p2 = 1 AND `DescriptionInvitation` IS NULL) OR (`DescriptionInvitation` = @p3)))</CommandText>
                     <Parameters>
                       <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@p1" Precision="0" ProviderType="Int32" Scale="0" Size="0" SourceColumn="ID" SourceColumnNullMapping="false" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@p2" Precision="0" ProviderType="Int32" Scale="0" Size="0" SourceColumn="Description" SourceColumnNullMapping="true" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@p3" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="Description" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@p2" Precision="0" ProviderType="Int32" Scale="0" Size="0" SourceColumn="DescriptionInvitation" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@p3" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="DescriptionInvitation" SourceColumnNullMapping="false" SourceVersion="Original" />
                     </Parameters>
                   </DbCommand>
                 </DeleteCommand>
                 <InsertCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
-                    <CommandText>INSERT INTO `statutinvitations` (`Description`) VALUES (@p1)</CommandText>
+                    <CommandText>INSERT INTO `statutinvitations` (`DescriptionInvitation`) VALUES (@p1)</CommandText>
                     <Parameters>
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@p1" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="Description" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@p1" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="DescriptionInvitation" SourceColumnNullMapping="false" SourceVersion="Current" />
                     </Parameters>
                   </DbCommand>
                 </InsertCommand>
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
-                    <CommandText>SELECT `ID`, `Description` FROM `statutinvitations`</CommandText>
+                    <CommandText>SELECT `ID`, `DescriptionInvitation` FROM `statutinvitations`</CommandText>
                     <Parameters />
                   </DbCommand>
                 </SelectCommand>
                 <UpdateCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
-                    <CommandText>UPDATE `statutinvitations` SET `Description` = @p1 WHERE ((`ID` = @p2) AND ((@p3 = 1 AND `Description` IS NULL) OR (`Description` = @p4)))</CommandText>
+                    <CommandText>UPDATE `statutinvitations` SET `DescriptionInvitation` = @p1 WHERE ((`ID` = @p2) AND ((@p3 = 1 AND `DescriptionInvitation` IS NULL) OR (`DescriptionInvitation` = @p4)))</CommandText>
                     <Parameters>
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@p1" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="Description" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@p1" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="DescriptionInvitation" SourceColumnNullMapping="false" SourceVersion="Current" />
                       <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@p2" Precision="0" ProviderType="Int32" Scale="0" Size="0" SourceColumn="ID" SourceColumnNullMapping="false" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@p3" Precision="0" ProviderType="Int32" Scale="0" Size="0" SourceColumn="Description" SourceColumnNullMapping="true" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@p4" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="Description" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@p3" Precision="0" ProviderType="Int32" Scale="0" Size="0" SourceColumn="DescriptionInvitation" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@p4" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="DescriptionInvitation" SourceColumnNullMapping="false" SourceVersion="Original" />
                     </Parameters>
                   </DbCommand>
                 </UpdateCommand>
@@ -949,20 +898,20 @@
             </MainSource>
             <Mappings>
               <Mapping SourceColumn="ID" DataSetColumn="ID" />
-              <Mapping SourceColumn="Description" DataSetColumn="Description" />
+              <Mapping SourceColumn="DescriptionInvitation" DataSetColumn="DescriptionInvitation" />
             </Mappings>
             <Sources />
           </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="taxesTableAdapter" GeneratorDataComponentClassName="taxesTableAdapter" Name="taxes" UserDataComponentName="taxesTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="pongConnectionString (Settings)" DbObjectName="pong.taxes" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="pongConnectionString2 (Settings)" DbObjectName="pong.taxes" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <DeleteCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
-                    <CommandText>DELETE FROM `taxes` WHERE ((`ID` = @p1) AND ((@p2 = 1 AND `Description` IS NULL) OR (`Description` = @p3)) AND ((@p4 = 1 AND `Taxe` IS NULL) OR (`Taxe` = @p5)))</CommandText>
+                    <CommandText>DELETE FROM `taxes` WHERE ((`ID` = @p1) AND ((@p2 = 1 AND `DescriptionTaxe` IS NULL) OR (`DescriptionTaxe` = @p3)) AND ((@p4 = 1 AND `Taxe` IS NULL) OR (`Taxe` = @p5)))</CommandText>
                     <Parameters>
                       <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@p1" Precision="0" ProviderType="Int32" Scale="0" Size="0" SourceColumn="ID" SourceColumnNullMapping="false" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@p2" Precision="0" ProviderType="Int32" Scale="0" Size="0" SourceColumn="Description" SourceColumnNullMapping="true" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@p3" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="Description" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@p2" Precision="0" ProviderType="Int32" Scale="0" Size="0" SourceColumn="DescriptionTaxe" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@p3" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="DescriptionTaxe" SourceColumnNullMapping="false" SourceVersion="Original" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@p4" Precision="0" ProviderType="Int32" Scale="0" Size="0" SourceColumn="Taxe" SourceColumnNullMapping="true" SourceVersion="Original" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Double" Direction="Input" ParameterName="@p5" Precision="0" ProviderType="Double" Scale="0" Size="0" SourceColumn="Taxe" SourceColumnNullMapping="false" SourceVersion="Original" />
                     </Parameters>
@@ -970,28 +919,28 @@
                 </DeleteCommand>
                 <InsertCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
-                    <CommandText>INSERT INTO `taxes` (`Description`, `Taxe`) VALUES (@p1, @p2)</CommandText>
+                    <CommandText>INSERT INTO `taxes` (`DescriptionTaxe`, `Taxe`) VALUES (@p1, @p2)</CommandText>
                     <Parameters>
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@p1" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="Description" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@p1" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="DescriptionTaxe" SourceColumnNullMapping="false" SourceVersion="Current" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Double" Direction="Input" ParameterName="@p2" Precision="0" ProviderType="Double" Scale="0" Size="0" SourceColumn="Taxe" SourceColumnNullMapping="false" SourceVersion="Current" />
                     </Parameters>
                   </DbCommand>
                 </InsertCommand>
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
-                    <CommandText>SELECT `ID`, `Description`, `Taxe` FROM `taxes`</CommandText>
+                    <CommandText>SELECT `ID`, `DescriptionTaxe`, `Taxe` FROM `taxes`</CommandText>
                     <Parameters />
                   </DbCommand>
                 </SelectCommand>
                 <UpdateCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
-                    <CommandText>UPDATE `taxes` SET `Description` = @p1, `Taxe` = @p2 WHERE ((`ID` = @p3) AND ((@p4 = 1 AND `Description` IS NULL) OR (`Description` = @p5)) AND ((@p6 = 1 AND `Taxe` IS NULL) OR (`Taxe` = @p7)))</CommandText>
+                    <CommandText>UPDATE `taxes` SET `DescriptionTaxe` = @p1, `Taxe` = @p2 WHERE ((`ID` = @p3) AND ((@p4 = 1 AND `DescriptionTaxe` IS NULL) OR (`DescriptionTaxe` = @p5)) AND ((@p6 = 1 AND `Taxe` IS NULL) OR (`Taxe` = @p7)))</CommandText>
                     <Parameters>
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@p1" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="Description" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@p1" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="DescriptionTaxe" SourceColumnNullMapping="false" SourceVersion="Current" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Double" Direction="Input" ParameterName="@p2" Precision="0" ProviderType="Double" Scale="0" Size="0" SourceColumn="Taxe" SourceColumnNullMapping="false" SourceVersion="Current" />
                       <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@p3" Precision="0" ProviderType="Int32" Scale="0" Size="0" SourceColumn="ID" SourceColumnNullMapping="false" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@p4" Precision="0" ProviderType="Int32" Scale="0" Size="0" SourceColumn="Description" SourceColumnNullMapping="true" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@p5" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="Description" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@p4" Precision="0" ProviderType="Int32" Scale="0" Size="0" SourceColumn="DescriptionTaxe" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@p5" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="DescriptionTaxe" SourceColumnNullMapping="false" SourceVersion="Original" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@p6" Precision="0" ProviderType="Int32" Scale="0" Size="0" SourceColumn="Taxe" SourceColumnNullMapping="true" SourceVersion="Original" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Double" Direction="Input" ParameterName="@p7" Precision="0" ProviderType="Double" Scale="0" Size="0" SourceColumn="Taxe" SourceColumnNullMapping="false" SourceVersion="Original" />
                     </Parameters>
@@ -1001,21 +950,21 @@
             </MainSource>
             <Mappings>
               <Mapping SourceColumn="ID" DataSetColumn="ID" />
-              <Mapping SourceColumn="Description" DataSetColumn="Description" />
+              <Mapping SourceColumn="DescriptionTaxe" DataSetColumn="DescriptionTaxe" />
               <Mapping SourceColumn="Taxe" DataSetColumn="Taxe" />
             </Mappings>
             <Sources />
           </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="tournoisTableAdapter" GeneratorDataComponentClassName="tournoisTableAdapter" Name="tournois" UserDataComponentName="tournoisTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="pongConnectionString (Settings)" DbObjectName="pong.tournois" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="pongConnectionString2 (Settings)" DbObjectName="pong.tournois" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <DeleteCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
-                    <CommandText>DELETE FROM `tournois` WHERE ((`ID` = @p1) AND ((@p2 = 1 AND `Premium` IS NULL) OR (`Premium` = @p3)) AND ((@p4 = 1 AND `NombreJoueurs` IS NULL) OR (`NombreJoueurs` = @p5)))</CommandText>
+                    <CommandText>DELETE FROM `tournois` WHERE ((`ID` = @p1) AND ((@p2 = 1 AND `PremiumTournoi` IS NULL) OR (`PremiumTournoi` = @p3)) AND ((@p4 = 1 AND `NombreJoueurs` IS NULL) OR (`NombreJoueurs` = @p5)))</CommandText>
                     <Parameters>
                       <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@p1" Precision="0" ProviderType="Int32" Scale="0" Size="0" SourceColumn="ID" SourceColumnNullMapping="false" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@p2" Precision="0" ProviderType="Int32" Scale="0" Size="0" SourceColumn="Premium" SourceColumnNullMapping="true" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@p3" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="Premium" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@p2" Precision="0" ProviderType="Int32" Scale="0" Size="0" SourceColumn="PremiumTournoi" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@p3" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="PremiumTournoi" SourceColumnNullMapping="false" SourceVersion="Original" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@p4" Precision="0" ProviderType="Int32" Scale="0" Size="0" SourceColumn="NombreJoueurs" SourceColumnNullMapping="true" SourceVersion="Original" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@p5" Precision="0" ProviderType="Int32" Scale="0" Size="0" SourceColumn="NombreJoueurs" SourceColumnNullMapping="false" SourceVersion="Original" />
                     </Parameters>
@@ -1023,28 +972,28 @@
                 </DeleteCommand>
                 <InsertCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
-                    <CommandText>INSERT INTO `tournois` (`Premium`, `NombreJoueurs`) VALUES (@p1, @p2)</CommandText>
+                    <CommandText>INSERT INTO `tournois` (`PremiumTournoi`, `NombreJoueurs`) VALUES (@p1, @p2)</CommandText>
                     <Parameters>
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@p1" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="Premium" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@p1" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="PremiumTournoi" SourceColumnNullMapping="false" SourceVersion="Current" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@p2" Precision="0" ProviderType="Int32" Scale="0" Size="0" SourceColumn="NombreJoueurs" SourceColumnNullMapping="false" SourceVersion="Current" />
                     </Parameters>
                   </DbCommand>
                 </InsertCommand>
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
-                    <CommandText>SELECT `ID`, `Premium`, `NombreJoueurs` FROM `tournois`</CommandText>
+                    <CommandText>SELECT `ID`, `PremiumTournoi`, `NombreJoueurs` FROM `tournois`</CommandText>
                     <Parameters />
                   </DbCommand>
                 </SelectCommand>
                 <UpdateCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
-                    <CommandText>UPDATE `tournois` SET `Premium` = @p1, `NombreJoueurs` = @p2 WHERE ((`ID` = @p3) AND ((@p4 = 1 AND `Premium` IS NULL) OR (`Premium` = @p5)) AND ((@p6 = 1 AND `NombreJoueurs` IS NULL) OR (`NombreJoueurs` = @p7)))</CommandText>
+                    <CommandText>UPDATE `tournois` SET `PremiumTournoi` = @p1, `NombreJoueurs` = @p2 WHERE ((`ID` = @p3) AND ((@p4 = 1 AND `PremiumTournoi` IS NULL) OR (`PremiumTournoi` = @p5)) AND ((@p6 = 1 AND `NombreJoueurs` IS NULL) OR (`NombreJoueurs` = @p7)))</CommandText>
                     <Parameters>
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@p1" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="Premium" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@p1" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="PremiumTournoi" SourceColumnNullMapping="false" SourceVersion="Current" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@p2" Precision="0" ProviderType="Int32" Scale="0" Size="0" SourceColumn="NombreJoueurs" SourceColumnNullMapping="false" SourceVersion="Current" />
                       <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@p3" Precision="0" ProviderType="Int32" Scale="0" Size="0" SourceColumn="ID" SourceColumnNullMapping="false" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@p4" Precision="0" ProviderType="Int32" Scale="0" Size="0" SourceColumn="Premium" SourceColumnNullMapping="true" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@p5" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="Premium" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@p4" Precision="0" ProviderType="Int32" Scale="0" Size="0" SourceColumn="PremiumTournoi" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@p5" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="PremiumTournoi" SourceColumnNullMapping="false" SourceVersion="Original" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@p6" Precision="0" ProviderType="Int32" Scale="0" Size="0" SourceColumn="NombreJoueurs" SourceColumnNullMapping="true" SourceVersion="Original" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@p7" Precision="0" ProviderType="Int32" Scale="0" Size="0" SourceColumn="NombreJoueurs" SourceColumnNullMapping="false" SourceVersion="Original" />
                     </Parameters>
@@ -1054,67 +1003,75 @@
             </MainSource>
             <Mappings>
               <Mapping SourceColumn="ID" DataSetColumn="ID" />
-              <Mapping SourceColumn="Premium" DataSetColumn="Premium" />
+              <Mapping SourceColumn="PremiumTournoi" DataSetColumn="PremiumTournoi" />
               <Mapping SourceColumn="NombreJoueurs" DataSetColumn="NombreJoueurs" />
             </Mappings>
             <Sources />
           </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="transactionsTableAdapter" GeneratorDataComponentClassName="transactionsTableAdapter" Name="transactions" UserDataComponentName="transactionsTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="pongConnectionString (Settings)" DbObjectName="pong.transactions" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="pongConnectionString2 (Settings)" DbObjectName="pong.transactions" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <DeleteCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
-                    <CommandText>DELETE FROM `transactions` WHERE ((`ID_Joueurs` = @p1) AND (`ID_RegistreTransactions` = @p2))</CommandText>
+                    <CommandText>DELETE FROM `transactions` WHERE ((`ID` = @p1) AND (`ID_Joueurs` = @p2) AND (`ID_Forfaits` = @p3) AND (`DateTransaction` = @p4))</CommandText>
                     <Parameters>
-                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@p1" Precision="0" ProviderType="Int32" Scale="0" Size="0" SourceColumn="ID_Joueurs" SourceColumnNullMapping="false" SourceVersion="Original" />
-                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@p2" Precision="0" ProviderType="Int32" Scale="0" Size="0" SourceColumn="ID_RegistreTransactions" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@p1" Precision="0" ProviderType="Int32" Scale="0" Size="0" SourceColumn="ID" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@p2" Precision="0" ProviderType="Int32" Scale="0" Size="0" SourceColumn="ID_Joueurs" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@p3" Precision="0" ProviderType="Int32" Scale="0" Size="0" SourceColumn="ID_Forfaits" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="@p4" Precision="0" ProviderType="DateTime" Scale="0" Size="0" SourceColumn="DateTransaction" SourceColumnNullMapping="false" SourceVersion="Original" />
                     </Parameters>
                   </DbCommand>
                 </DeleteCommand>
                 <InsertCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
-                    <CommandText>INSERT INTO `transactions` (`ID_Joueurs`, `ID_RegistreTransactions`) VALUES (@p1, @p2)</CommandText>
+                    <CommandText>INSERT INTO `transactions` (`ID_Joueurs`, `ID_Forfaits`, `DateTransaction`) VALUES (@p1, @p2, @p3)</CommandText>
                     <Parameters>
                       <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@p1" Precision="0" ProviderType="Int32" Scale="0" Size="0" SourceColumn="ID_Joueurs" SourceColumnNullMapping="false" SourceVersion="Current" />
-                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@p2" Precision="0" ProviderType="Int32" Scale="0" Size="0" SourceColumn="ID_RegistreTransactions" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@p2" Precision="0" ProviderType="Int32" Scale="0" Size="0" SourceColumn="ID_Forfaits" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="@p3" Precision="0" ProviderType="DateTime" Scale="0" Size="0" SourceColumn="DateTransaction" SourceColumnNullMapping="false" SourceVersion="Current" />
                     </Parameters>
                   </DbCommand>
                 </InsertCommand>
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
-                    <CommandText>SELECT `ID_Joueurs`, `ID_RegistreTransactions` FROM `transactions`</CommandText>
+                    <CommandText>SELECT `ID`, `ID_Joueurs`, `ID_Forfaits`, `DateTransaction` FROM `transactions`</CommandText>
                     <Parameters />
                   </DbCommand>
                 </SelectCommand>
                 <UpdateCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
-                    <CommandText>UPDATE `transactions` SET `ID_Joueurs` = @p1, `ID_RegistreTransactions` = @p2 WHERE ((`ID_Joueurs` = @p3) AND (`ID_RegistreTransactions` = @p4))</CommandText>
+                    <CommandText>UPDATE `transactions` SET `ID_Joueurs` = @p1, `ID_Forfaits` = @p2, `DateTransaction` = @p3 WHERE ((`ID` = @p4) AND (`ID_Joueurs` = @p5) AND (`ID_Forfaits` = @p6) AND (`DateTransaction` = @p7))</CommandText>
                     <Parameters>
                       <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@p1" Precision="0" ProviderType="Int32" Scale="0" Size="0" SourceColumn="ID_Joueurs" SourceColumnNullMapping="false" SourceVersion="Current" />
-                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@p2" Precision="0" ProviderType="Int32" Scale="0" Size="0" SourceColumn="ID_RegistreTransactions" SourceColumnNullMapping="false" SourceVersion="Current" />
-                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@p3" Precision="0" ProviderType="Int32" Scale="0" Size="0" SourceColumn="ID_Joueurs" SourceColumnNullMapping="false" SourceVersion="Original" />
-                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@p4" Precision="0" ProviderType="Int32" Scale="0" Size="0" SourceColumn="ID_RegistreTransactions" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@p2" Precision="0" ProviderType="Int32" Scale="0" Size="0" SourceColumn="ID_Forfaits" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="@p3" Precision="0" ProviderType="DateTime" Scale="0" Size="0" SourceColumn="DateTransaction" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@p4" Precision="0" ProviderType="Int32" Scale="0" Size="0" SourceColumn="ID" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@p5" Precision="0" ProviderType="Int32" Scale="0" Size="0" SourceColumn="ID_Joueurs" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@p6" Precision="0" ProviderType="Int32" Scale="0" Size="0" SourceColumn="ID_Forfaits" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="@p7" Precision="0" ProviderType="DateTime" Scale="0" Size="0" SourceColumn="DateTransaction" SourceColumnNullMapping="false" SourceVersion="Original" />
                     </Parameters>
                   </DbCommand>
                 </UpdateCommand>
               </DbSource>
             </MainSource>
             <Mappings>
+              <Mapping SourceColumn="ID" DataSetColumn="ID" />
               <Mapping SourceColumn="ID_Joueurs" DataSetColumn="ID_Joueurs" />
-              <Mapping SourceColumn="ID_RegistreTransactions" DataSetColumn="ID_RegistreTransactions" />
+              <Mapping SourceColumn="ID_Forfaits" DataSetColumn="ID_Forfaits" />
+              <Mapping SourceColumn="DateTransaction" DataSetColumn="DateTransaction" />
             </Mappings>
             <Sources />
           </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="villeTableAdapter" GeneratorDataComponentClassName="villeTableAdapter" Name="ville" UserDataComponentName="villeTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="pongConnectionString (Settings)" DbObjectName="pong.ville" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="pongConnectionString2 (Settings)" DbObjectName="pong.ville" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <DeleteCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
-                    <CommandText>DELETE FROM `ville` WHERE ((`ID` = @p1) AND ((@p2 = 1 AND `Nom` IS NULL) OR (`Nom` = @p3)) AND ((@p4 = 1 AND `ID_Province` IS NULL) OR (`ID_Province` = @p5)))</CommandText>
+                    <CommandText>DELETE FROM `ville` WHERE ((`ID` = @p1) AND ((@p2 = 1 AND `NomVille` IS NULL) OR (`NomVille` = @p3)) AND ((@p4 = 1 AND `ID_Province` IS NULL) OR (`ID_Province` = @p5)))</CommandText>
                     <Parameters>
                       <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@p1" Precision="0" ProviderType="Int32" Scale="0" Size="0" SourceColumn="ID" SourceColumnNullMapping="false" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@p2" Precision="0" ProviderType="Int32" Scale="0" Size="0" SourceColumn="Nom" SourceColumnNullMapping="true" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@p3" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="Nom" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@p2" Precision="0" ProviderType="Int32" Scale="0" Size="0" SourceColumn="NomVille" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@p3" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="NomVille" SourceColumnNullMapping="false" SourceVersion="Original" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@p4" Precision="0" ProviderType="Int32" Scale="0" Size="0" SourceColumn="ID_Province" SourceColumnNullMapping="true" SourceVersion="Original" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@p5" Precision="0" ProviderType="Int32" Scale="0" Size="0" SourceColumn="ID_Province" SourceColumnNullMapping="false" SourceVersion="Original" />
                     </Parameters>
@@ -1122,28 +1079,28 @@
                 </DeleteCommand>
                 <InsertCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
-                    <CommandText>INSERT INTO `ville` (`Nom`, `ID_Province`) VALUES (@p1, @p2)</CommandText>
+                    <CommandText>INSERT INTO `ville` (`NomVille`, `ID_Province`) VALUES (@p1, @p2)</CommandText>
                     <Parameters>
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@p1" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="Nom" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@p1" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="NomVille" SourceColumnNullMapping="false" SourceVersion="Current" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@p2" Precision="0" ProviderType="Int32" Scale="0" Size="0" SourceColumn="ID_Province" SourceColumnNullMapping="false" SourceVersion="Current" />
                     </Parameters>
                   </DbCommand>
                 </InsertCommand>
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
-                    <CommandText>SELECT `ID`, `Nom`, `ID_Province` FROM `ville`</CommandText>
+                    <CommandText>SELECT `ID`, `NomVille`, `ID_Province` FROM `ville`</CommandText>
                     <Parameters />
                   </DbCommand>
                 </SelectCommand>
                 <UpdateCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
-                    <CommandText>UPDATE `ville` SET `Nom` = @p1, `ID_Province` = @p2 WHERE ((`ID` = @p3) AND ((@p4 = 1 AND `Nom` IS NULL) OR (`Nom` = @p5)) AND ((@p6 = 1 AND `ID_Province` IS NULL) OR (`ID_Province` = @p7)))</CommandText>
+                    <CommandText>UPDATE `ville` SET `NomVille` = @p1, `ID_Province` = @p2 WHERE ((`ID` = @p3) AND ((@p4 = 1 AND `NomVille` IS NULL) OR (`NomVille` = @p5)) AND ((@p6 = 1 AND `ID_Province` IS NULL) OR (`ID_Province` = @p7)))</CommandText>
                     <Parameters>
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@p1" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="Nom" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@p1" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="NomVille" SourceColumnNullMapping="false" SourceVersion="Current" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@p2" Precision="0" ProviderType="Int32" Scale="0" Size="0" SourceColumn="ID_Province" SourceColumnNullMapping="false" SourceVersion="Current" />
                       <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@p3" Precision="0" ProviderType="Int32" Scale="0" Size="0" SourceColumn="ID" SourceColumnNullMapping="false" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@p4" Precision="0" ProviderType="Int32" Scale="0" Size="0" SourceColumn="Nom" SourceColumnNullMapping="true" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@p5" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="Nom" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@p4" Precision="0" ProviderType="Int32" Scale="0" Size="0" SourceColumn="NomVille" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@p5" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="NomVille" SourceColumnNullMapping="false" SourceVersion="Original" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@p6" Precision="0" ProviderType="Int32" Scale="0" Size="0" SourceColumn="ID_Province" SourceColumnNullMapping="true" SourceVersion="Original" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@p7" Precision="0" ProviderType="Int32" Scale="0" Size="0" SourceColumn="ID_Province" SourceColumnNullMapping="false" SourceVersion="Original" />
                     </Parameters>
@@ -1153,7 +1110,7 @@
             </MainSource>
             <Mappings>
               <Mapping SourceColumn="ID" DataSetColumn="ID" />
-              <Mapping SourceColumn="Nom" DataSetColumn="Nom" />
+              <Mapping SourceColumn="NomVille" DataSetColumn="NomVille" />
               <Mapping SourceColumn="ID_Province" DataSetColumn="ID_Province" />
             </Mappings>
             <Sources />
@@ -1216,7 +1173,7 @@
           <xs:complexType>
             <xs:sequence>
               <xs:element name="ID" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnID" msprop:Generator_ColumnPropNameInRow="ID" msprop:Generator_ColumnPropNameInTable="IDColumn" msprop:Generator_UserColumnName="ID" type="xs:int" />
-              <xs:element name="Description" msprop:Generator_ColumnVarNameInTable="columnDescription" msprop:Generator_ColumnPropNameInRow="Description" msprop:Generator_ColumnPropNameInTable="DescriptionColumn" msprop:Generator_UserColumnName="Description" minOccurs="0">
+              <xs:element name="Couleur" msprop:Generator_ColumnVarNameInTable="columnCouleur" msprop:Generator_ColumnPropNameInRow="Couleur" msprop:Generator_ColumnPropNameInTable="CouleurColumn" msprop:Generator_UserColumnName="Couleur" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="45" />
@@ -1230,14 +1187,14 @@
           <xs:complexType>
             <xs:sequence>
               <xs:element name="ID" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnID" msprop:Generator_ColumnPropNameInRow="ID" msprop:Generator_ColumnPropNameInTable="IDColumn" msprop:Generator_UserColumnName="ID" type="xs:int" />
-              <xs:element name="Nom" msprop:Generator_ColumnVarNameInTable="columnNom" msprop:Generator_ColumnPropNameInRow="Nom" msprop:Generator_ColumnPropNameInTable="NomColumn" msprop:Generator_UserColumnName="Nom" minOccurs="0">
+              <xs:element name="NomEquipe" msprop:Generator_ColumnVarNameInTable="columnNomEquipe" msprop:Generator_ColumnPropNameInRow="NomEquipe" msprop:Generator_ColumnPropNameInTable="NomEquipeColumn" msprop:Generator_UserColumnName="NomEquipe" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="45" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="Description" msprop:Generator_ColumnVarNameInTable="columnDescription" msprop:Generator_ColumnPropNameInRow="Description" msprop:Generator_ColumnPropNameInTable="DescriptionColumn" msprop:Generator_UserColumnName="Description" minOccurs="0">
+              <xs:element name="DescriptionEquipe" msprop:Generator_ColumnVarNameInTable="columnDescriptionEquipe" msprop:Generator_ColumnPropNameInRow="DescriptionEquipe" msprop:Generator_ColumnPropNameInTable="DescriptionEquipeColumn" msprop:Generator_UserColumnName="DescriptionEquipe" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="200" />
@@ -1251,7 +1208,7 @@
           <xs:complexType>
             <xs:sequence>
               <xs:element name="ID" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnID" msprop:Generator_ColumnPropNameInRow="ID" msprop:Generator_ColumnPropNameInTable="IDColumn" msprop:Generator_UserColumnName="ID" type="xs:int" />
-              <xs:element name="Description" msprop:Generator_ColumnVarNameInTable="columnDescription" msprop:Generator_ColumnPropNameInRow="Description" msprop:Generator_ColumnPropNameInTable="DescriptionColumn" msprop:Generator_UserColumnName="Description" minOccurs="0">
+              <xs:element name="DescriptionForfait" msprop:Generator_ColumnVarNameInTable="columnDescriptionForfait" msprop:Generator_ColumnPropNameInRow="DescriptionForfait" msprop:Generator_ColumnPropNameInTable="DescriptionForfaitColumn" msprop:Generator_UserColumnName="DescriptionForfait" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="45" />
@@ -1285,7 +1242,7 @@
           <xs:complexType>
             <xs:sequence>
               <xs:element name="ID" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnID" msprop:Generator_ColumnPropNameInRow="ID" msprop:Generator_ColumnPropNameInTable="IDColumn" msprop:Generator_UserColumnName="ID" type="xs:int" />
-              <xs:element name="Nom" msprop:Generator_ColumnVarNameInTable="columnNom" msprop:Generator_ColumnPropNameInRow="Nom" msprop:Generator_ColumnPropNameInTable="NomColumn" msprop:Generator_UserColumnName="Nom" minOccurs="0">
+              <xs:element name="NomJoueur" msprop:Generator_ColumnVarNameInTable="columnNomJoueur" msprop:Generator_ColumnPropNameInRow="NomJoueur" msprop:Generator_ColumnPropNameInTable="NomJoueurColumn" msprop:Generator_UserColumnName="NomJoueur" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="45" />
@@ -1340,7 +1297,7 @@
           <xs:complexType>
             <xs:sequence>
               <xs:element name="ID" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnID" msprop:Generator_ColumnPropNameInRow="ID" msprop:Generator_ColumnPropNameInTable="IDColumn" msprop:Generator_UserColumnName="ID" type="xs:int" />
-              <xs:element name="Nom" msprop:Generator_ColumnVarNameInTable="columnNom" msprop:Generator_ColumnPropNameInRow="Nom" msprop:Generator_ColumnPropNameInTable="NomColumn" msprop:Generator_UserColumnName="Nom" minOccurs="0">
+              <xs:element name="Marque" msprop:Generator_ColumnVarNameInTable="columnMarque" msprop:Generator_ColumnPropNameInRow="Marque" msprop:Generator_ColumnPropNameInTable="MarqueColumn" msprop:Generator_UserColumnName="Marque" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="45" />
@@ -1375,7 +1332,7 @@
           <xs:complexType>
             <xs:sequence>
               <xs:element name="ID" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnID" msprop:Generator_ColumnPropNameInRow="ID" msprop:Generator_ColumnPropNameInTable="IDColumn" msprop:Generator_UserColumnName="ID" type="xs:int" />
-              <xs:element name="Nom" msprop:Generator_ColumnVarNameInTable="columnNom" msprop:Generator_ColumnPropNameInRow="Nom" msprop:Generator_ColumnPropNameInTable="NomColumn" msprop:Generator_UserColumnName="Nom" minOccurs="0">
+              <xs:element name="NomPays" msprop:Generator_ColumnVarNameInTable="columnNomPays" msprop:Generator_ColumnPropNameInRow="NomPays" msprop:Generator_ColumnPropNameInTable="NomPaysColumn" msprop:Generator_UserColumnName="NomPays" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="45" />
@@ -1389,7 +1346,7 @@
           <xs:complexType>
             <xs:sequence>
               <xs:element name="ID" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnID" msprop:Generator_ColumnPropNameInRow="ID" msprop:Generator_ColumnPropNameInTable="IDColumn" msprop:Generator_UserColumnName="ID" type="xs:int" />
-              <xs:element name="Nom" msprop:Generator_ColumnVarNameInTable="columnNom" msprop:Generator_ColumnPropNameInRow="Nom" msprop:Generator_ColumnPropNameInTable="NomColumn" msprop:Generator_UserColumnName="Nom" minOccurs="0">
+              <xs:element name="NomProvince" msprop:Generator_ColumnVarNameInTable="columnNomProvince" msprop:Generator_ColumnPropNameInRow="NomProvince" msprop:Generator_ColumnPropNameInTable="NomProvinceColumn" msprop:Generator_UserColumnName="NomProvince" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="45" />
@@ -1397,15 +1354,6 @@
                 </xs:simpleType>
               </xs:element>
               <xs:element name="ID_Pays" msprop:Generator_ColumnVarNameInTable="columnID_Pays" msprop:Generator_ColumnPropNameInRow="ID_Pays" msprop:Generator_ColumnPropNameInTable="ID_PaysColumn" msprop:Generator_UserColumnName="ID_Pays" type="xs:int" minOccurs="0" />
-            </xs:sequence>
-          </xs:complexType>
-        </xs:element>
-        <xs:element name="registretransactions" msprop:Generator_TableClassName="registretransactionsDataTable" msprop:Generator_TableVarName="tableregistretransactions" msprop:Generator_TablePropName="registretransactions" msprop:Generator_RowDeletingName="registretransactionsRowDeleting" msprop:Generator_RowChangingName="registretransactionsRowChanging" msprop:Generator_RowEvHandlerName="registretransactionsRowChangeEventHandler" msprop:Generator_RowDeletedName="registretransactionsRowDeleted" msprop:Generator_UserTableName="registretransactions" msprop:Generator_RowChangedName="registretransactionsRowChanged" msprop:Generator_RowEvArgName="registretransactionsRowChangeEvent" msprop:Generator_RowClassName="registretransactionsRow">
-          <xs:complexType>
-            <xs:sequence>
-              <xs:element name="ID" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnID" msprop:Generator_ColumnPropNameInRow="ID" msprop:Generator_ColumnPropNameInTable="IDColumn" msprop:Generator_UserColumnName="ID" type="xs:int" />
-              <xs:element name="DateTransaction" msprop:Generator_ColumnVarNameInTable="columnDateTransaction" msprop:Generator_ColumnPropNameInRow="DateTransaction" msprop:Generator_ColumnPropNameInTable="DateTransactionColumn" msprop:Generator_UserColumnName="DateTransaction" type="xs:dateTime" minOccurs="0" />
-              <xs:element name="ID_Forfaits" msprop:Generator_ColumnVarNameInTable="columnID_Forfaits" msprop:Generator_ColumnPropNameInRow="ID_Forfaits" msprop:Generator_ColumnPropNameInTable="ID_ForfaitsColumn" msprop:Generator_UserColumnName="ID_Forfaits" type="xs:int" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>
@@ -1422,7 +1370,7 @@
           <xs:complexType>
             <xs:sequence>
               <xs:element name="ID" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnID" msprop:Generator_ColumnPropNameInRow="ID" msprop:Generator_ColumnPropNameInTable="IDColumn" msprop:Generator_UserColumnName="ID" type="xs:int" />
-              <xs:element name="Description" msprop:Generator_ColumnVarNameInTable="columnDescription" msprop:Generator_ColumnPropNameInRow="Description" msprop:Generator_ColumnPropNameInTable="DescriptionColumn" msprop:Generator_UserColumnName="Description" minOccurs="0">
+              <xs:element name="DescriptionInvitation" msprop:Generator_ColumnVarNameInTable="columnDescriptionInvitation" msprop:Generator_ColumnPropNameInRow="DescriptionInvitation" msprop:Generator_ColumnPropNameInTable="DescriptionInvitationColumn" msprop:Generator_UserColumnName="DescriptionInvitation" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="45" />
@@ -1436,7 +1384,7 @@
           <xs:complexType>
             <xs:sequence>
               <xs:element name="ID" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnID" msprop:Generator_ColumnPropNameInRow="ID" msprop:Generator_ColumnPropNameInTable="IDColumn" msprop:Generator_UserColumnName="ID" type="xs:int" />
-              <xs:element name="Description" msprop:Generator_ColumnVarNameInTable="columnDescription" msprop:Generator_ColumnPropNameInRow="Description" msprop:Generator_ColumnPropNameInTable="DescriptionColumn" msprop:Generator_UserColumnName="Description" minOccurs="0">
+              <xs:element name="DescriptionTaxe" msprop:Generator_ColumnVarNameInTable="columnDescriptionTaxe" msprop:Generator_ColumnPropNameInRow="DescriptionTaxe" msprop:Generator_ColumnPropNameInTable="DescriptionTaxeColumn" msprop:Generator_UserColumnName="DescriptionTaxe" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="45" />
@@ -1451,7 +1399,7 @@
           <xs:complexType>
             <xs:sequence>
               <xs:element name="ID" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnID" msprop:Generator_ColumnPropNameInRow="ID" msprop:Generator_ColumnPropNameInTable="IDColumn" msprop:Generator_UserColumnName="ID" type="xs:int" />
-              <xs:element name="Premium" msprop:Generator_ColumnVarNameInTable="columnPremium" msprop:Generator_ColumnPropNameInRow="Premium" msprop:Generator_ColumnPropNameInTable="PremiumColumn" msprop:Generator_UserColumnName="Premium" minOccurs="0">
+              <xs:element name="PremiumTournoi" msprop:Generator_ColumnVarNameInTable="columnPremiumTournoi" msprop:Generator_ColumnPropNameInRow="PremiumTournoi" msprop:Generator_ColumnPropNameInTable="PremiumTournoiColumn" msprop:Generator_UserColumnName="PremiumTournoi" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="45" />
@@ -1465,8 +1413,10 @@
         <xs:element name="transactions" msprop:Generator_TableClassName="transactionsDataTable" msprop:Generator_TableVarName="tabletransactions" msprop:Generator_TablePropName="transactions" msprop:Generator_RowDeletingName="transactionsRowDeleting" msprop:Generator_RowChangingName="transactionsRowChanging" msprop:Generator_RowEvHandlerName="transactionsRowChangeEventHandler" msprop:Generator_RowDeletedName="transactionsRowDeleted" msprop:Generator_UserTableName="transactions" msprop:Generator_RowChangedName="transactionsRowChanged" msprop:Generator_RowEvArgName="transactionsRowChangeEvent" msprop:Generator_RowClassName="transactionsRow">
           <xs:complexType>
             <xs:sequence>
+              <xs:element name="ID" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnID" msprop:Generator_ColumnPropNameInRow="ID" msprop:Generator_ColumnPropNameInTable="IDColumn" msprop:Generator_UserColumnName="ID" type="xs:int" />
               <xs:element name="ID_Joueurs" msprop:Generator_ColumnVarNameInTable="columnID_Joueurs" msprop:Generator_ColumnPropNameInRow="ID_Joueurs" msprop:Generator_ColumnPropNameInTable="ID_JoueursColumn" msprop:Generator_UserColumnName="ID_Joueurs" type="xs:int" />
-              <xs:element name="ID_RegistreTransactions" msprop:Generator_ColumnVarNameInTable="columnID_RegistreTransactions" msprop:Generator_ColumnPropNameInRow="ID_RegistreTransactions" msprop:Generator_ColumnPropNameInTable="ID_RegistreTransactionsColumn" msprop:Generator_UserColumnName="ID_RegistreTransactions" type="xs:int" />
+              <xs:element name="ID_Forfaits" msprop:Generator_ColumnVarNameInTable="columnID_Forfaits" msprop:Generator_ColumnPropNameInRow="ID_Forfaits" msprop:Generator_ColumnPropNameInTable="ID_ForfaitsColumn" msprop:Generator_UserColumnName="ID_Forfaits" type="xs:int" />
+              <xs:element name="DateTransaction" msprop:Generator_ColumnVarNameInTable="columnDateTransaction" msprop:Generator_ColumnPropNameInRow="DateTransaction" msprop:Generator_ColumnPropNameInTable="DateTransactionColumn" msprop:Generator_UserColumnName="DateTransaction" type="xs:dateTime" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>
@@ -1474,7 +1424,7 @@
           <xs:complexType>
             <xs:sequence>
               <xs:element name="ID" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnID" msprop:Generator_ColumnPropNameInRow="ID" msprop:Generator_ColumnPropNameInTable="IDColumn" msprop:Generator_UserColumnName="ID" type="xs:int" />
-              <xs:element name="Nom" msprop:Generator_ColumnVarNameInTable="columnNom" msprop:Generator_ColumnPropNameInRow="Nom" msprop:Generator_ColumnPropNameInTable="NomColumn" msprop:Generator_UserColumnName="Nom" minOccurs="0">
+              <xs:element name="NomVille" msprop:Generator_ColumnVarNameInTable="columnNomVille" msprop:Generator_ColumnPropNameInRow="NomVille" msprop:Generator_ColumnPropNameInTable="NomVilleColumn" msprop:Generator_UserColumnName="NomVille" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="45" />
@@ -1542,10 +1492,6 @@
       <xs:selector xpath=".//mstns:province" />
       <xs:field xpath="mstns:ID" />
     </xs:unique>
-    <xs:unique name="registretransactions_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
-      <xs:selector xpath=".//mstns:registretransactions" />
-      <xs:field xpath="mstns:ID" />
-    </xs:unique>
     <xs:unique name="rondes_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
       <xs:selector xpath=".//mstns:rondes" />
       <xs:field xpath="mstns:ID" />
@@ -1564,8 +1510,7 @@
     </xs:unique>
     <xs:unique name="transactions_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
       <xs:selector xpath=".//mstns:transactions" />
-      <xs:field xpath="mstns:ID_Joueurs" />
-      <xs:field xpath="mstns:ID_RegistreTransactions" />
+      <xs:field xpath="mstns:ID" />
     </xs:unique>
     <xs:unique name="ville_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
       <xs:selector xpath=".//mstns:ville" />
@@ -1586,13 +1531,12 @@
       <msdata:Relationship name="FK_ID_Joueurs1_Parties" msdata:parent="joueurs" msdata:child="parties" msdata:parentkey="ID" msdata:childkey="ID_Joueurs1" msprop:Generator_UserChildTable="parties" msprop:Generator_ChildPropName="GetpartiesRowsByFK_ID_Joueurs1_Parties" msprop:Generator_UserRelationName="FK_ID_Joueurs1_Parties" msprop:Generator_ParentPropName="joueursRowByFK_ID_Joueurs1_Parties" msprop:Generator_RelationVarName="relationFK_ID_Joueurs1_Parties" msprop:Generator_UserParentTable="joueurs" />
       <msdata:Relationship name="FK_ID_Joueurs2_Parties" msdata:parent="joueurs" msdata:child="parties" msdata:parentkey="ID" msdata:childkey="ID_Joueurs2" msprop:Generator_UserChildTable="parties" msprop:Generator_ChildPropName="GetpartiesRowsByFK_ID_Joueurs2_Parties" msprop:Generator_UserRelationName="FK_ID_Joueurs2_Parties" msprop:Generator_ParentPropName="joueursRowByFK_ID_Joueurs2_Parties" msprop:Generator_RelationVarName="relationFK_ID_Joueurs2_Parties" msprop:Generator_UserParentTable="joueurs" />
       <msdata:Relationship name="FK_ID_Pays_Province" msdata:parent="pays" msdata:child="province" msdata:parentkey="ID" msdata:childkey="ID_Pays" msprop:Generator_UserChildTable="province" msprop:Generator_ChildPropName="GetprovinceRows" msprop:Generator_UserRelationName="FK_ID_Pays_Province" msprop:Generator_ParentPropName="paysRow" msprop:Generator_RelationVarName="relationFK_ID_Pays_Province" msprop:Generator_UserParentTable="pays" />
-      <msdata:Relationship name="FK_ID_Forfaits_RegistreTransactions" msdata:parent="forfaits" msdata:child="registretransactions" msdata:parentkey="ID" msdata:childkey="ID_Forfaits" msprop:Generator_UserChildTable="registretransactions" msprop:Generator_ChildPropName="GetregistretransactionsRows" msprop:Generator_UserRelationName="FK_ID_Forfaits_RegistreTransactions" msprop:Generator_ParentPropName="forfaitsRow" msprop:Generator_RelationVarName="relationFK_ID_Forfaits_RegistreTransactions" msprop:Generator_UserParentTable="forfaits" />
       <msdata:Relationship name="FK_ID_Rondes_Parties" msdata:parent="rondes" msdata:child="parties" msdata:parentkey="ID" msdata:childkey="ID_Rondes" msprop:Generator_UserChildTable="parties" msprop:Generator_ChildPropName="GetpartiesRows" msprop:Generator_UserRelationName="FK_ID_Rondes_Parties" msprop:Generator_RelationVarName="relationFK_ID_Rondes_Parties" msprop:Generator_UserParentTable="rondes" msprop:Generator_ParentPropName="rondesRow" />
       <msdata:Relationship name="FK_ID_StatutInvitations_Invitations" msdata:parent="statutinvitations" msdata:child="invitations" msdata:parentkey="ID" msdata:childkey="ID_StatutInvitations" msprop:Generator_UserChildTable="invitations" msprop:Generator_ChildPropName="GetinvitationsRows" msprop:Generator_UserRelationName="FK_ID_StatutInvitations_Invitations" msprop:Generator_RelationVarName="relationFK_ID_StatutInvitations_Invitations" msprop:Generator_UserParentTable="statutinvitations" msprop:Generator_ParentPropName="statutinvitationsRow" />
       <msdata:Relationship name="FK_ID_Taxes_Forfaits_Taxes" msdata:parent="taxes" msdata:child="forfaits_taxes" msdata:parentkey="ID" msdata:childkey="ID_Taxes" msprop:Generator_UserChildTable="forfaits_taxes" msprop:Generator_ChildPropName="Getforfaits_taxesRows" msprop:Generator_UserRelationName="FK_ID_Taxes_Forfaits_Taxes" msprop:Generator_RelationVarName="relationFK_ID_Taxes_Forfaits_Taxes" msprop:Generator_UserParentTable="taxes" msprop:Generator_ParentPropName="taxesRow" />
       <msdata:Relationship name="FK_ID_Tournois_Rondes" msdata:parent="tournois" msdata:child="rondes" msdata:parentkey="ID" msdata:childkey="ID_Tournois" msprop:Generator_UserChildTable="rondes" msprop:Generator_ChildPropName="GetrondesRows" msprop:Generator_UserRelationName="FK_ID_Tournois_Rondes" msprop:Generator_RelationVarName="relationFK_ID_Tournois_Rondes" msprop:Generator_UserParentTable="tournois" msprop:Generator_ParentPropName="tournoisRow" />
+      <msdata:Relationship name="FK_ID_Forfaits_Transactions" msdata:parent="forfaits" msdata:child="transactions" msdata:parentkey="ID" msdata:childkey="ID_Forfaits" msprop:Generator_UserChildTable="transactions" msprop:Generator_ChildPropName="GettransactionsRows" msprop:Generator_UserRelationName="FK_ID_Forfaits_Transactions" msprop:Generator_ParentPropName="forfaitsRow" msprop:Generator_RelationVarName="relationFK_ID_Forfaits_Transactions" msprop:Generator_UserParentTable="forfaits" />
       <msdata:Relationship name="FK_ID_Joueurs_Transactions" msdata:parent="joueurs" msdata:child="transactions" msdata:parentkey="ID" msdata:childkey="ID_Joueurs" msprop:Generator_UserChildTable="transactions" msprop:Generator_ChildPropName="GettransactionsRows" msprop:Generator_UserRelationName="FK_ID_Joueurs_Transactions" msprop:Generator_ParentPropName="joueursRow" msprop:Generator_RelationVarName="relationFK_ID_Joueurs_Transactions" msprop:Generator_UserParentTable="joueurs" />
-      <msdata:Relationship name="FK_ID_RegistreTransactions_Transactions" msdata:parent="registretransactions" msdata:child="transactions" msdata:parentkey="ID" msdata:childkey="ID_RegistreTransactions" msprop:Generator_UserChildTable="transactions" msprop:Generator_ChildPropName="GettransactionsRows" msprop:Generator_UserRelationName="FK_ID_RegistreTransactions_Transactions" msprop:Generator_ParentPropName="registretransactionsRow" msprop:Generator_RelationVarName="relationFK_ID_RegistreTransactions_Transactions" msprop:Generator_UserParentTable="registretransactions" />
       <msdata:Relationship name="FK_ID_Ville_Adresse" msdata:parent="ville" msdata:child="adresse" msdata:parentkey="ID" msdata:childkey="ID_Ville" msprop:Generator_UserChildTable="adresse" msprop:Generator_ChildPropName="GetadresseRows" msprop:Generator_UserRelationName="FK_ID_Ville_Adresse" msprop:Generator_RelationVarName="relationFK_ID_Ville_Adresse" msprop:Generator_UserParentTable="ville" msprop:Generator_ParentPropName="villeRow" />
       <msdata:Relationship name="FK_ID_Province_Ville" msdata:parent="province" msdata:child="ville" msdata:parentkey="ID" msdata:childkey="ID_Province" msprop:Generator_UserChildTable="ville" msprop:Generator_ChildPropName="GetvilleRows" msprop:Generator_UserRelationName="FK_ID_Province_Ville" msprop:Generator_ParentPropName="provinceRow" msprop:Generator_RelationVarName="relationFK_ID_Province_Ville" msprop:Generator_UserParentTable="province" />
     </xs:appinfo>

@@ -20,7 +20,13 @@ namespace GestionPong
 
         private void buttonDeconnexion_Click(object sender, EventArgs e)
         {
-            Global.ID = 0;
+            Global.Id = 0;
+            Global.Id_Adresse = 0;
+            Global.Id_CouleurPlaquette = 0;
+            Global.Id_Equipes = 0;
+            Global.Nom = "";
+            Global.Prenom = "";
+            Global.Pseudonyme = "";
             Environment.Exit(0);
         }
 
