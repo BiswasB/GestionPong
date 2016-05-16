@@ -83,6 +83,37 @@ namespace GestionPong
                 cmd.ExecuteNonQuery();
 
                 MessageBox.Show("Ajout complété!");
+
+                #region Étape 1 : Établir la connexion avec la base de données
+
+                con = new MySqlConnection(Global.ConnexionString);
+                con.Open();
+
+                #endregion
+
+                #region Étape 2 : Inscrire la commande à exécuter
+
+                // Créer la commande à exécuter
+                commandText = "INSERT INTO cartescredit_joueurs (ID_Joueurs, ID_CartesCredit) VALUES (@ID_Joueurs, @CartesCredit);";
+                cmd = new MySqlCommand(commandText); // Création de la commande
+
+                cmd.Connection = con; // Association de la commande avec la connexion
+
+
+
+                // Ajouter les paramètres (Plus sécuritaire)
+                cmd.Parameters.Add(new MySqlParameter("@ID_Joueurs", MySql.Data.MySqlClient.MySqlDbType.Int16, -1, "ID_Joueurs"));
+                cmd.Parameters.Add(new MySqlParameter("@ID_CartesCredit", MySql.Data.MySqlClient.MySqlDbType.Int16, -1, "ID_CartesCredit"));
+
+                // Récupère les valeurs entrées dans les zones de texte
+                cmd.Parameters["@ID_Joueurs"].Value = Global.Id;
+                cmd.Parameters["@ID_CartesCredit"].Value = cmd.LastInsertedId;
+
+                #endregion
+
+                cmd.ExecuteNonQuery();
+
+                MessageBox.Show("Ajout complété!");
             }
             catch (Exception ex)
             {
